@@ -1,5 +1,7 @@
-## 第 8 章 Collection API 的增强功能
-### 8.1 集合工厂
+# 第 8 章 Collection API 的增强功能
+
+## 8.1 集合工厂
+
 Arrays.asList
 - 创建一个固定大小的列表
 - 列表的元素可以更新
@@ -7,7 +9,8 @@ Arrays.asList
 ```java
 List<String> friends = Arrays.asList("Raphael", "Olivia");
 ```
-#### 8.1.1 List 工厂
+
+## 8.1.1 List 工厂
 List.of 创建一个列表
 - 创建的是一个只读列表
 - 可以更新元素
@@ -15,14 +18,18 @@ List.of 创建一个列表
 ```java
 List<String> friends5 = List.of("Raphael", "Olivia", "Thibaut");
 ```
-#### 8.1.2 Set 工厂
+
+## 8.1.2 Set 工厂
 Set.of
 ```java
 Set<String> friends = Set.of("Raphael", "Olivia", "Thibaut");
 ```
-#### 8.1.3 Map 工厂
+
+## 8.1.3 Map 工厂
+
 - Map.of
 - Map.ofEntries
+
 ```java
  private static void creatingMaps() {
     System.out.println("--> Creating a Map with Map.of()");
@@ -37,8 +44,11 @@ Set<String> friends = Set.of("Raphael", "Olivia", "Thibaut");
     System.out.println(ageOfFriends2);
   }
 ```
-### 8.2 使用 List 和 Set
+
+## 8.2 使用 List 和 Set
+
 因为集合的修改烦琐且容易出错，所以添加了两个方法解决这个问题：
+
 - removeIf
 - replaceAll
 
@@ -48,22 +58,26 @@ list.add(1);
 list.add(2);
 list.add(30);
 ```
+
 ```java
 list.removeIf(i -> i > 10);
 // [1, 2]
 ```
+
 ```java
 list.replaceAll(i -> i > 10 ? i / 10 : i);
 // [1, 2, 3]
 ```
-### 8.3 使用 Map
+
+## 8.3 使用 Map
+
 - forEach 遍历 Map
 - 排序
-    - [Entry.comparingByKey](#Map.Entry.comparingByKey)
-    - Entry.comparingByValue
+  - [Entry.comparingByKey](#Map.Entry.comparingByKey)
+  - Entry.comparingByValue
 - getOrDefault 方法
-    - 解决要查找的键在 Map 中不存在
-    - 第一个参数作为键，第二个参数为默认值
+  - 解决要查找的键在 Map 中不存在
+  - 第一个参数作为键，第二个参数为默认值
 - 计算模式
     - [computeIfAbsent](#computeIfAbsent)：给指定的键添加新的值（与原来的值进行合并操作）
     - [computeIfPresent](#computeIfPresent)：如果指定的键在 Map 中存在，使用新值替换旧值；如果不存在，Map 内容无变化
@@ -82,7 +96,9 @@ list.replaceAll(i -> i > 10 ? i / 10 : i);
     - [处理键冲突时的情况](#merge)
     - [简化代码](#merge-简化代码)
 
-#### Map.Entry.comparingByKey
+
+## Map.Entry.comparingByKey
+
 ```java
         Map<String, String> favouriteMovies = Map.ofEntries(
                 entry("Raphael", "Star Wars"),
@@ -92,7 +108,9 @@ list.replaceAll(i -> i > 10 ? i / 10 : i);
                 .sorted(Map.Entry.comparingByKey())
                 .forEachOrdered(System.out::println);
 ```
-#### computeIfAbsent
+
+## computeIfAbsent
+
 ```java
         Map<String, List<String>> friendsToMovies = new HashMap<>();
 
@@ -110,7 +128,9 @@ list.replaceAll(i -> i > 10 ? i / 10 : i);
         System.out.println(friendsToMovies);
         // {小刚=[星球大战, 星际争霸, 星际争霸]}
 ```
-#### computeIfPresent
+
+## computeIfPresent
+
 ```java
         Map<String, List<String>> gameMap = new HashMap<>();
 
@@ -129,7 +149,9 @@ list.replaceAll(i -> i > 10 ? i / 10 : i);
         System.out.println(gameMap);
         // {小刚=[暗黑3, 地球时代]}
 ```
-#### compute
+
+## compute
+
 ```java
         Map<String, List<String>> gameMap = new HashMap<>();
 
@@ -148,7 +170,9 @@ list.replaceAll(i -> i > 10 ? i / 10 : i);
         System.out.println(gameMap);
         // {小刚=[暗黑3, 地球时代], 又来一个键=[红警]}
 ```
-#### remove
+
+## remove
+
 ```java
         Map<String, String> gameMap = new HashMap<>();
         gameMap.put("暴雪1", "魔兽争霸");
@@ -163,7 +187,9 @@ list.replaceAll(i -> i > 10 ? i / 10 : i);
         System.out.println(gameMap);
         // {暴雪3=守望先锋, 暴雪2=暗黑3}
 ```
-#### replaceAll
+
+## replaceAll
+
 ```java
         Map<String, String> gameMap = new HashMap<>();
         gameMap.put("blizzard1", "starcraft2");
@@ -178,7 +204,9 @@ list.replaceAll(i -> i > 10 ? i / 10 : i);
         System.out.println(gameMap);
         // {blizzard3=BLIZZARD3, blizzard2=BLIZZARD2, blizzard1=BLIZZARD1}
 ```
-#### merge
+
+## merge
+
 ```java
         Map<String, String> family = Map.ofEntries(
                 entry("Teo", "Star Wars"),
@@ -201,7 +229,9 @@ list.replaceAll(i -> i > 10 ? i / 10 : i);
         System.out.println(everyone2);
         // {Raphael=Star Wars, Cristina=James Bond & Matrix, Teo=Star Wars}
 ```
-#### merge 简化代码
+
+## merge 简化代码
+
 ```java
         Map<String, Integer> gameMap = new HashMap<>();
         String gameName = "巫师3";
@@ -223,5 +253,7 @@ list.replaceAll(i -> i > 10 ? i / 10 : i);
         System.out.println(gameMap);
         // {英雄无敌=1, 巫师3=2}
 ```
-### 8.4 改进的 ConcurrentHashMap
+
+## 8.4 改进的 ConcurrentHashMap
+
 推荐使用 mappingCount 代替 size 方法

@@ -1,15 +1,19 @@
-## 第12章 新的日期和时间 API
+# 第12章 新的日期和时间 API
 - Joda-Time 第三方日期和时间库
 
-### 12.1 LocalDate、LocalTime、LocalDateTime、Instant、Duration 以及 Period
-#### 12.1.1 使用 LocalDate 和 LocalTime
-##### LocalDate
+## 12.1 LocalDate、LocalTime、LocalDateTime、Instant、Duration 以及 Period
+
+## 12.1.1 使用 LocalDate 和 LocalTime
+
+### LocalDate
+  
   - 是一个不可变对象
   - 只提供了简单的日期
   - 不含当天的时间信息
   - 也不附带任何与时区相关的信息
   
 可以通过静态工厂方法 of 创建一个 LocalDate 实例
+
 ```java
     LocalDate date = LocalDate.of(2014, 3, 18);
     int year = date.getYear(); // 2014
@@ -20,12 +24,17 @@
     boolean leap = date.isLeapYear(); // false (not a leap year)
     System.out.println(date);
 ```
+
 还可以使用工厂方法 now 从系统时钟获取当前的日期
+
 ```java
 LocalDate today = LocalDate.now();
 ```
-##### LocalTime
+
+### LocalTime
+
 - 可以表示一天中的时间，比如 13:45:20
+
 ```java
     LocalTime time = LocalTime.of(13, 45, 20); // 13:45:20
     int hour = time.getHour(); // 13
@@ -35,14 +44,18 @@ LocalDate today = LocalDate.now();
 ```
 
 使用静态方法 parse 也可以创建
+
 ```java
 LocalDate date = LocalDate.parse("2017-09-21");
 LocalTime time = LocalTime.parse("13:45:20");
 ```
-#### 12.1.2 合并日期和时间
+
+## 12.1.2 合并日期和时间
+
 - LocalDateTime：LocalDate 和 LocalTime 的合体
 - 同时表示日期和时间
 - 但不带有时区信息
+
 ```java
     // 2014-03-18T13:45
     LocalDateTime dt1 = LocalDateTime.of(2014, Month.MARCH, 18, 13, 45, 20);
@@ -57,8 +70,11 @@ LocalTime time = LocalTime.parse("13:45:20");
     LocalTime time1 = dt1.toLocalTime();
     System.out.println(time1);
 ```
-#### 12.1.3 机器的日期和时间格式
-##### java.time.Instant
+
+## 12.1.3 机器的日期和时间格式
+
+### java.time.Instant
+
 - 建模方式：表示一个持续时间段上某个点的单一大整型数
 - 以 Unix 元年时间（传统的设定为 UTC 时区 1970 年 1 月 1 日午夜时分）开始所经历的秒数进行计算
 - 可以通过向静态工厂方法 ofEpochSecond 传递代表秒数的值创建一个该类的实例
@@ -78,9 +94,13 @@ LocalTime time = LocalTime.parse("13:45:20");
   - 它包含的是由秒及纳秒所构成的数字
   - 它无法处理那些非常容易理解的时间单位（例如，获得今天是这个月的第几天）
     - 可以通过 Duration 或 Period 类使用 Instant
-#### 12.1.4 定义 Duration 或 Period
-##### Duration 类主要用于以秒和纳秒衡量时间
+
+## 12.1.4 定义 Duration 或 Period
+
+### Duration 类主要用于以秒和纳秒衡量时间
+
 - 不能仅向 between 方法传递一个 LocalDate 对象做参数
+
 ```java
         LocalTime time = LocalTime.of(13, 45, 20); // 13:45:20
         Instant instant = Instant.ofEpochSecond(44 * 365 * 86400);
@@ -91,14 +111,19 @@ LocalTime time = LocalTime.parse("13:45:20");
         System.out.println(d1.getSeconds());
         System.out.println(d2.getSeconds());
 ```
-##### Period 以年、月、日的方式对多个时间单位建模
+
+### Period 以年、月、日的方式对多个时间单位建模
+
 工厂方法 between 可以得到两个 LocalDate 之间的时长
+
 ```java
         Period tenDays = Period.between(LocalDate.of(2017, 9, 11),
                                         LocalDate.of(2017, 9, 21));
         System.out.println(tenDays.getDays());
 ```
-##### Duration 和 Period 便利的创建工厂
+
+### Duration 和 Period 便利的创建工厂
+
 ```java
         Duration threeMinutes = Duration.ofMinutes(3);
         Duration threeDays = Duration.of(3, ChronoUnit.DAYS);
@@ -125,32 +150,42 @@ LocalTime time = LocalTime.parse("13:45:20");
 | plus | 否 | 以**增加**某个指定时长的方式创建该时间间隔的副本 |
 | subtractFrom | 否 | 从指定的 temporal 对象中**减去**该时间间隔 |
 
-##### 截止目前，Duration 和 Period 对象都是不可修改的
+
+### 截止目前，Duration 和 Period 对象都是不可修改的
+
 - 更好的支持函数式编程
 - 线程安全
-#### 12.2 操纵、解析和格式化日期
+
+## 12.2 操纵、解析和格式化日期
+
 以下代码中所有的方法都返回一个修改了属性的对象，**不会修改原来的对象**
+
 ```java
         LocalDate date1 = LocalDate.of(2017, 9, 21); // 2017-09-21
         LocalDate date2 = date1.withYear(2011); // 2011-09-21
         LocalDate date3 = date2.withDayOfMonth(25); // 2011-09-25
         LocalDate date4 = date3.with(ChronoField.MONTH_OF_YEAR, 2); // 2011-02-25
 ```
+
 - 使用 get 和 with 方法，可以将 Temporal 对象值的读取和修改区分开
   - with 方法并不会直接修改现有的 Temporal 对象
   - 它会创建现有对象的副本并更新对应的字段
   - 这一过程也被称作**函数式更新**
 
 以相对方式修改 LocalDate 对象的属性
+
 ```java
         LocalDate date1 = LocalDate.of(2017, 9, 21); // 2017-09-21
         LocalDate date2 = date1.plusWeeks(1); // 2017-09-28
         LocalDate date3 = date2.minusYears(6); // 2011-09-28
         LocalDate date4 = date3.plus(6, ChronoUnit.MONTHS); // 2012-03-28
 ```
-#### 12.2.1 使用 TemporalAdjuster
+
+## 12.2.1 使用 TemporalAdjuster
+
 - 将日期调整到下个周日、下个工作日
 - 本月的最后一天
+
 ```java
         import static java.time.temporal.TemporalAdjusters.*;
 
@@ -158,11 +193,15 @@ LocalTime time = LocalTime.parse("13:45:20");
         LocalDate date2 = date1.with(nextOrSame(DayOfWeek.SUNDAY)); // 2014-03-23
         LocalDate date3 = date2.with(lastDayOfMonth()); // 2014-03-31
 ```
+
 更多方法详见 表 12-3 TemporalAdjusters 类中的工厂方法
-##### 实现自己的时间调节器
+
+### 实现自己的时间调节器
+
 - 使用 Lambda 表达式定义 TemporalAdjuster 对象，推荐使用静态工厂方法 TemporalAdjusters.ofDateAdjuster
 
 下一个工作日
+
 ```java
         TemporalAdjuster nextWorkingDay = TemporalAdjusters.ofDateAdjuster(temporal -> {
             DayOfWeek dow = DayOfWeek.of(temporal.get(ChronoField.DAY_OF_WEEK)); // 读取当前日期
@@ -179,8 +218,11 @@ LocalTime time = LocalTime.parse("13:45:20");
         LocalDate date1 = LocalDate.of(2021, 1, 22); // 2021-01-22
         LocalDate date2 = date1.with(nextWorkingDay); // 2021-01-25
 ```
-#### 12.2.2 打印输出及解析日期 - 时间对象
-##### 包 java.time.format
+
+## 12.2.2 打印输出及解析日期 - 时间对象
+
+### 包 java.time.format
+
 - 格式化、解析日期
 - 最重要的类 **DateTimeFormatter**
 
