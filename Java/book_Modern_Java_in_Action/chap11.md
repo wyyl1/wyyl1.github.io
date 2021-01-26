@@ -1,0 +1,83 @@
+## 第 11 章 用 Optional 取代 null
+### 11.3 应用 Optional 的几种模式
+#### 11.3.1 创建 Optional 对象
+
+##### 01 声明一个空的 Optional
+
+```java
+Optional<Car> optCar = Optional.empty();
+```
+
+##### 02 依据一个非空值创建 Optional
+- 如果 car 是一个 null， 代码会立即抛出 NullPointerException
+
+```java
+Optional<Car> optCar = Optional.of(car);
+```
+##### 03 可接受 null 的 Optional
+- 如果 car 是 null，那么得到的 Optional 对象就是空对象
+```java
+Optional<Car> optCar = Optional.ofNullable(car);
+```
+#### 11.3.2 使用 map 从 Optional 对象中提取和转换值
+```java
+Optional<Insurance> optInsurance = Optional.ofNullable(insurance);
+Optional<String> name = optInsurance.map(Insurance::getName);
+```
+#### 11.3.3 使用 flatMap 链接 Optional 对象
+##### 01 使用 Optional 获取 car 的保险公司名称
+- 🧨 一样会抛出 NullPointerException
+- 不需要大量的 if else 分支判断
+- 通过类型系统让你的域模型中隐藏的知识显示地提现在代码中
+  - 人不一定有车、有保险
+  - 保险公司一定有名称（如果没有，是因为数据出错，而不是代码问题） 
+```java
+  public String getCarInsuranceName(Optional<Person> person) {
+    return person.flatMap(Person::getCar)
+        .flatMap(Car::getInsurance)
+        .map(Insurance::getName)
+        .orElse("Unknown");
+  }
+```
+#### 11.3.4 操纵由 Optional 对象构成的 Stream
+- 🧨 一样会抛出 NullPointerException
+```java
+  public Set<String> getCarInsuranceNames(List<Person> persons) {
+    return persons.stream()
+        .map(Person::getCar)
+        .map(optCar -> optCar.flatMap(Car::getInsurance))
+        .map(optInsurance -> optInsurance.map(Insurance::getName))
+        .flatMap(Optional::stream)
+        .collect(toSet());
+  }
+```
+#### 11.3.5 默认行为及解引用 Optional 对象
+
+- get()
+  - 最简单但最不安全
+  - 相对于嵌套式的 null 检查，并未体现出多大改进
+- orElse(T other)
+  - 允许在 Optional 对象不包含值时提供一个默认值
+- orElseGet(Supplier<? extends T> supplier)
+  - 是 orElse 方法的延迟调用版
+  - Supplier 方法只有在 Optional 对象不含值时才执行调用
+  - 如果创建默认值耗时费力，建议采用这种方式，提升程序性能
+  - 或者自己非常确定某个方法仅在 Optional 为空时才调用，也可以采用这种方式
+- or(Supplier<? extends Optional<? extends T>> supplier)
+  -  与 orElseGet 方法很像
+  -  不过它不会解包 Optional 对象中的值，即便该值是存在的
+  -  实战中
+     - Optional 对象含有值：不会执行任何额外操作，直接返回该 Optional 对象
+     - Optional 对象为空：该方法会延迟的返回一个不同的 Optional 对象
+- orElseThrow(Supplier<? extends X> exceptionSupplier)
+  - 和 get 方法非常类似
+  - 遭遇 Optional 对象为空时都会抛出一个异常
+  - 但使用 orElseThrow 你可以定制希望抛出的异常类型  
+- ifPresent(Consumer<? super T> action)
+  - 变量值存在时，执行一个以参数形式传入的方法
+  - 否则就不进行任何操作
+- ifPresentOrElse(Consumer<? super T> action, Runnable emptyAction)
+  - Java 9 引入的一个新的实例方法
+  - 该方法不同于 ifPresent
+  - 接受一个 Runnable 方法，如果 Optional 对象为空，就执行该方法所定义的动作
+### 11.4 使用 Optional 的实战示例
