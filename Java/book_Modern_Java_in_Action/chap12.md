@@ -194,7 +194,23 @@ LocalTime time = LocalTime.parse("13:45:20");
         LocalDate date3 = date2.with(lastDayOfMonth()); // 2014-03-31
 ```
 
-更多方法详见 表 12-3 TemporalAdjusters 类中的工厂方法
+表 12-3 TemporalAdjusters 类中的工厂方法
+
+|方法名 | 描述 |
+| - | - |
+| dayOfWeekInMonth | 创建一个新的日期，它的值为同一个月中每一周的第几天（负数表示从月末往月初计数） |
+| firstDayOfMonth | 创建一个新的日期，它的值为当月的第一天 |
+| firstDayOfNextMonth | 创建一个新的日期，它的值为下月的第一天 |
+| firstDayOfNextYear | 创建一个新的日期，它的值为明年的第一天 |
+| firstDayOfYear | 创建一个新的日期，它的值为当年的第一天 |
+| firstInMonth | 创建一个新的日期，它的值为同一个月中，第一个符合星期几要求的值 |
+| lastDayOfMonth | 创建一个新的日期，它的值为当月的最后一天 |
+| lastDayOfNextMonth | 创建一个新的日期，它的值为下月的最后一天 |
+| lastDayOfNextYear | 创建一个新的日期，它的值为明年的最后一天 |
+| lastDayOfYear | 创建一个新的日期，它的值为当年的最后一天 |
+| lastInMonth | 创建一个新的日期，它的值为同一个月中，最后一个符合星期几要求的值 |
+| next / previous | 创建一个新的日期，并将其值设定为日期调整后或者调整前，第一个符合指定星期几要求的日期 |
+| nextOrSame / previousOrSame | 创建一个新的日期，并将其值设定为日期调整后或者调整前，第一个符合指定星期几要求的日期，如果该日期已经符合要求，则直接返回该对象 |
 
 ### 实现自己的时间调节器
 
@@ -226,8 +242,110 @@ LocalTime time = LocalTime.parse("13:45:20");
 - 格式化、解析日期
 - 最重要的类 **DateTimeFormatter**
 
+格式化日期
+
 ```java
-        LocalDate date = LocalDate.of(2014, 3, 18);
-        String s1 = date.format(DateTimeFormatter.BASIC_ISO_DATE); // 20140318
-        String s2 = date.format(DateTimeFormatter.ISO_LOCAL_DATE); // 2014-03-18
+LocalDate date = LocalDate.of(2014, 3, 18);
+String s1 = date.format(DateTimeFormatter.BASIC_ISO_DATE); // 20140318
+String s2 = date.format(DateTimeFormatter.ISO_LOCAL_DATE); // 2014-03-18
 ```
+
+字符串转时间类型
+
+```java
+LocalDate date1 = LocalDate.parse("20140318", DateTimeFormatter.BASIC_ISO_DATE);
+LocalDate date2 = LocalDate.parse("2014-03-18", DateTimeFormatter.ISO_LOCAL_DATE);
+```
+
+和老的 java.util.DateFormat 相比较， 所有的 **DateTimeFormatter 实例都是线程安全的**
+
+按照自己喜欢的格式创建 DateTimeFormatter
+
+```java
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+LocalDate dateILike = LocalDate.of(2021, 1, 27);
+String formattedDate = dateILike.format(formatter); // 2021/01/27
+LocalDate dateULike = LocalDate.parse(formattedDate, formatter);
+```
+
+创建一个本地化的 DateTimeFormatter
+
+```java
+LocalDate date = LocalDate.of(2021, 1, 27);
+DateTimeFormatter chinaFormatter = DateTimeFormatter.ofPattern("yyyy MMMM d", Locale.CHINA);
+String formattedDate = date.format(chinaFormatter);
+System.out.println(formattedDate);
+// 2021 一月 27
+```
+
+DateTimeFormatterBuilder **自定义时间格式**
+
+```java
+LocalDate date = LocalDate.of(2021, 1, 27);
+DateTimeFormatter complexFormatter = new DateTimeFormatterBuilder()
+        .appendText(ChronoField.YEAR)
+        .appendLiteral(" 年 ")
+        .appendText(ChronoField.MONTH_OF_YEAR)
+        .appendLiteral(" ")
+        .appendText(ChronoField.DAY_OF_MONTH)
+        .appendLiteral(" 日 ")
+        .parseCaseInsensitive()
+        .toFormatter(Locale.CHINA);
+// 2021 年 一月 27 日        
+```
+
+## 12.3 处理不同的时区和历法
+
+新版 java.time.ZoneId 类
+
+- 是老版 java.util.TimeZone 类的代替品
+- 设计目标是让你无需为处理时区操碎了心
+- ZoneId 类是不可变的
+
+### 12.3.1 使用时区
+
+```java
+// ZoneId.of("区域/城市")
+ZoneId shanghaiZone = ZoneId.of("Asia/Shanghai");
+```
+
+- 时区数据由 IANA 的时区数据库提供
+
+将老的 TimeZone 转为 ZoneId
+
+```java
+ZoneId zoneId = TimeZone.getDefault().toZoneId();
+```
+
+ZoneId 对象可以整合下列对象构造 ZonedDateTime 实例
+
+- LocalDate
+- LocalDateTime
+- Instant
+
+```java
+ZoneId shanghaiZone = ZoneId.of("Asia/Shanghai");
+
+LocalDate date = LocalDate.of(2021, 1, 27);
+ZonedDateTime zdt1 = date.atStartOfDay(shanghaiZone);
+// 2021-01-27T00:00+08:00[Asia/Shanghai]
+System.out.println(zdt1);
+
+LocalDateTime dateTime = LocalDateTime.of(2021, 1, 27, 18, 13, 45);
+ZonedDateTime zdt2 = dateTime.atZone(shanghaiZone);
+// 2021-01-27T18:13:45+08:00[Asia/Shanghai]
+System.out.println(zdt2);
+
+Instant instant = Instant.now();
+ZonedDateTime zdt3 = instant.atZone(shanghaiZone);
+// 2021-01-27T23:47:02.923793+08:00[Asia/Shanghai]
+System.out.println(zdt3);
+```
+
+图 12-1 理解 ZonedDateTime 可以很好的帮助理解它们的关系（详见书中插图）
+
+- LocalDate : 年 月 日
+- LocalTime : 时 分 秒
+- ZoneId : 时区
+- LocalDateTime : LocalDate + LocalTime = 年 月 日 时 分 秒
+- ZonedDateTime : LocalDateTime + ZoneId = 年 月 日 时 分 秒 时区
