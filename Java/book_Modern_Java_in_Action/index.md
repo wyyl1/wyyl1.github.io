@@ -18,7 +18,13 @@
 - [第 9 章 重构、测试和调试](chap09.md)
 - [第 10 章 基于 Lambda 的领域特定语言](chap010.md)
 - [第 11 章 用 Optional 取代 null](chap11.md)
-- [第12章 新的日期和时间 API](chap12.md)
+- [第 12 章 新的日期和时间 API](chap12.md)
+- [第 14 章 Java 模块系统](chap14.md)
+- [第 15 章 CompletableFuture 及反应式编程背后的概念](chap15.md)
+- [第 16 章 CompletableFuture：组合式异步编程](chap16.md)
+- [第 17 章 反应式编程](chap17.md)
+- [第 18 章 函数式的思考](chap18.md)
+- [# 第 19 章 函数式编程的技巧](chap19.md)
 
 ## 随书源码说明
 Java8InAction
