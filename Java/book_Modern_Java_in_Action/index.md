@@ -24,7 +24,9 @@
 - [第 16 章 CompletableFuture：组合式异步编程](chap16.md)
 - [第 17 章 反应式编程](chap17.md)
 - [第 18 章 函数式的思考](chap18.md)
-- [# 第 19 章 函数式编程的技巧](chap19.md)
+- [第 19 章 函数式编程的技巧](chap19.md)
+- [第 20 章 面向对象和函数式编程的混合：Java 和 Scala 的比较](chap20.md)
+- [第 21 章 结论以及 Java 的未来](chap21.md)
 
 ## 随书源码说明
 Java8InAction
