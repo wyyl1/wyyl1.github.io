@@ -13,4 +13,10 @@
 
 #### [Gitflow](DevTools/git/git-flow.md)
 
+## Linux
+
+### 鸟哥的私房菜
+
+- [《鸟哥的Linux私房菜-基础篇》学习笔记](Linux/vbird/linux_basic_4e/index.md)
+
 ## [感兴趣的内容](Java/intrest/index.md)
