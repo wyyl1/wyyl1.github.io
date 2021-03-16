@@ -3,6 +3,10 @@
 
 - [Java实战（第2版）学习笔记](Java/book_Modern_Java_in_Action/index.md)
 
+## [存储](Storage/index.md)
+
+- [Redis](Storage/Redis/index.md)
+
 ## 开发工具
 
 ### VS Code
@@ -18,5 +22,9 @@
 ### 鸟哥的私房菜
 
 - [《鸟哥的Linux私房菜-基础篇》学习笔记](Linux/vbird/linux_basic_4e/index.md)
+
+## 实践
+
+- [实用技巧](Practice/practial_skills.md)
 
 ## [感兴趣的内容](Java/intrest/index.md)
