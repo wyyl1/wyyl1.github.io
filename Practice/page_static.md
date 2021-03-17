@@ -16,3 +16,7 @@
 - [mini](https://themes.gohugo.io/hugo-theme-cactus-plus/) 很简单
 - [PaperMod](https://themes.gohugo.io/hugo-papermod/)
 - [Dream](https://themes.gohugo.io/hugo-theme-dream/) 😁
+- [hugo-profile](https://themes.gohugo.io/hugo-profile/)
+- [Even](https://themes.gohugo.io/hugo-theme-even/) 试试看
+- [Developer Portfolio](https://themes.gohugo.io/hugo-developer-portfolio/)
+- [Hugrid](https://themes.gohugo.io/hugrid/) 卡牌

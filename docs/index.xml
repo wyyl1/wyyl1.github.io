@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Mar 2021 13:31:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第七章 Linux 磁盘与文件系统管理</title>
+      <link>http://localhost:1313/post/1/</link>
+      <pubDate>Wed, 17 Mar 2021 13:31:34 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/1/</guid>
+      <description>7.2 文件系统的简单操作 7.2.1 磁盘与目录的容量 df：列出文件系统的整体磁盘使用量 du：评估文件系统的磁盘使用量（常用在推算目录所占容量） df 1 df [-ahikHTm] [目</description>
+    </item>
+    
+  </channel>
+</rss>
