@@ -65,27 +65,6 @@
   </url>
   
   <url>
-    <loc>https://wyyl1.github.io/tags/git/</loc>
-    <lastmod>2021-03-22T15:56:41+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://wyyl1.github.io/post/dev_tools/git/git/</loc>
-    <lastmod>2021-03-22T15:56:41+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://wyyl1.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2021-03-22T15:56:41+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap06/</loc>
     <lastmod>2021-03-19T21:43:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -108,13 +87,6 @@
   
   <url>
     <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap09/</loc>
-    <lastmod>2021-03-19T21:43:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap10/</loc>
     <lastmod>2021-03-19T21:43:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -165,6 +137,104 @@
   <url>
     <loc>https://wyyl1.github.io/post/dir/</loc>
     <lastmod>2021-03-19T21:43:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap10/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/tags/git/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/dev_tools/git/git/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/tags/gitflow/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/dev_tools/git/gitflow/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/practice/page_static/hugo/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/tags/vs-code/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/dev_tools/vs_code/hot_key/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/tags/hugo/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/categories/%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/tags/%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/categories/%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96/</loc>
+    <lastmod>2021-03-19T21:13:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

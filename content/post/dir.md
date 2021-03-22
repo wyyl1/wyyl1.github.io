@@ -18,11 +18,12 @@ categories: ["目录"]
 
 ### VS Code
 
-- [VS Code 快捷键](DevTools/VsCode/HotKey.md)
+- [VS Code 快捷键](/post/dev_tools/vs_code/hot_key)
 
 ### Git
 
-#### [Gitflow](DevTools/git/git-flow.md)
+- [Git](/post/dev_tools/git/git)
+- [Gitflow](/post/dev_tools/git/gitflow)
 
 ## Linux
 
@@ -32,6 +33,8 @@ categories: ["目录"]
 
 ## 实践
 
-- [实用技巧](Practice/practial_skills.md)
+### 页面静态化
+
+- [Hugo](/post/practice/page_static/hugo)
 
 ## [感兴趣的内容](Java/intrest/index.md)

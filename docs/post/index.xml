@@ -17,15 +17,6 @@
     </item>
     
     <item>
-      <title>Git</title>
-      <link>https://wyyl1.github.io/post/dev_tools/git/git/</link>
-      <pubDate>Mon, 22 Mar 2021 15:56:41 +0800</pubDate>
-      
-      <guid>https://wyyl1.github.io/post/dev_tools/git/git/</guid>
-      <description>常用命令s 忽略文件 官方文档 忽略已检入的文件，则必须在添加忽略该文件的规则之前取消跟踪它。 从终端取消跟踪文件。 1 git rm --cached FILENAME</description>
-    </item>
-    
-    <item>
       <title>06 数据同步：主从库如何实现数据一致？</title>
       <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap06/</link>
       <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
@@ -62,15 +53,6 @@
     </item>
     
     <item>
-      <title>10 第1～9讲课后思考题答案及常见问题答疑</title>
-      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap10/</link>
-      <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
-      
-      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap10/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>加餐（一）| 经典的Redis学习资料有哪些？</title>
       <link>https://wyyl1.github.io/post/storage/redis/geekbang/extra_meal01/</link>
       <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
@@ -94,7 +76,52 @@
       <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
       
       <guid>https://wyyl1.github.io/post/dir/</guid>
-      <description>Java Java实战（第2版）学习笔记 存储 Redis 开发工具 VS Code VS Code 快捷键 Git Gitflow Linux 鸟哥的私房菜 《鸟哥的Linux私房菜-基础篇》学习笔记 实践 实用技巧 感兴趣的</description>
+      <description>Java Java实战（第2版）学习笔记 存储 Redis 开发工具 VS Code VS Code 快捷键 Git Git Gitflow Linux 鸟哥的私房菜 《鸟哥的Linux私房菜-基础篇》学习笔记 实践 页面静态化 Hugo 感</description>
+    </item>
+    
+    <item>
+      <title>10 第1～9讲课后思考题答案及常见问题答疑</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap10/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://wyyl1.github.io/post/dev_tools/git/git/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/dev_tools/git/git/</guid>
+      <description>常用命令 忽略文件 官方文档 忽略已检入的文件，则必须在添加忽略该文件的规则之前取消跟踪它。 从终端取消跟踪文件。 1 git rm --cached FILENAME</description>
+    </item>
+    
+    <item>
+      <title>Gitflow</title>
+      <link>https://wyyl1.github.io/post/dev_tools/git/gitflow/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/dev_tools/git/gitflow/</guid>
+      <description>git-flow 的工作流程 Gitflow Workflow git-flow cheatsheet Git-Flow 基本教學 Github文档 Youtube视频 The gitflow workflow - in less than 5 mins.</description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://wyyl1.github.io/post/practice/page_static/hugo/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/practice/page_static/hugo/</guid>
+      <description>官网 快速入门 Create a New Site 1 hugo new site quickstart Add Some Content 1 hugo new posts/my-first-post.md Start the Hugo server 1 hugo server -D Build static pages 1 hugo -D 常用配置 文章默认模板 Archetypes | Hugo - Static Site Generator | Tutorial 8 1 themes/even/archetypes/default.md 自定义目录模板 1 2 3 4 themes/even/archetypes/dir1.md</description>
+    </item>
+    
+    <item>
+      <title>VS Code 快捷键</title>
+      <link>https://wyyl1.github.io/post/dev_tools/vs_code/hot_key/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/dev_tools/vs_code/hot_key/</guid>
+      <description>快捷键 功能 补充说明 TAB / SHIFT + TAB 选中后整段左右移动 多行一起移动 Cmd + F2 全局替换文字 Option + Shift + ↓ / ↑ 复制当前行 Cmd + Shift + K 删除当前行 Option + ↑ 当前行向上移动</description>
     </item>
     
   </channel>

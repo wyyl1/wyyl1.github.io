@@ -1,0 +1,16 @@
+---
+title: "VS Code 快捷键"
+date: 2021-03-19T21:13:05+08:00
+draft: false
+tags: ["VS Code","快捷键"]
+categories: ["开发工具"]
+---
+
+| 快捷键 | 功能 | 补充说明 |
+| - | - | - |
+| TAB / SHIFT + TAB | 选中后整段左右移动 | 多行一起移动 |
+| Cmd + F2 | 全局替换文字 |  |
+| Option + Shift + ↓ / ↑ | 复制当前行 |  |
+| Cmd + Shift + K | 删除当前行 |  |
+| Option + ↑ | 当前行向上移动 |  |
+
