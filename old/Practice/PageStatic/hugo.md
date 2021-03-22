@@ -30,7 +30,9 @@ hugo -D
 
 ## 常用配置
 
-### [文章默认模板](https://www.youtube.com/watch?v=bcme8AzVh6o&list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3&index=8)
+### 文章默认模板
+
+- [Archetypes | Hugo - Static Site Generator | Tutorial 8](https://www.youtube.com/watch?v=bcme8AzVh6o&list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3&index=8)
 
 ```cmd
 themes/even/archetypes/default.md
@@ -45,7 +47,9 @@ themes/even/archetypes/dir1.md
 hugo new dir1/c.md
 ```
 
-### [tags、categories](https://www.youtube.com/watch?v=pCPCQgqC8RA&list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3&index=10)
+### tags、categories
+
+- [Taxonomies | Hugo - Static Site Generator | Tutorial 10](https://www.youtube.com/watch?v=pCPCQgqC8RA&list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3&index=10)
 
 Markdown 文件
 
@@ -70,9 +74,21 @@ config.toml
 
 **重启服务后生效**
 
+### HTML 文件中使用变量
+
+- [Data Files | Hugo - Static Site Generator | Tutorial 20](https://www.youtube.com/watch?v=FyPgSuwIMWQ&list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3&index=20)
+- 官方文档 [Data Templates](https://gohugo.io/templates/data-templates/)
+
+**只有在 html 文件中起作用！**
+
 ### 自定义目录的 index.html
 
 - [List Page Templates | Hugo - Static Site Generator | Tutorial 12](https://www.youtube.com/watch?v=8b2YTSMdMps&list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3&index=12)
+- 官方文档 [Data Templates](https://gohugo.io/templates/data-templates/)
+
+### 使用本地图片
+
+将图片放置在 **static** 目录下
 
 ## toml
 
