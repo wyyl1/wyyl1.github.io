@@ -43,7 +43,7 @@ categories: ["存储"]
 
 接下来，每个哨兵都会向其他哨兵发送命令，表明希望由自己来执行主从切换，并让所有其他哨兵进行投票。这个投票过程称为**Leader 选举**。因为最终执行主从切换的哨兵称为 Leader，投票过程就是确定 Leader。
 
-![image](../../../../../post/Storage/Redis/Geekbang/images/chap08-1.jpg)
+![image](../../../../../post/storage/redis/geekbang/images/chap08-1.jpg)
 
 如果本轮选举失败，过一段时间（也就是哨兵故障转移超时时间的 2 倍）会重新选举
 

@@ -17,7 +17,7 @@ categories: ["存储"]
 
 repl_backlog_buffer 是一个环形缓冲区，主库会记录自己写到的位置，从库则会记录自己已经读到的位置。
 
-![image](../../../../../post/Storage/Redis/Geekbang/images/chap06-1.jpg)
+![image](../../../../../post/storage/redis/geekbang/images/chap06-1.jpg)
 
 因为 repl_backlog_buffer 是一个环形缓冲区，所以在缓冲区写满后，主库会继续写入，此时，就会覆盖掉之前写入的操作。**如果从库的读取速度比较慢，就有可能导致从库还未读取的操作被主库新写的操作覆盖了，这会导致主从库间的数据不一致。**
 

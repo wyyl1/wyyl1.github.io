@@ -22,7 +22,7 @@ categories: ["存储"]
 - 选主（选择主库）
 - 通知
 
-![image](../../../../../post/Storage/Redis/Geekbang/images/chap07-1.jpg)
+![image](../../../../../post/storage/redis/geekbang/images/chap07-1.jpg)
 
 ## 主观下线和客观下线
 

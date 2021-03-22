@@ -206,7 +206,7 @@
 <li>这个所需的赞成票数是通过哨兵配置文件中的 <strong>quorum</strong> 配置项设定的</li>
 </ul>
 <p>接下来，每个哨兵都会向其他哨兵发送命令，表明希望由自己来执行主从切换，并让所有其他哨兵进行投票。这个投票过程称为<strong>Leader 选举</strong>。因为最终执行主从切换的哨兵称为 Leader，投票过程就是确定 Leader。</p>
-<p><img src="../../../../../post/Storage/Redis/Geekbang/images/chap08-1.jpg" alt="image"></p>
+<p><img src="../../../../../post/storage/redis/geekbang/images/chap08-1.jpg" alt="image"></p>
 <p>如果本轮选举失败，过一段时间（也就是哨兵故障转移超时时间的 2 倍）会重新选举</p>
 <h3 id="注意">注意</h3>
 <ul>
