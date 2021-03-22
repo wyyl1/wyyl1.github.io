@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Even - A super concise theme for Hugo</title>
+    <link>https://wyyl1.github.io/categories/</link>
+    <description>Recent content in Categories on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 22 Mar 2021 20:23:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>极客时间</title>
+      <link>https://wyyl1.github.io/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Mon, 22 Mar 2021 20:23:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>目录</title>
+      <link>https://wyyl1.github.io/categories/%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Mon, 22 Mar 2021 20:23:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/categories/%E7%9B%AE%E5%BD%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>存储</title>
+      <link>https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>实践</title>
+      <link>https://wyyl1.github.io/categories/%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/categories/%E5%AE%9E%E8%B7%B5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>开发工具</title>
+      <link>https://wyyl1.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>页面静态化</title>
+      <link>https://wyyl1.github.io/categories/%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/categories/%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

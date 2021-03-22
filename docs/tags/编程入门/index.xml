@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程入门 on Even - A super concise theme for Hugo</title>
+    <link>https://wyyl1.github.io/tags/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/</link>
+    <description>Recent content in 编程入门 on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Mar 2021 21:43:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>编程入门</title>
+      <link>https://wyyl1.github.io/post/dir/</link>
+      <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/dir/</guid>
+      <description>Java Java实战（第2版）学习笔记 存储 Redis 开发工具 VS Code VS Code 快捷键 Git Git Gitflow Linux 鸟哥的私房菜 《鸟哥的Linux私房菜-基础篇》学习笔记 实践 页面静态化 Hugo 感</description>
+    </item>
+    
+  </channel>
+</rss>

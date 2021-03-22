@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Even - A super concise theme for Hugo</title>
+    <link>https://wyyl1.github.io/</link>
+    <description>Recent content on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 22 Mar 2021 20:23:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>极客时间 | 《Redis核心技术与实战》学习笔记</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/dir/</link>
+      <pubDate>Mon, 22 Mar 2021 20:23:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/dir/</guid>
+      <description>06 数据同步：主从库如何实现数据一致？ 07 哨兵机制：主库挂了，如何不间断服务？ 08 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 切片集群：数据增多了，是</description>
+    </item>
+    
+    <item>
+      <title>06 数据同步：主从库如何实现数据一致？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap06/</link>
+      <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap06/</guid>
+      <description>Redis 具有高可靠性 一是数据尽量少丢失 AOF 和 RDB 实现 二是服务尽量少中断 增加副本冗余量 主从库间网络断了怎么办？ repl_backlog_buffer 是一个环形缓冲区，主库会记录自己写到的位</description>
+    </item>
+    
+    <item>
+      <title>07 哨兵机制：主库挂了，如何不间断服务？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap07/</link>
+      <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap07/</guid>
+      <description>从库切换为主库，涉及三个问题 主库真的挂了吗？ 该选择哪个从库作为主库？ 怎么把新主库的相关信息通知给从库和客户端呢？ 在 Redis 主从集群中，哨兵机制是实</description>
+    </item>
+    
+    <item>
+      <title>08 哨兵集群：哨兵挂了，主从库还能切换吗？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap08/</link>
+      <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap08/</guid>
+      <description>哨兵集群的组成和运行机制 基于 pub/sub 机制的哨兵集群组成 哨兵实例之间可以相互发现，要归功于 Redis 提供的 pub/sub 机制，也就是发布 / 订阅机制。 哨兵只要和主库建立起</description>
+    </item>
+    
+    <item>
+      <title>09 切片集群：数据增多了，是该加内存还是加实例？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap09/</link>
+      <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap09/</guid>
+      <description>在使用 RDB 进行持久化时，Redis 会 fork 子进程来完成，fork 操作的用时和 Redis 的数据量是正相关的，而 fork 在执行时会阻塞主线程。数据量越大，fork 操</description>
+    </item>
+    
+    <item>
+      <title>加餐（一）| 经典的Redis学习资料有哪些？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/extra_meal01/</link>
+      <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/extra_meal01/</guid>
+      <description>官网 翻译版的命令参考 工具书：《Redis 使用手册》 可以帮助我们快速地了解或查询 Redis 的日常使用命令和操作方法 原理书：《Redis 设计与实现》 在 Redis</description>
+    </item>
+    
+    <item>
+      <title>存储</title>
+      <link>https://wyyl1.github.io/post/storage/dir/</link>
+      <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/dir/</guid>
+      <description>Redis 极客时间 | 《Redis核心技术与实战》学习笔记</description>
+    </item>
+    
+    <item>
+      <title>编程入门</title>
+      <link>https://wyyl1.github.io/post/dir/</link>
+      <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/dir/</guid>
+      <description>Java Java实战（第2版）学习笔记 存储 Redis 开发工具 VS Code VS Code 快捷键 Git Git Gitflow Linux 鸟哥的私房菜 《鸟哥的Linux私房菜-基础篇》学习笔记 实践 页面静态化 Hugo 感</description>
+    </item>
+    
+    <item>
+      <title>10 第1～9讲课后思考题答案及常见问题答疑</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap10/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://wyyl1.github.io/post/dev_tools/git/git/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/dev_tools/git/git/</guid>
+      <description>常用命令 忽略文件 官方文档 忽略已检入的文件，则必须在添加忽略该文件的规则之前取消跟踪它。 从终端取消跟踪文件。 1 git rm --cached FILENAME</description>
+    </item>
+    
+    <item>
+      <title>Gitflow</title>
+      <link>https://wyyl1.github.io/post/dev_tools/git/gitflow/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/dev_tools/git/gitflow/</guid>
+      <description>git-flow 的工作流程 Gitflow Workflow git-flow cheatsheet Git-Flow 基本教學 Github文档 Youtube视频 The gitflow workflow - in less than 5 mins.</description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://wyyl1.github.io/post/practice/page_static/hugo/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/practice/page_static/hugo/</guid>
+      <description>官网 快速入门 Create a New Site 1 hugo new site quickstart Add Some Content 1 hugo new posts/my-first-post.md Start the Hugo server 1 hugo server -D Build static pages 1 hugo -D 常用配置 文章默认模板 Archetypes | Hugo - Static Site Generator | Tutorial 8 1 themes/even/archetypes/default.md 自定义目录模板 1 2 3 4 themes/even/archetypes/dir1.md</description>
+    </item>
+    
+    <item>
+      <title>VS Code 快捷键</title>
+      <link>https://wyyl1.github.io/post/dev_tools/vs_code/hot_key/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/dev_tools/vs_code/hot_key/</guid>
+      <description>快捷键 功能 补充说明 TAB / SHIFT + TAB 选中后整段左右移动 多行一起移动 Cmd + F2 全局替换文字 Option + Shift + ↓ / ↑ 复制当前行 Cmd + Shift + K 删除当前行 Option + ↑ 当前行向上移动</description>
+    </item>
+    
+  </channel>
+</rss>
