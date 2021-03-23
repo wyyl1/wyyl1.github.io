@@ -68,7 +68,7 @@ categories: ["存储"]
 
 ## 小结
 
-Redis 中大数据解决方案
+Redis 中**大数据**解决方案
 
 ### Bitmap 
 
