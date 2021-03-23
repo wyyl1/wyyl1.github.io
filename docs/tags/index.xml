@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 22 Mar 2021 20:23:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 21:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis</title>
+      <link>https://wyyl1.github.io/tags/redis/</link>
+      <pubDate>Tue, 23 Mar 2021 21:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/tags/redis/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Redis核心技术与实战</title>
       <link>https://wyyl1.github.io/tags/redis%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E6%88%98/</link>
@@ -22,15 +31,6 @@
       <pubDate>Mon, 22 Mar 2021 20:23:05 +0800</pubDate>
       
       <guid>https://wyyl1.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Redis</title>
-      <link>https://wyyl1.github.io/tags/redis/</link>
-      <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
-      
-      <guid>https://wyyl1.github.io/tags/redis/</guid>
       <description></description>
     </item>
     

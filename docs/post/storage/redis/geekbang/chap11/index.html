@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>极客时间 | 《Redis核心技术与实战》学习笔记 - Even - A super concise theme for Hugo</title>
+  <title>11 “万金油”的String，为什么不好用了？ - Even - A super concise theme for Hugo</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="aoe" /><meta name="description" content="基础篇 06 | 数据同步：主从库如何实现数据一致？ 07 | 哨兵机制：主库挂了，如何不间断服务？ 08 | 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 | 切片集群：" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="aoe" /><meta name="description" content="为什么 String 类型内存开销大？ 除了记录实际数据，String 类型还需要额外的内存空间记录数据长度、空间使用等信息，这些信息也叫作元数据。 当实际保存" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.81.0 with theme even" />
 
 
-<link rel="canonical" href="https://wyyl1.github.io/post/storage/redis/geekbang/dir/" />
+<link rel="canonical" href="https://wyyl1.github.io/post/storage/redis/geekbang/chap11/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="极客时间 | 《Redis核心技术与实战》学习笔记" />
-<meta property="og:description" content="基础篇 06 | 数据同步：主从库如何实现数据一致？ 07 | 哨兵机制：主库挂了，如何不间断服务？ 08 | 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 | 切片集群：" />
+<meta property="og:title" content="11 “万金油”的String，为什么不好用了？" />
+<meta property="og:description" content="为什么 String 类型内存开销大？ 除了记录实际数据，String 类型还需要额外的内存空间记录数据长度、空间使用等信息，这些信息也叫作元数据。 当实际保存" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wyyl1.github.io/post/storage/redis/geekbang/dir/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-03-22T20:23:05&#43;08:00" />
-<meta property="article:modified_time" content="2021-03-22T20:23:05&#43;08:00" />
+<meta property="og:url" content="https://wyyl1.github.io/post/storage/redis/geekbang/chap11/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-03-23T21:20:05&#43;08:00" />
+<meta property="article:modified_time" content="2021-03-23T21:20:05&#43;08:00" />
 
-<meta itemprop="name" content="极客时间 | 《Redis核心技术与实战》学习笔记">
-<meta itemprop="description" content="基础篇 06 | 数据同步：主从库如何实现数据一致？ 07 | 哨兵机制：主库挂了，如何不间断服务？ 08 | 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 | 切片集群："><meta itemprop="datePublished" content="2021-03-22T20:23:05&#43;08:00" />
-<meta itemprop="dateModified" content="2021-03-22T20:23:05&#43;08:00" />
-<meta itemprop="wordCount" content="177">
-<meta itemprop="keywords" content="Redis核心技术与实战,学习笔记," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="极客时间 | 《Redis核心技术与实战》学习笔记"/>
-<meta name="twitter:description" content="基础篇 06 | 数据同步：主从库如何实现数据一致？ 07 | 哨兵机制：主库挂了，如何不间断服务？ 08 | 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 | 切片集群："/>
+<meta itemprop="name" content="11 “万金油”的String，为什么不好用了？">
+<meta itemprop="description" content="为什么 String 类型内存开销大？ 除了记录实际数据，String 类型还需要额外的内存空间记录数据长度、空间使用等信息，这些信息也叫作元数据。 当实际保存"><meta itemprop="datePublished" content="2021-03-23T21:20:05&#43;08:00" />
+<meta itemprop="dateModified" content="2021-03-23T21:20:05&#43;08:00" />
+<meta itemprop="wordCount" content="932">
+<meta itemprop="keywords" content="Redis," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="11 “万金油”的String，为什么不好用了？"/>
+<meta name="twitter:description" content="为什么 String 类型内存开销大？ 除了记录实际数据，String 类型还需要额外的内存空间记录数据长度、空间使用等信息，这些信息也叫作元数据。 当实际保存"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,13 +129,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">极客时间 | 《Redis核心技术与实战》学习笔记</h1>
+      <h1 class="post-title">11 “万金油”的String，为什么不好用了？</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-03-22 </span>
+        <span class="post-time"> 2021-03-23 </span>
         <div class="post-category">
-            <a href="/categories/%E7%9B%AE%E5%BD%95/"> 目录 </a>
-            <a href="/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"> 极客时间 </a>
+            <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
             </div>
         
       </div>
@@ -148,8 +147,14 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#基础篇">基础篇</a></li>
-        <li><a href="#实践篇">实践篇</a></li>
+        <li><a href="#为什么-string-类型内存开销大">为什么 String 类型内存开销大？</a></li>
+        <li><a href="#用什么数据结构可以节省内存">用什么数据结构可以节省内存？</a></li>
+        <li><a href="#如何用集合类型保存单值的键值对">如何用集合类型保存单值的键值对？</a>
+          <ul>
+            <li><a href="#二级编码方法中采用的-id-长度是有讲究的">二级编码方法中采用的 ID 长度是有讲究的</a></li>
+          </ul>
+        </li>
+        <li><a href="#课后评论">课后评论</a></li>
       </ul>
     </li>
   </ul>
@@ -157,27 +162,27 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="基础篇">基础篇</h2>
+      <h2 id="为什么-string-类型内存开销大">为什么 String 类型内存开销大？</h2>
 <ul>
-<li>
-<a href="../chap06"  target="_blank" >06 | 数据同步：主从库如何实现数据一致？</a></li>
-<li>
-<a href="../chap07"  target="_blank" >07 | 哨兵机制：主库挂了，如何不间断服务？</a></li>
-<li>
-<a href="../chap08"  target="_blank" >08 | 哨兵集群：哨兵挂了，主从库还能切换吗？</a></li>
-<li>
-<a href="../chap09"  target="_blank" >09 | 切片集群：数据增多了，是该加内存还是加实例？</a></li>
-<li>
-<a href="../chap10"  target="_blank" >10 | 第1～9讲课后思考题答案及常见问题答疑</a></li>
-<li>
-<a href="../extra_meal01"  target="_blank" >加餐（一）经典的Redis学习资料有哪些？</a></li>
+<li>除了记录实际数据，String 类型还需要额外的内存空间记录数据长度、空间使用等信息，这些信息也叫作元数据。</li>
+<li>当实际保存的数据较小时，元数据的空间开销就显得比较大了，有点“喧宾夺主”的意思。</li>
 </ul>
-<h2 id="实践篇">实践篇</h2>
+<h2 id="用什么数据结构可以节省内存">用什么数据结构可以节省内存？</h2>
+<p>缩列表（ziplist），这是一种非常节省内存的结构</p>
+<h2 id="如何用集合类型保存单值的键值对">如何用集合类型保存单值的键值对？</h2>
+<p>在保存单值的键值对时，可以采用基于 Hash 类型的<strong>二级编码</strong>方法。这里说的二级编码，就是把一个单值的数据拆分成两部分，前一部分作为 Hash 集合的 key，后一部分作为 Hash 集合的 value，这样一来，我们就可以把单值数据保存到 Hash 集合中了。</p>
+<h3 id="二级编码方法中采用的-id-长度是有讲究的">二级编码方法中采用的 ID 长度是有讲究的</h3>
+<p>Hash 类型底层结构什么时候使用压缩列表，什么时候使用哈希表呢？其实，Hash 类型设置了用压缩列表保存数据时的两个阈值，一旦超过了阈值，Hash 类型就会用哈希表来保存数据了。这两个阈值分别对应以下两个配置项：</p>
 <ul>
-<li>
-<a href="../chap11"  target="_blank" >11 | “万金油”的String，为什么不好用了？</a></li>
-<li>
-<a href="../chap12"  target="_blank" >12 | 有一亿个keys要统计，应该用哪种集合？</a></li>
+<li>hash-max-ziplist-entries：表示用压缩列表保存时哈希集合中的最大元素个数。</li>
+<li>hash-max-ziplist-value：表示用压缩列表保存时哈希集合中单个元素的最大长度。</li>
+</ul>
+<p>如果我们往 Hash 集合中写入的元素个数超过了 hash-max-ziplist-entries，或者写入的单个元素大小超过了 hash-max-ziplist-value，Redis 就会自动把 Hash 类型的实现结构由压缩列表转为哈希表。</p>
+<p>一旦从压缩列表转为了哈希表，Hash 类型就会一直用哈希表进行保存，而不会再转回压缩列表了。在节省内存空间方面，哈希表就没有压缩列表那么高效了。</p>
+<p><strong>为了能充分使用压缩列表的精简内存布局，我们一般要控制保存在 Hash 集合中的元素个数。</strong></p>
+<h2 id="课后评论">课后评论</h2>
+<ul>
+<li>不管是使用Hash还是Sorted Set，当采用ziplist方式存储时，虽然可以节省内存空间，但是在查询指定元素时，都要遍历整个ziplist，找到指定的元素。所以使用ziplist方式存储时，虽然可以利用CPU高速缓存，但也不适合存储过多的数据（hash-max-ziplist-entries和zset-max-ziplist-entries不宜设置过大），否则查询性能就会下降比较厉害。整体来说，这样的方案就是时间换空间，我们需要权衡使用。</li>
 </ul>
 
     </div>
@@ -190,7 +195,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2021-03-22
+        2021-03-23
         
     </span>
   </p>
@@ -199,17 +204,16 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/redis%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E6%88%98/">Redis核心技术与实战</a>
-          <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+          <a href="/tags/redis/">Redis</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/storage/redis/geekbang/chap11/">
+        <a class="prev" href="/post/storage/redis/geekbang/chap12/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">11 “万金油”的String，为什么不好用了？</span>
+            <span class="prev-text nav-default">12 | 有一亿个keys要统计，应该用哪种集合？</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/storage/redis/geekbang/chap06/">
-            <span class="next-text nav-default">06 数据同步：主从库如何实现数据一致？</span>
+        <a class="next" href="/post/storage/redis/geekbang/dir/">
+            <span class="next-text nav-default">极客时间 | 《Redis核心技术与实战》学习笔记</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

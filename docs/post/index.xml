@@ -6,14 +6,32 @@
     <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 22 Mar 2021 20:23:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 21:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>12 | 有一亿个keys要统计，应该用哪种集合？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap12/</link>
+      <pubDate>Tue, 23 Mar 2021 21:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap12/</guid>
+      <description>集合类型常见的四种统计模式 聚合统计 排序统计 二值状态统计 基数统计 聚合统计 交集 并集 差集 举例：每天的新增用户数和第二天的留存用户数 一个集合记录所有</description>
+    </item>
+    
+    <item>
+      <title>11 “万金油”的String，为什么不好用了？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap11/</link>
+      <pubDate>Tue, 23 Mar 2021 21:20:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap11/</guid>
+      <description>为什么 String 类型内存开销大？ 除了记录实际数据，String 类型还需要额外的内存空间记录数据长度、空间使用等信息，这些信息也叫作元数据。 当实际保存</description>
+    </item>
+    
     <item>
       <title>极客时间 | 《Redis核心技术与实战》学习笔记</title>
       <link>https://wyyl1.github.io/post/storage/redis/geekbang/dir/</link>
       <pubDate>Mon, 22 Mar 2021 20:23:05 +0800</pubDate>
       
       <guid>https://wyyl1.github.io/post/storage/redis/geekbang/dir/</guid>
-      <description>06 数据同步：主从库如何实现数据一致？ 07 哨兵机制：主库挂了，如何不间断服务？ 08 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 切片集群：数据增多了，是</description>
+      <description>基础篇 06 | 数据同步：主从库如何实现数据一致？ 07 | 哨兵机制：主库挂了，如何不间断服务？ 08 | 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 | 切片集群：</description>
     </item>
     
     <item>
@@ -85,7 +103,7 @@
       <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
       
       <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap10/</guid>
-      <description></description>
+      <description>不知道计算机底层读写原理，可以直接忽略本章 Redis 基本 IO 模型中还有哪些潜在的性能瓶颈？ 进一步理解阻塞操作对 Redis 单线程性能的影响。 在 Redis 基本 IO 模型中，主</description>
     </item>
     
     <item>

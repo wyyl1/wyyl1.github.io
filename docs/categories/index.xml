@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 22 Mar 2021 20:23:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 21:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>存储</title>
+      <link>https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Tue, 23 Mar 2021 21:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>极客时间</title>
       <link>https://wyyl1.github.io/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/</link>
@@ -22,15 +31,6 @@
       <pubDate>Mon, 22 Mar 2021 20:23:05 +0800</pubDate>
       
       <guid>https://wyyl1.github.io/categories/%E7%9B%AE%E5%BD%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>存储</title>
-      <link>https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/</link>
-      <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
-      
-      <guid>https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/</guid>
       <description></description>
     </item>
     
