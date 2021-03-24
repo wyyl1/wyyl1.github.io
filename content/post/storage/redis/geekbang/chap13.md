@@ -1,0 +1,33 @@
+---
+title: "13 | GEO是什么？还可以定义新的数据类型吗？"
+date: 2021-03-23T21:50:05+08:00
+draft: false
+tags: ["Redis"]
+categories: ["存储"]
+---
+
+## GEO
+
+> 面向 LBS (Location-Based Service) 应用的数据类型
+
+### GEO 的底层结构
+
+- GEO 类型的底层数据结构就是用 Sorted Set 来实现的
+- **GeoHash 编码**：将一组经纬度转为一个浮点数
+
+## Redis 的基本对象结构
+
+RedisObject 的内部组成包括了 type、encoding、lru 和 refcount 4 个元数据，以及 1 个*ptr指针。
+
+- type：表示值的类型，涵盖了我们前面学习的五大基本类型；
+- encoding：是值的编码方式，用来表示 Redis 中实现各个基本类型的底层数据结构，例如 SDS、压缩列表、哈希表、跳表等；
+- lru：记录了这个对象最后一次被访问的时间，用于淘汰过期的键值对；
+- refcount：记录了对象的引用计数；
+- *ptr：是指向数据的指针。
+
+![image](../../../../../post/storage/redis/geekbang/images/chap13-1.jpg)
+
+## 强大的评论
+
+- Redis 5.0推出了Stream数据结构，它借鉴了Kafka的设计思想，弥补了List和PubSub的不足。Stream类型数据可以持久化、支持ack机制、支持多个消费者、支持回溯消费，基本上实现了队列中间件大部分功能，比List和PubSub更可靠。
+- 基于Redis实现的布隆过滤器，其底层实现利用的是String数据结构和位运算，可以解决业务层缓存穿透的问题，而且内存占用非常小，操作非常高效。
