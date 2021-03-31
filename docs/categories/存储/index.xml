@@ -6,7 +6,16 @@
     <description>Recent content in 存储 on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Mar 2021 08:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Mar 2021 20:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>15 | 消息队列的考验：Redis有哪些解决方案？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap15/</link>
+      <pubDate>Wed, 31 Mar 2021 20:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap15/</guid>
+      <description>原文 消息队列的消息存取需求 消息保序 重复消息处理 消息可靠性保证 基于 List 的消息队列解决方案 List 本身就是按先进先出的顺序对数据进行存取 LPUSH 命令 把要发送的</description>
+    </item>
+    
     <item>
       <title>14 | 如何在Redis中保存时间序列数据？</title>
       <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap14/</link>
