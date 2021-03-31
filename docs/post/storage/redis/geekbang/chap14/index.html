@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>12 | 有一亿个keys要统计，应该用哪种集合？ - Even - A super concise theme for Hugo</title>
+  <title>14 | 如何在Redis中保存时间序列数据？ - Even - A super concise theme for Hugo</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="aoe" /><meta name="description" content="集合类型常见的四种统计模式 聚合统计 排序统计 二值状态统计 基数统计 聚合统计 交集 并集 差集 举例：每天的新增用户数和第二天的留存用户数 一个集合记录所有" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="aoe" /><meta name="description" content="时间序列数据的读写特点 写入特点 插入数据快 要求我们选择的数据类型，在进行数据插入时，复杂度要低，尽量不要阻塞 读特点 查询单条记录 查询时间范围内的" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.81.0 with theme even" />
 
 
-<link rel="canonical" href="https://wyyl1.github.io/post/storage/redis/geekbang/chap12/" />
+<link rel="canonical" href="https://wyyl1.github.io/post/storage/redis/geekbang/chap14/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="12 | 有一亿个keys要统计，应该用哪种集合？" />
-<meta property="og:description" content="集合类型常见的四种统计模式 聚合统计 排序统计 二值状态统计 基数统计 聚合统计 交集 并集 差集 举例：每天的新增用户数和第二天的留存用户数 一个集合记录所有" />
+<meta property="og:title" content="14 | 如何在Redis中保存时间序列数据？" />
+<meta property="og:description" content="时间序列数据的读写特点 写入特点 插入数据快 要求我们选择的数据类型，在进行数据插入时，复杂度要低，尽量不要阻塞 读特点 查询单条记录 查询时间范围内的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wyyl1.github.io/post/storage/redis/geekbang/chap12/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-03-23T21:50:05&#43;08:00" />
-<meta property="article:modified_time" content="2021-03-23T21:50:05&#43;08:00" />
+<meta property="og:url" content="https://wyyl1.github.io/post/storage/redis/geekbang/chap14/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-03-26T08:50:05&#43;08:00" />
+<meta property="article:modified_time" content="2021-03-26T08:50:05&#43;08:00" />
 
-<meta itemprop="name" content="12 | 有一亿个keys要统计，应该用哪种集合？">
-<meta itemprop="description" content="集合类型常见的四种统计模式 聚合统计 排序统计 二值状态统计 基数统计 聚合统计 交集 并集 差集 举例：每天的新增用户数和第二天的留存用户数 一个集合记录所有"><meta itemprop="datePublished" content="2021-03-23T21:50:05&#43;08:00" />
-<meta itemprop="dateModified" content="2021-03-23T21:50:05&#43;08:00" />
-<meta itemprop="wordCount" content="896">
+<meta itemprop="name" content="14 | 如何在Redis中保存时间序列数据？">
+<meta itemprop="description" content="时间序列数据的读写特点 写入特点 插入数据快 要求我们选择的数据类型，在进行数据插入时，复杂度要低，尽量不要阻塞 读特点 查询单条记录 查询时间范围内的"><meta itemprop="datePublished" content="2021-03-26T08:50:05&#43;08:00" />
+<meta itemprop="dateModified" content="2021-03-26T08:50:05&#43;08:00" />
+<meta itemprop="wordCount" content="484">
 <meta itemprop="keywords" content="Redis," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="12 | 有一亿个keys要统计，应该用哪种集合？"/>
-<meta name="twitter:description" content="集合类型常见的四种统计模式 聚合统计 排序统计 二值状态统计 基数统计 聚合统计 交集 并集 差集 举例：每天的新增用户数和第二天的留存用户数 一个集合记录所有"/>
+<meta name="twitter:title" content="14 | 如何在Redis中保存时间序列数据？"/>
+<meta name="twitter:description" content="时间序列数据的读写特点 写入特点 插入数据快 要求我们选择的数据类型，在进行数据插入时，复杂度要低，尽量不要阻塞 读特点 查询单条记录 查询时间范围内的"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,10 +129,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">12 | 有一亿个keys要统计，应该用哪种集合？</h1>
+      <h1 class="post-title">14 | 如何在Redis中保存时间序列数据？</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-03-23 </span>
+        <span class="post-time"> 2021-03-26 </span>
         <div class="post-category">
             <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
             </div>
@@ -147,23 +147,16 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#聚合统计">聚合统计</a>
+        <li><a href="#时间序列数据的读写特点">时间序列数据的读写特点</a>
           <ul>
-            <li><a href="#举例每天的新增用户数和第二天的留存用户数">举例：每天的新增用户数和第二天的留存用户数</a></li>
+            <li><a href="#写入特点">写入特点</a></li>
+            <li><a href="#读特点">读特点</a></li>
+            <li><a href="#保存时间序列数据的两种方案">保存时间序列数据的两种方案</a></li>
           </ul>
         </li>
-        <li><a href="#排序统计">排序统计</a></li>
-        <li><a href="#二值状态统计">二值状态统计</a>
+        <li><a href="#基于-hash-和-sorted-set-保存时间序列数据">基于 Hash 和 Sorted Set 保存时间序列数据</a>
           <ul>
-            <li><a href="#bitmap">Bitmap</a></li>
-            <li><a href="#举例统计-1-亿个用户连续-10-天的签到情况">举例：统计 1 亿个用户连续 10 天的签到情况</a></li>
-          </ul>
-        </li>
-        <li><a href="#基数统计">基数统计</a></li>
-        <li><a href="#小结">小结</a>
-          <ul>
-            <li><a href="#bitmap-1">Bitmap</a></li>
-            <li><a href="#hyperloglog">HyperLogLog</a></li>
+            <li><a href="#redis-是怎么保证原子性操作">Redis 是怎么保证原子性操作？</a></li>
           </ul>
         </li>
       </ul>
@@ -173,90 +166,52 @@
   </div>
 </div>
     <div class="post-content">
-      <p>集合类型常见的四种统计模式</p>
+      <h2 id="时间序列数据的读写特点">时间序列数据的读写特点</h2>
+<h3 id="写入特点">写入特点</h3>
 <ul>
-<li>聚合统计</li>
-<li>排序统计</li>
-<li>二值状态统计</li>
-<li>基数统计</li>
+<li>插入数据快</li>
+<li>要求我们选择的数据类型，在进行数据插入时，复杂度要低，尽量不要阻塞</li>
 </ul>
-<h2 id="聚合统计">聚合统计</h2>
+<h3 id="读特点">读特点</h3>
 <ul>
-<li>交集</li>
-<li>并集</li>
-<li>差集</li>
-</ul>
-<h3 id="举例每天的新增用户数和第二天的留存用户数">举例：每天的新增用户数和第二天的留存用户数</h3>
+<li>查询单条记录</li>
+<li>查询时间范围内的数据</li>
+<li>对某个时间范围内的数据进行聚合计算
 <ul>
-<li>一个集合记录所有登录过 App 的用户 ID</li>
-<li>一个集合记录每一天登录过 App 的用户 ID
-<ul>
-<li>key = user🆔日期</li>
-<li>value = 用户id（Set类型）</li>
+<li>均值</li>
+<li>最大、最小值</li>
+<li>求和</li>
 </ul>
 </li>
 </ul>
-<h2 id="排序统计">排序统计</h2>
-<p>在面对需要展示最新列表、排行榜等场景时，如果数据更新频繁或者需要分页显示，建议你优先考虑使用 Sorted Set</p>
-<h2 id="二值状态统计">二值状态统计</h2>
-<p>二值状态就是指集合元素的取值就只有 0 和 1 两种</p>
+<h3 id="保存时间序列数据的两种方案">保存时间序列数据的两种方案</h3>
 <ul>
-<li>在签到打卡的场景中，我们只用记录签到（1）或未签到（0），所以它就是非常典型的二值状态</li>
-<li>再如：商品有没有、用户在不在</li>
-<li>在记录<strong>海量数据</strong>时，Bitmap 能够有效地节省内存空间。</li>
+<li>Hash 和 Sorted Set</li>
+<li>RedisTimeSeries</li>
 </ul>
-<h3 id="bitmap">Bitmap</h3>
+<h2 id="基于-hash-和-sorted-set-保存时间序列数据">基于 Hash 和 Sorted Set 保存时间序列数据</h2>
+<ul>
+<li>优点
+<ul>
+<li>Redis 内在的数据类型，代码成熟和性能稳定</li>
+<li>系统稳定性是可以预期</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>如果我们需要进行大量的聚合计算，同时网络带宽条件不是太好时，Hash 和 Sorted Set 的组合就不太适合了。此时，使用 RedisTimeSeries 就更加合适一些。</li>
+</ul>
+</li>
+</ul>
+<h3 id="redis-是怎么保证原子性操作">Redis 是怎么保证原子性操作？</h3>
 <blockquote>
-<p>Bitmap 本身是用 String 类型作为底层数据结构实现的一种统计二值状态的数据类型。String 类型是会保存为二进制的字节数组，所以，Redis 就把字节数组的每个 bit 位利用起来，用来表示一个元素的二值状态。你可以把 Bitmap 看作是一个 bit 数组。</p>
-</blockquote>
-<h3 id="举例统计-1-亿个用户连续-10-天的签到情况">举例：统计 1 亿个用户连续 10 天的签到情况</h3>
-<ul>
-<li>每天的日期作为 key，每个 key 对应一个 1 亿位的 Bitmap，每一个 bit 对应一个用户当天的签到情况。</li>
-<li>对 10 个 Bitmap 做“<strong>与</strong>”操作，得到的结果也是一个 Bitmap</li>
-<li>在这个 Bitmap 中，只有 10 天都签到的用户对应的 bit 位上的值才会是 1</li>
-<li>用 BITCOUNT 统计下 Bitmap 中的 1 的个数，这就是连续签到 10 天的用户总数了</li>
-</ul>
-<p>内存开销</p>
-<ul>
-<li>每天使用 1 个 1 亿位的 Bitmap，大约占 <strong>12MB</strong> 的内存（10^8/8/1024/1024）</li>
-<li>10 天的 Bitmap 的内存开销约为 <strong>120MB</strong></li>
-</ul>
-<h2 id="基数统计">基数统计</h2>
-<blockquote>
-<p>基数统计就是指统计一个集合中不重复的元素个数</p>
+<p>Redis 用来实现简单的事务的 <strong>MULTI</strong> 和 <strong>EXEC</strong> 命令。当多个命令及其参数本身无误时，MULTI 和 EXEC 命令可以保证执行这些命令时的原子性。</p>
 </blockquote>
 <ul>
-<li>Set</li>
-<li>HyperLogLog：当数据量大到 Set 搞不定时用
-<ul>
-<li>用于统计基数的数据集合类型</li>
-<li>最大优势就在于，当集合元素数量非常多时，它计算基数所需的空间总是固定的，而且还很小</li>
-<li>在 Redis 中，每个 HyperLogLog 只需要花费 <strong>12 KB 内存</strong>，就可以计算接近 <strong>2^64 个元素</strong>的基数</li>
-<li>HyperLogLog 的统计规则是基于概率完成的，标准误算率是 0.81%
-<ul>
-<li>例如：HyperLogLog 统计的 UV 是 100 万，但实际的 UV 可能是 101 万</li>
+<li>MULTI 命令：表示一系列原子性操作的开始。收到这个命令后，Redis 就知道，接下来再收到的命令需要放到一个内部队列中，后续一起执行，保证原子性。</li>
+<li>EXEC 命令：表示一系列原子性操作的结束。一旦 Redis 收到了这个命令，就表示所有要保证原子性的命令操作都已经发送完成了。此时，Redis 开始执行刚才放到内部队列中的所有命令操作。</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="小结">小结</h2>
-<p>Redis 中<strong>大数据</strong>解决方案</p>
-<h3 id="bitmap-1">Bitmap</h3>
-<ul>
-<li>统计 <strong>1 亿</strong>个用户连续 10 天的签到情况
-<ul>
-<li>每天使用 1 个 1 亿位的 Bitmap，大约占 12MB 的内存（10^8/8/1024/1024）</li>
-<li>10 天的 Bitmap 的内存开销约为 <strong>120MB</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="hyperloglog">HyperLogLog</h3>
-<ul>
-<li>统计<strong>2^64 个元素</strong>的基数，花费 <strong>12 KB 内存</strong></li>
-<li>基于概率完成，标准误算率是 0.81%</li>
-</ul>
-<p><img src="../../../../../post/storage/redis/geekbang/images/chap12-1.jpg" alt="image"></p>
+<p>为了避免客户端和 Redis 实例间频繁的大量数据传输，我们可以使用 RedisTimeSeries 来保存时间序列数据。</p>
 
     </div>
 
@@ -268,7 +223,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2021-03-23
+        2021-03-26
         
     </span>
   </p>
@@ -280,13 +235,13 @@
           <a href="/tags/redis/">Redis</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/storage/redis/geekbang/chap14/">
+        <a class="prev" href="/post/java/getting_started/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">14 | 如何在Redis中保存时间序列数据？</span>
+            <span class="prev-text nav-default">Java 入门</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/storage/redis/geekbang/chap13/">
-            <span class="next-text nav-default">13 | GEO是什么？还可以定义新的数据类型吗？</span>
+        <a class="next" href="/post/storage/redis/geekbang/chap12/">
+            <span class="next-text nav-default">12 | 有一亿个keys要统计，应该用哪种集合？</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

@@ -6,7 +6,25 @@
     <description>Recent content on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Mar 2021 21:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Mar 2021 23:07:00 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java 入门</title>
+      <link>https://wyyl1.github.io/post/java/getting_started/</link>
+      <pubDate>Tue, 30 Mar 2021 23:07:00 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/java/getting_started/</guid>
+      <description>前言 目录简介 可持续发展线路：个人见解，看看就好 推荐书籍：封神之路 大部分图书都没有注明版本，因为技术更新太快，看的时候找最新版。 购买极客时间课</description>
+    </item>
+    
+    <item>
+      <title>14 | 如何在Redis中保存时间序列数据？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap14/</link>
+      <pubDate>Fri, 26 Mar 2021 08:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap14/</guid>
+      <description>时间序列数据的读写特点 写入特点 插入数据快 要求我们选择的数据类型，在进行数据插入时，复杂度要低，尽量不要阻塞 读特点 查询单条记录 查询时间范围内的</description>
+    </item>
+    
     <item>
       <title>12 | 有一亿个keys要统计，应该用哪种集合？</title>
       <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap12/</link>
