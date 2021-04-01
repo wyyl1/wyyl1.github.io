@@ -106,5 +106,14 @@
       <description>不知道计算机底层读写原理，可以直接忽略本章 Redis 基本 IO 模型中还有哪些潜在的性能瓶颈？ 进一步理解阻塞操作对 Redis 单线程性能的影响。 在 Redis 基本 IO 模型中，主</description>
     </item>
     
+    <item>
+      <title>16 | 异步机制：如何避免单线程模型的阻塞？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap16/</guid>
+      <description>原文 影响 Redis 性能的 5 大方面 Redis 内部的阻塞式操作； CPU 核和 NUMA 架构的影响； Redis 关键系统配置； Redis 内存碎片；Redis 缓冲区。 Redis 实例有哪些阻塞点？ 和 Redis 交互时</description>
+    </item>
+    
   </channel>
 </rss>
