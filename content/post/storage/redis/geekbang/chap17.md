@@ -1,0 +1,31 @@
+---
+title: "17 | 为什么CPU结构也会影响Redis的性能？"
+date: 2021-04-01T20:10:05+08:00
+draft: false
+tags: ["Redis"]
+categories: ["存储"]
+---
+
+- [原文](https://time.geekbang.org/column/article/286082)
+
+## 主流的 CPU 架构
+
+要避免 Redis 总是在不同 CPU 核上来回调度执行，可以使用 **taskset 命令**把一个程序绑定在一个核上运行。
+
+执行下面的命令，就把 Redis 实例绑在了 0 号核上，其中，“-c”选项用于设置要绑定的核编号。
+
+```cmd
+taskset -c 0 ./redis-server
+```
+
+为了避免 Redis 跨 CPU Socket 访问网络数据，我们最好把网络中断程序和 Redis 实例绑在同一个 CPU Socket 上，这样一来，Redis 实例就可以直接从本地内存读取网络数据了
+
+需要注意的是，**在 CPU 的 NUMA 架构下，对 CPU 核的编号规则，并不是先把一个 CPU Socket 中的所有逻辑核编完，再对下一个 CPU Socket 中的逻辑核编码，而是先给每个 CPU Socket 中每个物理核的第一个逻辑核依次编号，再给每个 CPU Socket 中的物理核的第二个逻辑核依次编号。**
+
+## 绑核的风险和解决方案
+
+当我们把 Redis 实例绑到一个 CPU 逻辑核上时，就会导致子进程、后台线程和 Redis 主线程竞争 CPU 资源，一旦子进程或后台线程占用 CPU 时，主线程就会被阻塞，导致 Redis 请求延迟增加。
+
+## 感悟
+
+太刺激了

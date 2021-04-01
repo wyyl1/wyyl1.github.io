@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Apr 2021 08:10:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Apr 2021 20:30:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>18 | 波动的响应延迟：如何应对变慢的Redis？（上）</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap18/</link>
+      <pubDate>Thu, 01 Apr 2021 20:30:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap18/</guid>
+      <description>原文 Redis 真的变慢了吗？ 查看 Redis 的响应延迟 当前环境下的 Redis 基线性能 redis-cli 命令提供了–intrinsic-latency 选项，可以用来监测和统计测试期间内</description>
+    </item>
+    
+    <item>
+      <title>17 | 为什么CPU结构也会影响Redis的性能？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap17/</link>
+      <pubDate>Thu, 01 Apr 2021 20:10:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap17/</guid>
+      <description>原文 主流的 CPU 架构 要避免 Redis 总是在不同 CPU 核上来回调度执行，可以使用 taskset 命令把一个程序绑定在一个核上运行。 执行下面的命令，就把 Redis 实例绑在了 0 号核上，</description>
+    </item>
+    
     <item>
       <title>16 | 异步机制：如何避免单线程模型的阻塞？</title>
       <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap16/</link>
