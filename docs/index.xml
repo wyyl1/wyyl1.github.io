@@ -6,7 +6,16 @@
     <description>Recent content on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Apr 2021 20:30:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Apr 2021 21:30:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>19 | 波动的响应延迟：如何应对变慢的Redis？（下）</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap19/</link>
+      <pubDate>Thu, 01 Apr 2021 21:30:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap19/</guid>
+      <description>原文 文件系统：AOF 模式 write 只要把日志记录写到内核缓冲区，就可以返回了，并不需要等待日志实际写回到磁盘 fsync 需要把日志记录写回到磁盘后才能返回，时</description>
+    </item>
+    
     <item>
       <title>18 | 波动的响应延迟：如何应对变慢的Redis？（上）</title>
       <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap18/</link>
