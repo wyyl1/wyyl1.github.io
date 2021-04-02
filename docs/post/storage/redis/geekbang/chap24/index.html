@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>18 | 波动的响应延迟：如何应对变慢的Redis？（上） - Even - A super concise theme for Hugo</title>
+  <title>24 | 替换策略：缓存满了怎么办？ - Even - A super concise theme for Hugo</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="aoe" /><meta name="description" content="原文 Redis 真的变慢了吗？ 查看 Redis 的响应延迟 当前环境下的 Redis 基线性能 redis-cli 命令提供了–intrinsic-latency 选项，可以用来监测和统计测试期间内" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="aoe" /><meta name="description" content="原文 设置多大的缓存容量合适？ 建议把缓存容量设置为总数据量的 15% 到 30%，兼顾访问性能和内存空间开销。 Redis 缓存有哪些淘汰策略？ 默认情况下，Redi" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.81.0 with theme even" />
 
 
-<link rel="canonical" href="https://wyyl1.github.io/post/storage/redis/geekbang/chap18/" />
+<link rel="canonical" href="https://wyyl1.github.io/post/storage/redis/geekbang/chap24/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="18 | 波动的响应延迟：如何应对变慢的Redis？（上）" />
-<meta property="og:description" content="原文 Redis 真的变慢了吗？ 查看 Redis 的响应延迟 当前环境下的 Redis 基线性能 redis-cli 命令提供了–intrinsic-latency 选项，可以用来监测和统计测试期间内" />
+<meta property="og:title" content="24 | 替换策略：缓存满了怎么办？" />
+<meta property="og:description" content="原文 设置多大的缓存容量合适？ 建议把缓存容量设置为总数据量的 15% 到 30%，兼顾访问性能和内存空间开销。 Redis 缓存有哪些淘汰策略？ 默认情况下，Redi" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wyyl1.github.io/post/storage/redis/geekbang/chap18/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-04-01T20:30:05&#43;08:00" />
-<meta property="article:modified_time" content="2021-04-01T20:30:05&#43;08:00" />
+<meta property="og:url" content="https://wyyl1.github.io/post/storage/redis/geekbang/chap24/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-02T18:50:05&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-02T18:50:05&#43;08:00" />
 
-<meta itemprop="name" content="18 | 波动的响应延迟：如何应对变慢的Redis？（上）">
-<meta itemprop="description" content="原文 Redis 真的变慢了吗？ 查看 Redis 的响应延迟 当前环境下的 Redis 基线性能 redis-cli 命令提供了–intrinsic-latency 选项，可以用来监测和统计测试期间内"><meta itemprop="datePublished" content="2021-04-01T20:30:05&#43;08:00" />
-<meta itemprop="dateModified" content="2021-04-01T20:30:05&#43;08:00" />
-<meta itemprop="wordCount" content="839">
+<meta itemprop="name" content="24 | 替换策略：缓存满了怎么办？">
+<meta itemprop="description" content="原文 设置多大的缓存容量合适？ 建议把缓存容量设置为总数据量的 15% 到 30%，兼顾访问性能和内存空间开销。 Redis 缓存有哪些淘汰策略？ 默认情况下，Redi"><meta itemprop="datePublished" content="2021-04-02T18:50:05&#43;08:00" />
+<meta itemprop="dateModified" content="2021-04-02T18:50:05&#43;08:00" />
+<meta itemprop="wordCount" content="1133">
 <meta itemprop="keywords" content="Redis," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="18 | 波动的响应延迟：如何应对变慢的Redis？（上）"/>
-<meta name="twitter:description" content="原文 Redis 真的变慢了吗？ 查看 Redis 的响应延迟 当前环境下的 Redis 基线性能 redis-cli 命令提供了–intrinsic-latency 选项，可以用来监测和统计测试期间内"/>
+<meta name="twitter:title" content="24 | 替换策略：缓存满了怎么办？"/>
+<meta name="twitter:description" content="原文 设置多大的缓存容量合适？ 建议把缓存容量设置为总数据量的 15% 到 30%，兼顾访问性能和内存空间开销。 Redis 缓存有哪些淘汰策略？ 默认情况下，Redi"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,10 +129,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">18 | 波动的响应延迟：如何应对变慢的Redis？（上）</h1>
+      <h1 class="post-title">24 | 替换策略：缓存满了怎么办？</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-04-01 </span>
+        <span class="post-time"> 2021-04-02 </span>
         <div class="post-category">
             <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
             </div>
@@ -147,17 +147,10 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#redis-真的变慢了吗">Redis 真的变慢了吗？</a>
-          <ul>
-            <li><a href="#查看-redis-的响应延迟">查看 Redis 的响应延迟</a></li>
-          </ul>
-        </li>
-        <li><a href="#如何应对-redis-变慢">如何应对 Redis 变慢？</a>
-          <ul>
-            <li><a href="#1-慢查询命令redis-自身操作特性的影响">1. 慢查询命令（Redis 自身操作特性的影响）</a></li>
-            <li><a href="#2-过期-key-操作redis-自身操作特性的影响">2. 过期 key 操作（Redis 自身操作特性的影响）</a></li>
-          </ul>
-        </li>
+        <li><a href="#设置多大的缓存容量合适">设置多大的缓存容量合适？</a></li>
+        <li><a href="#redis-缓存有哪些淘汰策略">Redis 缓存有哪些淘汰策略？</a></li>
+        <li><a href="#三个使用建议">三个使用建议</a></li>
+        <li><a href="#如何处理被淘汰的数据">如何处理被淘汰的数据？</a></li>
       </ul>
     </li>
   </ul>
@@ -167,53 +160,53 @@
     <div class="post-content">
       <ul>
 <li>
-<a href="https://time.geekbang.org/column/article/286549"  target="_blank"  rel="noopener">原文</a></li>
+<a href="https://time.geekbang.org/column/article/294640"  target="_blank"  rel="noopener">原文</a></li>
 </ul>
-<h2 id="redis-真的变慢了吗">Redis 真的变慢了吗？</h2>
-<h3 id="查看-redis-的响应延迟">查看 Redis 的响应延迟</h3>
+<h2 id="设置多大的缓存容量合适">设置多大的缓存容量合适？</h2>
 <ul>
-<li>当前环境下的 Redis 基线性能</li>
-<li>redis-cli 命令提供了–intrinsic-latency 选项，可以用来监测和统计测试期间内的最大延迟，这个延迟可以作为 Redis 的基线性能。其中，测试时长可以用–intrinsic-latency 选项的参数来指定。</li>
-<li>为了避免网络对基线性能的影响，这个命令需要在服务器端直接运行，这也就是说，我们<strong>只考虑服务器端软硬件环境的影响</strong></li>
-<li>想了解网络对 Redis 性能的影响，一个简单的方法是用 <strong>iPerf</strong> 这样的工具，测量从 Redis 客户端到服务器端的<strong>网络延迟</strong></li>
+<li>建议把缓存容量设置为<strong>总数据量的 15% 到 30%</strong>，兼顾访问性能和内存空间开销。</li>
 </ul>
-<h2 id="如何应对-redis-变慢">如何应对 Redis 变慢？</h2>
-<h3 id="1-慢查询命令redis-自身操作特性的影响">1. 慢查询命令（Redis 自身操作特性的影响）</h3>
-<p>
-<a href="https://redis.io/commands/"  target="_blank"  rel="noopener">Redis 官方文档</a>中对每个命令的<strong>复杂度</strong>都有介绍</p>
-<p>当发现 Redis 性能变慢时，可以通过 <strong>Redis 日志</strong>，或者是 <strong>latency monitor 工具</strong>，查询变慢的请求，根据请求对应的具体命令以及官方文档，确认下是否采用了复杂度高的慢查询命令。</p>
-<p>如果的确有大量的慢查询命令，有两种处理方式：</p>
+<h2 id="redis-缓存有哪些淘汰策略">Redis 缓存有哪些淘汰策略？</h2>
+<p><img src="../../../../../post/storage/redis/geekbang/images/chap24-1.jpg" alt="image"></p>
 <ul>
-<li><strong>1. 用其他高效命令代替。比如说，如果你需要返回一个 SET 中的所有成员时，不要使用 SMEMBERS 命令，而是要使用 SSCAN 多次迭代返回，避免一次返回大量数据，造成线程阻塞。</strong></li>
-<li><strong>2. 当你需要执行排序、交集、并集操作时，可以在客户端完成，而不要用 SORT、SUNION、SINTER 这些命令，以免拖慢 Redis 实例。</strong></li>
-</ul>
-<p>比较容易忽略的慢查询命令，就是 KEYS。它用于返回和输入模式匹配的所有 key</p>
+<li><strong>默认</strong>情况下，Redis 在使用的内存空间超过 maxmemory 值时，并不会淘汰数据，也就是设定的 <strong>noeviction 策略</strong>
 <ul>
-<li><strong>因为 KEYS 命令需要遍历存储的键值对，所以操作延时高</strong></li>
-<li><strong>KEYS 命令一般不被建议用于生产环境中</strong></li>
+<li>对应到 Redis 缓存，也就是指，一旦缓存被写满了，再有写请求来时，Redis 不再提供服务，而是直接返回错误</li>
 </ul>
-<p>例如，以下命令返回所有包含“name”字符串的 keys。</p>
+</li>
+<li><strong>volatile-ttl</strong> 在筛选时，会针对设置了过期时间的键值对，根据过期时间的先后进行删除，越早过期的越先被删除</li>
+<li><strong>volatile-random</strong> 就像它的名称一样，在设置了过期时间的键值对中，进行随机删除</li>
+<li><strong>volatile-lru</strong> 会使用 LRU 算法筛选设置了过期时间的键值对</li>
+<li><strong>volatile-lfu</strong> 会使用 LFU 算法选择设置了过期时间的键值对
+<ul>
+<li>在 LRU 算法的基础上，同时考虑了数据的访问时效性和数据的访问次数，可以看作是对淘汰策略的优化</li>
+</ul>
+</li>
+</ul>
+<p>相对于 volatile-ttl、volatile-random、volatile-lru、volatile-lfu 这四种策略淘汰的是设置了过期时间的数据，allkeys-lru、allkeys-random、allkeys-lfu 这三种淘汰策略的备选淘汰数据范围，就扩大到了所有键值对，无论这些键值对是否设置了过期时间。它们筛选数据进行淘汰的规则是：</p>
+<ul>
+<li><strong>allkeys-random</strong> 策略，从所有键值对中随机选择并删除数据</li>
+<li><strong>allkeys-lru</strong> 策略，使用 LRU 算法在所有数据中进行筛选</li>
+<li><strong>allkeys-lfu</strong> 策略，使用 LFU 算法在所有数据中进行筛选</li>
+</ul>
+<p>LRU 算法在实际实现时，需要用链表管理所有的缓存数据，这会<strong>带来额外的空间开销</strong>。而且，当有数据被访问时，需要在链表上把该数据移动到 MRU 端，如果有大量数据被访问，就会带来很多链表移动操作，会很耗时，进而会降低 Redis 缓存性能。</p>
+<p>在 Redis 中，LRU 算法被做了简化，以减轻数据淘汰对缓存性能的影响。具体来说，Redis 默认会记录每个数据的最近一次访问的时间戳（由键值对数据结构 RedisObject 中的 lru 字段记录）。然后，Redis 在决定淘汰的数据时，第一次会随机选出 N 个数据，把它们作为一个候选集合。接下来，Redis 会比较这 N 个数据的 lru 字段，把 lru 字段值最小的数据从缓存中淘汰出去。</p>
+<p>Redis 提供了一个配置参数 <strong>maxmemory-samples</strong>，这个参数就是 Redis 选出的数据个数 N。例如，我们执行如下命令，可以让 Redis 选出 100 个数据作为候选数据集：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cmd" data-lang="cmd">redis<span class="p">&gt;</span> KEYS *name*
-1) <span class="s2">&#34;lastname&#34;</span>
-2) <span class="s2">&#34;firstname&#34;</span>
+<pre class="chroma"><code class="language-cmd" data-lang="cmd">CONFIG SET maxmemory-samples 100
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="2-过期-key-操作redis-自身操作特性的影响">2. 过期 key 操作（Redis 自身操作特性的影响）</h3>
-<p><strong>频繁使用带有相同时间参数的 EXPIREAT 命令设置过期 key</strong>，这就会导致，在同一秒内有大量的 key 同时过期</p>
-<p>排查建议和解决方法</p>
+</div><h2 id="三个使用建议">三个使用建议</h2>
 <ul>
-<li>检查业务代码在使用 EXPIREAT 命令设置 key 过期时间时，是否使用了相同的 UNIX 时间戳</li>
-<li>有没有使用 EXPIRE 命令给批量的 key 设置相同的过期秒数</li>
-<li>因为，这都会造成大量 key 在同一时间过期，导致性能变慢</li>
-<li>可以在 EXPIREAT 和 EXPIRE 的过期时间参数上，加上一个一定大小范围内的随机数，这样，既保证了 key 在一个邻近时间范围内被删除，又避免了同时过期造成的压力</li>
+<li><strong>优先使用 allkeys-lru 策略</strong>。这样，可以充分利用 LRU 这一经典缓存算法的优势，把最近最常访问的数据留在缓存中，提升应用的访问性能。如果你的业务数据中有明显的冷热数据区分，强烈建议</li>
+<li>如果业务应用中的数据访问频率相差不大，没有明显的冷热数据区分，建议使用 <strong>allkeys-random 策略</strong>，随机选择淘汰的数据就行</li>
+<li><strong>如果你的业务中有置顶的需求</strong>，比如置顶新闻、置顶视频，那么，可以使用 <strong>volatile-lru 策略</strong>，同时不给这些置顶数据设置过期时间。这样一来，这些需要置顶的数据一直不会被删除，而其他数据会在过期时根据 LRU 规则进行筛选</li>
 </ul>
+<h2 id="如何处理被淘汰的数据">如何处理被淘汰的数据？</h2>
 
     </div>
 
@@ -225,7 +218,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2021-04-01
+        2021-04-02
         
     </span>
   </p>
@@ -237,13 +230,13 @@
           <a href="/tags/redis/">Redis</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/storage/redis/geekbang/chap20/">
+        <a class="prev" href="/post/storage/redis/geekbang/chap25/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">20 | 删除数据后，为什么内存占用率还是很高？</span>
+            <span class="prev-text nav-default">25 | 缓存异常（上）：如何解决缓存和数据库的数据不一致问题？</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/storage/redis/geekbang/chap17/">
-            <span class="next-text nav-default">17 | 为什么CPU结构也会影响Redis的性能？</span>
+        <a class="next" href="/post/storage/redis/geekbang/chap23/">
+            <span class="next-text nav-default">23 | 旁路缓存：Redis是如何工作的？</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

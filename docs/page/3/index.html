@@ -126,31 +126,9 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/dir/">极客时间 | 《Redis核心技术与实战》学习笔记</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap16/">16 | 异步机制：如何避免单线程模型的阻塞？</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-22 </span>
-      <div class="post-category">
-          <a href="/categories/%E7%9B%AE%E5%BD%95/"> 目录 </a>
-          <a href="/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"> 极客时间 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      基础篇 06 | 数据同步：主从库如何实现数据一致？ 07 | 哨兵机制：主库挂了，如何不间断服务？ 08 | 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 | 切片集群：
-    </div>
-    <div class="read-more">
-      <a href="/post/storage/redis/geekbang/dir/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap06/">06 数据同步：主从库如何实现数据一致？</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-03-19 </span>
+      <span class="post-time"> 2021-04-01 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -159,19 +137,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      Redis 具有高可靠性 一是数据尽量少丢失 AOF 和 RDB 实现 二是服务尽量少中断 增加副本冗余量 主从库间网络断了怎么办？ repl_backlog_buffer 是一个环形缓冲区，主库会记录自己写到的位
+      原文 影响 Redis 性能的 5 大方面 Redis 内部的阻塞式操作； CPU 核和 NUMA 架构的影响； Redis 关键系统配置； Redis 内存碎片；Redis 缓冲区。 Redis 实例有哪些阻塞点？ 和 Redis 交互时
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap06/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap16/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap07/">07 哨兵机制：主库挂了，如何不间断服务？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap15/">15 | 消息队列的考验：Redis有哪些解决方案？</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-19 </span>
+      <span class="post-time"> 2021-03-31 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -180,19 +158,40 @@
   
   <div class="post-content">
     <div class="post-summary">
-      从库切换为主库，涉及三个问题 主库真的挂了吗？ 该选择哪个从库作为主库？ 怎么把新主库的相关信息通知给从库和客户端呢？ 在 Redis 主从集群中，哨兵机制是实
+      原文 消息队列的消息存取需求 消息保序 重复消息处理 消息可靠性保证 基于 List 的消息队列解决方案 List 本身就是按先进先出的顺序对数据进行存取 LPUSH 命令 把要发送的
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap07/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap15/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap08/">08 哨兵集群：哨兵挂了，主从库还能切换吗？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/getting_started/">Java 入门</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-19 </span>
+      <span class="post-time"> 2021-03-30 </span>
+      <div class="post-category">
+          <a href="/categories/java/"> Java </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      前言 目录简介 可持续发展线路：个人见解，看看就好 推荐书籍：封神之路 大部分图书都没有注明版本，因为技术更新太快，看的时候找最新版。 购买极客时间课
+    </div>
+    <div class="read-more">
+      <a href="/post/java/getting_started/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap14/">14 | 如何在Redis中保存时间序列数据？</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-03-26 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -201,19 +200,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      哨兵集群的组成和运行机制 基于 pub/sub 机制的哨兵集群组成 哨兵实例之间可以相互发现，要归功于 Redis 提供的 pub/sub 机制，也就是发布 / 订阅机制。 哨兵只要和主库建立起
+      时间序列数据的读写特点 写入特点 插入数据快 要求我们选择的数据类型，在进行数据插入时，复杂度要低，尽量不要阻塞 读特点 查询单条记录 查询时间范围内的
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap08/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap14/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap09/">09 切片集群：数据增多了，是该加内存还是加实例？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap12/">12 | 有一亿个keys要统计，应该用哪种集合？</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-19 </span>
+      <span class="post-time"> 2021-03-23 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -222,10 +221,10 @@
   
   <div class="post-content">
     <div class="post-summary">
-      在使用 RDB 进行持久化时，Redis 会 fork 子进程来完成，fork 操作的用时和 Redis 的数据量是正相关的，而 fork 在执行时会阻塞主线程。数据量越大，fork 操
+      集合类型常见的四种统计模式 聚合统计 排序统计 二值状态统计 基数统计 聚合统计 交集 并集 差集 举例：每天的新增用户数和第二天的留存用户数 一个集合记录所有
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap09/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap12/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

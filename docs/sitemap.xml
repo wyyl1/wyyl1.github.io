@@ -2,6 +2,111 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap25/</loc>
+    <lastmod>2021-04-02T19:30:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/categories/</loc>
+    <lastmod>2021-04-02T19:30:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/</loc>
+    <lastmod>2021-04-02T19:30:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/</loc>
+    <lastmod>2021-04-02T19:30:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/tags/redis/</loc>
+    <lastmod>2021-04-02T19:30:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/tags/</loc>
+    <lastmod>2021-04-02T19:30:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/</loc>
+    <lastmod>2021-04-02T19:30:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap24/</loc>
+    <lastmod>2021-04-02T18:50:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap23/</loc>
+    <lastmod>2021-04-02T18:18:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap22/</loc>
+    <lastmod>2021-04-02T18:11:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap21/</loc>
+    <lastmod>2021-04-02T18:10:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/tags/java/</loc>
+    <lastmod>2021-04-02T10:07:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/categories/java/</loc>
+    <lastmod>2021-04-02T10:07:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</loc>
+    <lastmod>2021-04-02T10:07:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/java/timed_task/</loc>
+    <lastmod>2021-04-02T10:07:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap19/</loc>
     <lastmod>2021-04-01T21:30:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -9,42 +114,7 @@
   </url>
   
   <url>
-    <loc>https://wyyl1.github.io/categories/</loc>
-    <lastmod>2021-04-01T21:30:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://wyyl1.github.io/</loc>
-    <lastmod>2021-04-01T21:30:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://wyyl1.github.io/post/</loc>
-    <lastmod>2021-04-01T21:30:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://wyyl1.github.io/tags/redis/</loc>
-    <lastmod>2021-04-01T21:30:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://wyyl1.github.io/tags/</loc>
-    <lastmod>2021-04-01T21:30:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/</loc>
+    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap20/</loc>
     <lastmod>2021-04-01T21:30:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -74,13 +144,6 @@
   <url>
     <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap15/</loc>
     <lastmod>2021-03-31T20:50:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://wyyl1.github.io/categories/java/</loc>
-    <lastmod>2021-03-30T23:07:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

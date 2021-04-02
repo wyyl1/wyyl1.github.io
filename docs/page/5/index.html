@@ -126,64 +126,105 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/dev_tools/git/gitflow/">Gitflow</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap08/">08 哨兵集群：哨兵挂了，主从库还能切换吗？</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-03-19 </span>
       <div class="post-category">
-          <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"> 开发工具 </a>
+          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      git-flow 的工作流程 Gitflow Workflow git-flow cheatsheet Git-Flow 基本教學 Github文档 Youtube视频 The gitflow workflow - in less than 5 mins.
+      哨兵集群的组成和运行机制 基于 pub/sub 机制的哨兵集群组成 哨兵实例之间可以相互发现，要归功于 Redis 提供的 pub/sub 机制，也就是发布 / 订阅机制。 哨兵只要和主库建立起
     </div>
     <div class="read-more">
-      <a href="/post/dev_tools/git/gitflow/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap08/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/practice/page_static/hugo/">Hugo</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap09/">09 切片集群：数据增多了，是该加内存还是加实例？</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-03-19 </span>
       <div class="post-category">
-          <a href="/categories/%E5%AE%9E%E8%B7%B5/"> 实践 </a>
-          <a href="/categories/%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96/"> 页面静态化 </a>
+          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      官网 快速入门 Create a New Site 1 hugo new site quickstart Add Some Content 1 hugo new posts/my-first-post.md Start the Hugo server 1 hugo server -D Build static pages 1 hugo -D 常用配置 文章默认模板 Archetypes | Hugo - Static Site Generator | Tutorial 8 1 themes/even/archetypes/default.md 自定义目录模板 1 2 3 4 themes/even/archetypes/dir1.md
+      在使用 RDB 进行持久化时，Redis 会 fork 子进程来完成，fork 操作的用时和 Redis 的数据量是正相关的，而 fork 在执行时会阻塞主线程。数据量越大，fork 操
     </div>
     <div class="read-more">
-      <a href="/post/practice/page_static/hugo/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap09/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/dev_tools/vs_code/hot_key/">VS Code 快捷键</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/extra_meal01/">加餐（一）| 经典的Redis学习资料有哪些？</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-03-19 </span>
       <div class="post-category">
-          <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"> 开发工具 </a>
+          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      快捷键 功能 补充说明 TAB / SHIFT + TAB 选中后整段左右移动 多行一起移动 Cmd + F2 全局替换文字 Option + Shift + ↓ / ↑ 复制当前行 Cmd + Shift + K 删除当前行 Option + ↑ 当前行向上移动
+      官网 翻译版的命令参考 工具书：《Redis 使用手册》 可以帮助我们快速地了解或查询 Redis 的日常使用命令和操作方法 原理书：《Redis 设计与实现》 在 Redis
     </div>
     <div class="read-more">
-      <a href="/post/dev_tools/vs_code/hot_key/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/extra_meal01/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/storage/dir/">存储</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-03-19 </span>
+      <div class="post-category">
+          <a href="/categories/%E7%9B%AE%E5%BD%95/"> 目录 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Redis 极客时间 | 《Redis核心技术与实战》学习笔记
+    </div>
+    <div class="read-more">
+      <a href="/post/storage/dir/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/dir/">编程入门</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-03-19 </span>
+      <div class="post-category">
+          <a href="/categories/%E7%9B%AE%E5%BD%95/"> 目录 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Java Java实战（第2版）学习笔记 存储 Redis 开发工具 VS Code VS Code 快捷键 Git Git Gitflow Linux 鸟哥的私房菜 《鸟哥的Linux私房菜-基础篇》学习笔记 实践 页面静态化 Hugo 感
+    </div>
+    <div class="read-more">
+      <a href="/post/dir/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -195,7 +236,10 @@
         <i class="iconfont icon-left"></i>
         <span class="prev-text">上一页</span>
       </a>
-    
+    <a class="next" href="/page/6/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
   </nav>
         </div>
         

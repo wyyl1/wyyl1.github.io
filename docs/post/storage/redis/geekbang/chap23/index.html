@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>极客时间 | 《Redis核心技术与实战》学习笔记 - Even - A super concise theme for Hugo</title>
+  <title>23 | 旁路缓存：Redis是如何工作的？ - Even - A super concise theme for Hugo</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="aoe" /><meta name="description" content="基础篇 06 | 数据同步：主从库如何实现数据一致？ 07 | 哨兵机制：主库挂了，如何不间断服务？ 08 | 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 | 切片集群：" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="aoe" /><meta name="description" content="原文 缓存的特征 Redis 缓存处理请求的两种情况 Redis 作为旁路缓存的使用操作 缓存的类型 只读缓存 读写缓存" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.81.0 with theme even" />
 
 
-<link rel="canonical" href="https://wyyl1.github.io/post/storage/redis/geekbang/dir/" />
+<link rel="canonical" href="https://wyyl1.github.io/post/storage/redis/geekbang/chap23/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="极客时间 | 《Redis核心技术与实战》学习笔记" />
-<meta property="og:description" content="基础篇 06 | 数据同步：主从库如何实现数据一致？ 07 | 哨兵机制：主库挂了，如何不间断服务？ 08 | 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 | 切片集群：" />
+<meta property="og:title" content="23 | 旁路缓存：Redis是如何工作的？" />
+<meta property="og:description" content="原文 缓存的特征 Redis 缓存处理请求的两种情况 Redis 作为旁路缓存的使用操作 缓存的类型 只读缓存 读写缓存" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wyyl1.github.io/post/storage/redis/geekbang/dir/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-03-22T20:23:05&#43;08:00" />
-<meta property="article:modified_time" content="2021-03-22T20:23:05&#43;08:00" />
+<meta property="og:url" content="https://wyyl1.github.io/post/storage/redis/geekbang/chap23/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-02T18:18:05&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-02T18:18:05&#43;08:00" />
 
-<meta itemprop="name" content="极客时间 | 《Redis核心技术与实战》学习笔记">
-<meta itemprop="description" content="基础篇 06 | 数据同步：主从库如何实现数据一致？ 07 | 哨兵机制：主库挂了，如何不间断服务？ 08 | 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 | 切片集群："><meta itemprop="datePublished" content="2021-03-22T20:23:05&#43;08:00" />
-<meta itemprop="dateModified" content="2021-03-22T20:23:05&#43;08:00" />
-<meta itemprop="wordCount" content="463">
-<meta itemprop="keywords" content="Redis核心技术与实战,学习笔记," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="极客时间 | 《Redis核心技术与实战》学习笔记"/>
-<meta name="twitter:description" content="基础篇 06 | 数据同步：主从库如何实现数据一致？ 07 | 哨兵机制：主库挂了，如何不间断服务？ 08 | 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 | 切片集群："/>
+<meta itemprop="name" content="23 | 旁路缓存：Redis是如何工作的？">
+<meta itemprop="description" content="原文 缓存的特征 Redis 缓存处理请求的两种情况 Redis 作为旁路缓存的使用操作 缓存的类型 只读缓存 读写缓存"><meta itemprop="datePublished" content="2021-04-02T18:18:05&#43;08:00" />
+<meta itemprop="dateModified" content="2021-04-02T18:18:05&#43;08:00" />
+<meta itemprop="wordCount" content="44">
+<meta itemprop="keywords" content="Redis," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="23 | 旁路缓存：Redis是如何工作的？"/>
+<meta name="twitter:description" content="原文 缓存的特征 Redis 缓存处理请求的两种情况 Redis 作为旁路缓存的使用操作 缓存的类型 只读缓存 读写缓存"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,13 +129,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">极客时间 | 《Redis核心技术与实战》学习笔记</h1>
+      <h1 class="post-title">23 | 旁路缓存：Redis是如何工作的？</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-03-22 </span>
+        <span class="post-time"> 2021-04-02 </span>
         <div class="post-category">
-            <a href="/categories/%E7%9B%AE%E5%BD%95/"> 目录 </a>
-            <a href="/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"> 极客时间 </a>
+            <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
             </div>
         
       </div>
@@ -148,8 +147,10 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#基础篇">基础篇</a></li>
-        <li><a href="#实践篇">实践篇</a></li>
+        <li><a href="#缓存的特征">缓存的特征</a></li>
+        <li><a href="#redis-缓存处理请求的两种情况">Redis 缓存处理请求的两种情况</a></li>
+        <li><a href="#redis-作为旁路缓存的使用操作">Redis 作为旁路缓存的使用操作</a></li>
+        <li><a href="#缓存的类型">缓存的类型</a></li>
       </ul>
     </li>
   </ul>
@@ -157,53 +158,17 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="基础篇">基础篇</h2>
-<ul>
+      <ul>
 <li>
-<a href="../chap06"  target="_blank" >06 | 数据同步：主从库如何实现数据一致？</a></li>
-<li>
-<a href="../chap07"  target="_blank" >07 | 哨兵机制：主库挂了，如何不间断服务？</a></li>
-<li>
-<a href="../chap08"  target="_blank" >08 | 哨兵集群：哨兵挂了，主从库还能切换吗？</a></li>
-<li>
-<a href="../chap09"  target="_blank" >09 | 切片集群：数据增多了，是该加内存还是加实例？</a></li>
-<li>
-<a href="../chap10"  target="_blank" >10 | 第1～9讲课后思考题答案及常见问题答疑</a></li>
-<li>
-<a href="../extra_meal01"  target="_blank" >加餐（一）经典的Redis学习资料有哪些？</a></li>
+<a href="https://time.geekbang.org/column/article/293929"  target="_blank"  rel="noopener">原文</a></li>
 </ul>
-<h2 id="实践篇">实践篇</h2>
+<h2 id="缓存的特征">缓存的特征</h2>
+<h2 id="redis-缓存处理请求的两种情况">Redis 缓存处理请求的两种情况</h2>
+<h2 id="redis-作为旁路缓存的使用操作">Redis 作为旁路缓存的使用操作</h2>
+<h2 id="缓存的类型">缓存的类型</h2>
 <ul>
-<li>
-<a href="../chap11"  target="_blank" >11 | “万金油”的String，为什么不好用了？</a></li>
-<li>
-<a href="../chap12"  target="_blank" >12 | 有一亿个keys要统计，应该用哪种集合？</a></li>
-<li>
-<a href="../chap13"  target="_blank" >13 | GEO是什么？还可以定义新的数据类型吗？</a></li>
-<li>
-<a href="../chap14"  target="_blank" >14 | 如何在Redis中保存时间序列数据？</a></li>
-<li>
-<a href="../chap15"  target="_blank" >15 | 消息队列的考验：Redis有哪些解决方案？</a></li>
-<li>
-<a href="../chap16"  target="_blank" >16 | 异步机制：如何避免单线程模型的阻塞？</a></li>
-<li>
-<a href="../chap17"  target="_blank" >17 | 为什么CPU结构也会影响Redis的性能？</a></li>
-<li>
-<a href="../chap18"  target="_blank" >18 | 波动的响应延迟：如何应对变慢的Redis？（上）</a></li>
-<li>
-<a href="../chap19"  target="_blank" >19 | 波动的响应延迟：如何应对变慢的Redis？（下）</a></li>
-<li>
-<a href="../chap20"  target="_blank" >20 | 删除数据后，为什么内存占用率还是很高？</a></li>
-<li>
-<a href="../chap21"  target="_blank" >21 | 缓冲区：一个可能引发“惨案”的地方</a></li>
-<li>
-<a href="../chap22"  target="_blank" >22 | 第11～21讲课后思考题答案及常见问题答疑</a></li>
-<li>
-<a href="../chap23"  target="_blank" >23 | 旁路缓存：Redis是如何工作的？</a></li>
-<li>
-<a href="../chap24"  target="_blank" >24 | 替换策略：缓存满了怎么办？</a></li>
-<li>
-<a href="../chap25"  target="_blank" >25 | 缓存异常（上）：如何解决缓存和数据库的数据不一致问题？</a></li>
+<li>只读缓存</li>
+<li>读写缓存</li>
 </ul>
 
     </div>
@@ -216,7 +181,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2021-03-22
+        2021-04-02
         
     </span>
   </p>
@@ -225,17 +190,16 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/redis%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E6%88%98/">Redis核心技术与实战</a>
-          <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+          <a href="/tags/redis/">Redis</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/storage/redis/geekbang/chap11/">
+        <a class="prev" href="/post/storage/redis/geekbang/chap24/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">11 “万金油”的String，为什么不好用了？</span>
+            <span class="prev-text nav-default">24 | 替换策略：缓存满了怎么办？</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/storage/redis/geekbang/chap06/">
-            <span class="next-text nav-default">06 数据同步：主从库如何实现数据一致？</span>
+        <a class="next" href="/post/storage/redis/geekbang/chap22/">
+            <span class="next-text nav-default">22 | 第11～21讲课后思考题答案及常见问题答疑</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

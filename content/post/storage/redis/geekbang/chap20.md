@@ -1,0 +1,49 @@
+---
+title: "20 | 删除数据后，为什么内存占用率还是很高？"
+date: 2021-04-01T21:30:05+08:00
+draft: false
+tags: ["Redis"]
+categories: ["存储"]
+---
+
+- [原文](https://time.geekbang.org/column/article/289140)
+
+## 什么是内存碎片？
+
+## 如何判断是否有内存碎片？
+
+- 内存利用率的高低直接关系到 Redis 运行效率的高低
+- 为了让用户能监控到实时的内存使用情况，Redis 自身提供了 INFO 命令，可以用来查询内存使用的详细信息，命令如下：
+
+```cmd
+INFO memory
+# Memory
+used_memory:1073741736
+used_memory_human:1024.00M
+used_memory_rss:1997159792
+used_memory_rss_human:1.86G
+…
+mem_fragmentation_ratio:1.86
+```
+
+- mem_fragmentation_ratio 表示的就是 Redis 当前的**内存碎片率**
+- mem_fragmentation_ratio = used_memory_rss/ used_memor
+- used_memory_rss 是操作系统实际分配给 Redis 的物理内存空间，里面就包含了碎片
+- used_memory 是 Redis 为了保存数据实际申请使用的空间
+
+### 一些经验阈值
+
+- **mem_fragmentation_ratio 大于 1 但小于 1.5**：合理范围
+- **mem_fragmentation_ratio 大于 1.5**：表明内存碎片率已经超过了 50%。一般情况下，需要采取一些措施来降低内存碎片率
+
+## 如何清理内存碎片？
+
+- **重启 Redis 实例**
+  - 简单粗暴
+  - 会丢失没有持久化的数据
+  - 通过 AOF 或 RDB 进行恢复，恢复时长取决于 AOF 或 RDB 的大小，如果只有一个 Redis 实例，恢复阶段无法提供服务
+- 启用自动内存碎片清理，可以把 activedefrag 配置项设置为 yes
+  - **active-defrag-ignore-bytes 100mb**：表示内存碎片的字节数达到 100MB 时，开始清理；
+  - **active-defrag-threshold-lower 10**：表示内存碎片空间占操作系统分配给 Redis 的总空间比例达到 10% 时，开始清理。
+  - **active-defrag-cycle-min 25**： 表示自动清理过程所用 CPU 时间的比例不低于 25%，保证清理能正常开展；
+  - **active-defrag-cycle-max 75**：表示自动清理过程所用 CPU 时间的比例不高于 75%，一旦超过，就停止清理，从而避免在清理时，大量的内存拷贝阻塞 Redis，导致响应延迟升高。
