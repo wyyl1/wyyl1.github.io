@@ -6,14 +6,32 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Apr 2021 10:30:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Apr 2021 18:30:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>28 | Pika：如何基于SSD实现大容量Redis？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap28/</link>
+      <pubDate>Tue, 06 Apr 2021 18:30:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap28/</guid>
+      <description>原文 基于大内存的大容量实例在实例恢复、主从同步过程中会引起一系列潜在问题，例如 恢复时间增长 主从切换开销大 缓冲区易溢出 固态硬盘版 Redis Pika （360 开</description>
+    </item>
+    
     <item>
       <title>26 | 缓存异常（下）：如何解决缓存雪崩、击穿、穿透难题？</title>
       <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap26/</link>
       <pubDate>Tue, 06 Apr 2021 10:30:05 +0800</pubDate>
       
       <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap26/</guid>
-      <description>原文</description>
+      <description>原文 缓存雪崩 缓存雪崩是指大量的应用请求无法在 Redis 缓存中进行处理，紧接着，应用将大量请求发送到数据库层，导致数据库层的压力激增。 缓存雪崩的主要两</description>
+    </item>
+    
+    <item>
+      <title>27 | 缓存被污染了，该怎么办？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap27/</link>
+      <pubDate>Tue, 06 Apr 2021 10:30:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap27/</guid>
+      <description>原文 在一些场景下，有些数据被访问的次数非常少，甚至只会被访问一次。当这些数据服务完访问请求后，如果还继续留存在缓存中的话，就只会白白占用缓存</description>
     </item>
     
     <item>
