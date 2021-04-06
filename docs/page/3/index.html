@@ -18,8 +18,6 @@
 
 <meta name="author" content="aoe" />
 
-
-
 <script src="/js/baidu_tongji.js"></script><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
 
 
@@ -130,6 +128,27 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap17/">17 | 为什么CPU结构也会影响Redis的性能？</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-04-01 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      原文 主流的 CPU 架构 要避免 Redis 总是在不同 CPU 核上来回调度执行，可以使用 taskset 命令把一个程序绑定在一个核上运行。 执行下面的命令，就把 Redis 实例绑在了 0 号核上，
+    </div>
+    <div class="read-more">
+      <a href="/post/storage/redis/geekbang/chap17/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap16/">16 | 异步机制：如何避免单线程模型的阻塞？</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-04-01 </span>
@@ -208,27 +227,6 @@
     </div>
     <div class="read-more">
       <a href="/post/storage/redis/geekbang/chap14/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap12/">12 | 有一亿个keys要统计，应该用哪种集合？</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-03-23 </span>
-      <div class="post-category">
-          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      集合类型常见的四种统计模式 聚合统计 排序统计 二值状态统计 基数统计 聚合统计 交集 并集 差集 举例：每天的新增用户数和第二天的留存用户数 一个集合记录所有
-    </div>
-    <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap12/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
