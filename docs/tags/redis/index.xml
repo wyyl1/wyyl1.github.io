@@ -6,7 +6,25 @@
     <description>Recent content in Redis on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Apr 2021 18:30:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Apr 2021 10:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>30 | 如何使用Redis实现分布式锁？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap30/</link>
+      <pubDate>Wed, 07 Apr 2021 10:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap30/</guid>
+      <description>原文 实现分布式锁的两个要求 分布式锁的加锁和释放锁的过程，涉及多个操作。所以，在实现分布式锁时，我们需要保证这些锁操作的原子性 共享存储系统保存</description>
+    </item>
+    
+    <item>
+      <title>29 | 无锁的原子操作：Redis如何应对并发访问？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap29/</link>
+      <pubDate>Tue, 06 Apr 2021 18:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap29/</guid>
+      <description>原文 为了保证并发访问的正确性，Redis 提供了两种方法 加锁 原子操作 并发访问中需要对什么进行控制？ Redis 的两种原子操作方法 把多个操作在 Redis 中实现成一</description>
+    </item>
+    
     <item>
       <title>28 | Pika：如何基于SSD实现大容量Redis？</title>
       <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap28/</link>

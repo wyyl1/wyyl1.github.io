@@ -128,6 +128,48 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap13/">13 | GEO是什么？还可以定义新的数据类型吗？</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-03-23 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      GEO 面向 LBS (Location-Based Service) 应用的数据类型 GEO 的底层结构 GEO 类型的底层数据结构就是用 Sorted Set 来实现的 GeoHash 编码：将一组经纬度转为一个浮点数 Redis 的基本对象结构 RedisObject 的内部组成包
+    </div>
+    <div class="read-more">
+      <a href="/post/storage/redis/geekbang/chap13/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap11/">11 “万金油”的String，为什么不好用了？</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-03-23 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      为什么 String 类型内存开销大？ 除了记录实际数据，String 类型还需要额外的内存空间记录数据长度、空间使用等信息，这些信息也叫作元数据。 当实际保存
+    </div>
+    <div class="read-more">
+      <a href="/post/storage/redis/geekbang/chap11/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/dir/">极客时间 | 《Redis核心技术与实战》学习笔记</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-03-22 </span>
@@ -186,48 +228,6 @@
     </div>
     <div class="read-more">
       <a href="/post/storage/redis/geekbang/chap07/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap08/">08 哨兵集群：哨兵挂了，主从库还能切换吗？</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-03-19 </span>
-      <div class="post-category">
-          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      哨兵集群的组成和运行机制 基于 pub/sub 机制的哨兵集群组成 哨兵实例之间可以相互发现，要归功于 Redis 提供的 pub/sub 机制，也就是发布 / 订阅机制。 哨兵只要和主库建立起
-    </div>
-    <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap08/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap09/">09 切片集群：数据增多了，是该加内存还是加实例？</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-03-19 </span>
-      <div class="post-category">
-          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      在使用 RDB 进行持久化时，Redis 会 fork 子进程来完成，fork 操作的用时和 Redis 的数据量是正相关的，而 fork 在执行时会阻塞主线程。数据量越大，fork 操
-    </div>
-    <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap09/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

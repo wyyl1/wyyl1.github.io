@@ -3,48 +3,62 @@
   
   <url>
     <loc>https://wyyl1.github.io/</loc>
-    <lastmod>2021-04-06T18:30:05+08:00</lastmod>
+    <lastmod>2021-04-07T10:50:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap28/</loc>
-    <lastmod>2021-04-06T18:30:05+08:00</lastmod>
+    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap30/</loc>
+    <lastmod>2021-04-07T10:50:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://wyyl1.github.io/categories/</loc>
-    <lastmod>2021-04-06T18:30:05+08:00</lastmod>
+    <lastmod>2021-04-07T10:50:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://wyyl1.github.io/post/</loc>
-    <lastmod>2021-04-06T18:30:05+08:00</lastmod>
+    <lastmod>2021-04-07T10:50:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://wyyl1.github.io/tags/redis/</loc>
-    <lastmod>2021-04-06T18:30:05+08:00</lastmod>
+    <lastmod>2021-04-07T10:50:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://wyyl1.github.io/tags/</loc>
-    <lastmod>2021-04-06T18:30:05+08:00</lastmod>
+    <lastmod>2021-04-07T10:50:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/</loc>
+    <lastmod>2021-04-07T10:50:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap29/</loc>
+    <lastmod>2021-04-06T18:50:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap28/</loc>
     <lastmod>2021-04-06T18:30:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
