@@ -6,7 +6,16 @@
     <description>Recent content in Redis on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 07 Apr 2021 10:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Apr 2021 13:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>31 | 事务机制：Redis能实现ACID属性吗？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap31/</link>
+      <pubDate>Wed, 07 Apr 2021 13:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap31/</guid>
+      <description>原文 事务在执行时，会提供专门的属性保证，包括 原子性（Atomicity） 一致性（Consistency） 隔离性（Isolation） 持久性（</description>
+    </item>
+    
     <item>
       <title>30 | 如何使用Redis实现分布式锁？</title>
       <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap30/</link>

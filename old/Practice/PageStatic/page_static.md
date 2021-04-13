@@ -17,6 +17,24 @@
 - [PaperMod](https://themes.gohugo.io/hugo-papermod/)
 - [Dream](https://themes.gohugo.io/hugo-theme-dream/) 😁
 - [hugo-profile](https://themes.gohugo.io/hugo-profile/)
-- [Even](https://themes.gohugo.io/hugo-theme-even/) 试试看
+- [Even](https://themes.gohugo.io/hugo-theme-even/) 😁 😁 试试看
 - [Developer Portfolio](https://themes.gohugo.io/hugo-developer-portfolio/)
 - [Hugrid](https://themes.gohugo.io/hugrid/) 卡牌
+
+### Clean
+
+- [Meghna Hugo](https://themes.gohugo.io/meghna-hugo/) 公司首页
+
+### Minimal
+
+- [Amperage](https://themes.gohugo.io/amperage/) 线框图文
+
+### Simple
+
+- [Academic](https://themes.gohugo.io/academic/)  😁 😁 😁
+- [Hugo Theme Bootie Docs](https://themes.gohugo.io/bootie-docs/)  😁  分类多了很乱
+- [Clarity](https://themes.gohugo.io/hugo-clarity/) 
+
+### Personal
+
+### Light

@@ -6,7 +6,43 @@
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 07 Apr 2021 10:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Apr 2021 09:53:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Gremlin Console</title>
+      <link>https://wyyl1.github.io/post/storage/graph/gremlin/the-gremlin-console/</link>
+      <pubDate>Mon, 12 Apr 2021 09:53:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/graph/gremlin/the-gremlin-console/</guid>
+      <description>The Gremlin Console 官网文档 需要参考官网图数据关系示例图学习 找到 V(1) 不同类型的箭头指向的 V（顶点）- 只能找到部分顶点 1 2 3 4 g.V(1).outE(). group(). by(label). by(inV()) valueMap() 以 Map 格式返回 使用 next() 有时</description>
+    </item>
+    
+    <item>
+      <title>The Gremlin Recipes</title>
+      <link>https://wyyl1.github.io/post/storage/graph/gremlin/recipes/</link>
+      <pubDate>Mon, 12 Apr 2021 09:53:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/graph/gremlin/recipes/</guid>
+      <description>The Gremlin Recipes 官网文档 Traversal Recipes 遍历 Between Vertices 顶点之间 g.V(1).bothE()：顶点的所有边 g.V(1).bothE().where(otherV().ha</description>
+    </item>
+    
+    <item>
+      <title>Gremlin 入门</title>
+      <link>https://wyyl1.github.io/post/storage/graph/gremlin/getting_started/</link>
+      <pubDate>Sat, 10 Apr 2021 09:53:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/graph/gremlin/getting_started/</guid>
+      <description>Apache TinkerPop Gremlin 以下代码来源 Getting Started 需要参考官网示例图学习 The First Five Minutes 遍历图的基础知识 g.V() 遍历图中所有顶点 g.V(1).outE(&amp;lsquo;knows&amp;rsquo;) 获取顶点“1”延伸出的所有带有标签“knows”的边</description>
+    </item>
+    
+    <item>
+      <title>31 | 事务机制：Redis能实现ACID属性吗？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap31/</link>
+      <pubDate>Wed, 07 Apr 2021 13:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap31/</guid>
+      <description>原文 事务在执行时，会提供专门的属性保证，包括 原子性（Atomicity） 一致性（Consistency） 隔离性（Isolation） 持久性（</description>
+    </item>
+    
     <item>
       <title>30 | 如何使用Redis实现分布式锁？</title>
       <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap30/</link>
@@ -265,7 +301,7 @@
       <pubDate>Fri, 19 Mar 2021 21:43:05 +0800</pubDate>
       
       <guid>https://wyyl1.github.io/post/storage/dir/</guid>
-      <description>Redis 极客时间 | 《Redis核心技术与实战》学习笔记 优秀资料 分布式锁的实现之 redis 篇(小米信息部技术团队)</description>
+      <description>Redis 极客时间 | 《Redis核心技术与实战》学习笔记 优秀资料 分布式锁的实现之 redis 篇(小米信息部技术团队) 图数据库 Apache TinkerPop Gremlin 官网 Gremlin 入门 The Gremlin Console 入门 The Gremlin Recipes 入</description>
     </item>
     
     <item>
