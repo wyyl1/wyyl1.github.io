@@ -128,106 +128,21 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap12/">12 | 有一亿个keys要统计，应该用哪种集合？</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-03-23 </span>
-      <div class="post-category">
-          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      集合类型常见的四种统计模式 聚合统计 排序统计 二值状态统计 基数统计 聚合统计 交集 并集 差集 举例：每天的新增用户数和第二天的留存用户数 一个集合记录所有
-    </div>
-    <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap12/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap13/">13 | GEO是什么？还可以定义新的数据类型吗？</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-03-23 </span>
-      <div class="post-category">
-          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      GEO 面向 LBS (Location-Based Service) 应用的数据类型 GEO 的底层结构 GEO 类型的底层数据结构就是用 Sorted Set 来实现的 GeoHash 编码：将一组经纬度转为一个浮点数 Redis 的基本对象结构 RedisObject 的内部组成包
-    </div>
-    <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap13/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap11/">11 “万金油”的String，为什么不好用了？</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-03-23 </span>
-      <div class="post-category">
-          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      为什么 String 类型内存开销大？ 除了记录实际数据，String 类型还需要额外的内存空间记录数据长度、空间使用等信息，这些信息也叫作元数据。 当实际保存
-    </div>
-    <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap11/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/dir/">极客时间 | 《Redis核心技术与实战》学习笔记</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-03-22 </span>
-      <div class="post-category">
-          <a href="/categories/%E7%9B%AE%E5%BD%95/"> 目录 </a>
-          <a href="/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"> 极客时间 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      基础篇 06 | 数据同步：主从库如何实现数据一致？ 07 | 哨兵机制：主库挂了，如何不间断服务？ 08 | 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 | 切片集群：
-    </div>
-    <div class="read-more">
-      <a href="/post/storage/redis/geekbang/dir/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap06/">06 数据同步：主从库如何实现数据一致？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/dev_tools/vs_code/hot_key/">VS Code 快捷键</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-03-19 </span>
       <div class="post-category">
-          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
+          <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"> 开发工具 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      Redis 具有高可靠性 一是数据尽量少丢失 AOF 和 RDB 实现 二是服务尽量少中断 增加副本冗余量 主从库间网络断了怎么办？ repl_backlog_buffer 是一个环形缓冲区，主库会记录自己写到的位
+      快捷键 功能 补充说明 TAB / SHIFT + TAB 选中后整段左右移动 多行一起移动 Cmd + F2 全局替换文字 Option + Shift + ↓ / ↑ 复制当前行 Cmd + Shift + K 删除当前行 Option + ↑ 当前行向上移动
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap06/" class="read-more-link">阅读更多</a>
+      <a href="/post/dev_tools/vs_code/hot_key/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -235,14 +150,11 @@
     </section>
   
   <nav class="pagination">
-    <a class="prev" href="/page/5/">
+    <a class="prev" href="/page/8/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text">上一页</span>
       </a>
-    <a class="next" href="/page/7/">
-        <span class="next-text">下一页</span>
-        <i class="iconfont icon-right"></i>
-      </a>
+    
   </nav>
         </div>
         

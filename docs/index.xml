@@ -6,7 +6,25 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Apr 2021 09:53:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Apr 2021 21:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>32 | Redis主从同步与故障切换，有哪些坑？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap32/</link>
+      <pubDate>Wed, 14 Apr 2021 21:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap32/</guid>
+      <description>原文 主从数据不一致 出现原因 主从库间的命令复制是异步进行的 网络延迟 即使从库及时收到了主库的命令，但是，也可能会因为正在处理其它复杂度高的命令（</description>
+    </item>
+    
+    <item>
+      <title>REST API 设计最佳实践</title>
+      <link>https://wyyl1.github.io/post/practice/rest-api/best-practices-rest-api-design/</link>
+      <pubDate>Wed, 14 Apr 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/practice/rest-api/best-practices-rest-api-design/</guid>
+      <description>表现层状态转换 （英语：Representational State Transfer，缩写：REST） 无状态 参考资料 Best practices for REST API design RESTful API Design: 13 Best Practices to Make Your Users Happy 什</description>
+    </item>
+    
     <item>
       <title>The Gremlin Console</title>
       <link>https://wyyl1.github.io/post/storage/graph/gremlin/the-gremlin-console/</link>

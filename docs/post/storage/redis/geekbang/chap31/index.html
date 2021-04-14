@@ -51,7 +51,7 @@
 <meta itemprop="name" content="31 | 事务机制：Redis能实现ACID属性吗？">
 <meta itemprop="description" content="原文 事务在执行时，会提供专门的属性保证，包括 原子性（Atomicity） 一致性（Consistency） 隔离性（Isolation） 持久性（"><meta itemprop="datePublished" content="2021-04-07T13:50:05&#43;08:00" />
 <meta itemprop="dateModified" content="2021-04-07T13:50:05&#43;08:00" />
-<meta itemprop="wordCount" content="393">
+<meta itemprop="wordCount" content="878">
 <meta itemprop="keywords" content="Redis," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="31 | 事务机制：Redis能实现ACID属性吗？"/>
 <meta name="twitter:description" content="原文 事务在执行时，会提供专门的属性保证，包括 原子性（Atomicity） 一致性（Consistency） 隔离性（Isolation） 持久性（"/>
@@ -150,7 +150,19 @@
     <li>
       <ul>
         <li><a href="#redis-如何实现事务">Redis 如何实现事务？</a></li>
-        <li><a href="#redis-的事务机制能保证哪些属性">Redis 的事务机制能保证哪些属性？</a></li>
+        <li><a href="#redis-的事务机制能保证哪些属性">Redis 的事务机制能保证哪些属性？</a>
+          <ul>
+            <li><a href="#原子性">原子性</a></li>
+            <li><a href="#一致性">一致性</a></li>
+            <li><a href="#隔离性">隔离性</a></li>
+            <li><a href="#持久性">持久性</a></li>
+          </ul>
+        </li>
+        <li><a href="#留言区">留言区</a>
+          <ul>
+            <li><a href="#为什么redis不支持回滚">为什么Redis不支持回滚？</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -177,6 +189,37 @@
 <li>第三步，客户端向服务器端发送提交事务的命令，让数据库实际执行第二步中发送的具体操作。Redis 提供的 <strong>EXEC 命令</strong>就是执行事务提交的。当服务器端收到 EXEC 命令后，才会实际执行命令队列中的所有命令。</li>
 </ul>
 <h2 id="redis-的事务机制能保证哪些属性">Redis 的事务机制能保证哪些属性？</h2>
+<h3 id="原子性">原子性</h3>
+<p><strong>Redis 中并没有提供回滚机制</strong></p>
+<p><strong>只有当事务中使用的命令语法有误时，原子性得不到保证，在其它情况下，事务都可以原子性执行</strong></p>
+<ul>
+<li>DISCARD 命令：只能用来主动放弃事务执行，把暂存的命令队列清空，起不到回滚的效果</li>
+<li>MULTI 和 EXEC 配合使用不能保证原子性
+<ul>
+<li>队列中的命令，因类型不匹配导致失败，仅当前命令执行失败，不影响其他命令执行</li>
+</ul>
+</li>
+</ul>
+<p>举例</p>
+<ul>
+<li>命令入队时就报错，会放弃事务执行，保证原子性；</li>
+<li>命令入队时没报错，实际执行时报错，<strong>不保证原子性</strong>；</li>
+<li>EXEC 命令执行时实例故障，如果开启了 AOF 日志，可以保证原子性。</li>
+</ul>
+<h3 id="一致性">一致性</h3>
+<h3 id="隔离性">隔离性</h3>
+<p><strong>WATCH</strong> 机制的作用是，在事务执行前，监控一个或多个键的值变化情况，当事务调用 EXEC 命令执行时，WATCH 机制会先检查监控的键是否被其它客户端修改了。如果修改了，就放弃事务执行，避免事务的隔离性被破坏。然后，客户端可以再次执行事务，此时，如果没有并发修改事务数据的操作了，事务就能正常执行，隔离性也得到了保证。</p>
+<h3 id="持久性">持久性</h3>
+<p><strong>不管 Redis 采用什么持久化模式，事务的持久性属性是得不到保证的</strong></p>
+<h2 id="留言区">留言区</h2>
+<h3 id="为什么redis不支持回滚">为什么Redis不支持回滚？</h3>
+<p>Redis 官网文档 
+<a href="https://redis.io/topics/transactions#why-redis-does-not-support-roll-backs"  target="_blank"  rel="noopener">Why Redis does not support roll backs?</a></p>
+<ol>
+<li>只有当事务中使用的命令语法有误时，原子性得不到保证</li>
+<li>回滚并不能避免编程错误</li>
+<li>不支持回滚实现更简单、高效</li>
+</ol>
 
     </div>
 
