@@ -6,7 +6,25 @@
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Apr 2021 20:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Apr 2021 21:51:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>36 | Redis支撑秒杀场景的关键技术和实践都有哪些？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chpa36/</link>
+      <pubDate>Fri, 16 Apr 2021 21:51:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chpa36/</guid>
+      <description>原文 秒杀场景的业务特点是限时限量 秒杀场景包含了多个环节，可以分成秒杀前、秒杀中和秒杀后三个阶段，每个阶段的请求处理需求并不相同，Redis 并</description>
+    </item>
+    
+    <item>
+      <title>35 | Codis VS Redis Cluster：我该选择哪一个集群方案？</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap35/</link>
+      <pubDate>Fri, 16 Apr 2021 21:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap35/</guid>
+      <description>原文 精选留言 Kaito 现在 Codis 已经不再维护，但是作为国人开发的 Redis 集群解决方案，其设计思想还是非常值得学习的。也推荐 Go 开发者，读一读 Codis 源码，质量非常高，</description>
+    </item>
+    
     <item>
       <title>34 | 第23~33讲课后思考题答案及常见问题答疑</title>
       <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap34/</link>

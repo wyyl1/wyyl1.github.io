@@ -3,20 +3,69 @@
   
   <url>
     <loc>https://wyyl1.github.io/</loc>
-    <lastmod>2021-04-15T20:50:05+08:00</lastmod>
+    <lastmod>2021-04-16T21:51:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap34/</loc>
-    <lastmod>2021-04-15T20:50:05+08:00</lastmod>
+    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chpa36/</loc>
+    <lastmod>2021-04-16T21:51:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://wyyl1.github.io/categories/</loc>
+    <lastmod>2021-04-16T21:51:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/</loc>
+    <lastmod>2021-04-16T21:51:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/tags/redis/</loc>
+    <lastmod>2021-04-16T21:51:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/tags/</loc>
+    <lastmod>2021-04-16T21:51:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/</loc>
+    <lastmod>2021-04-16T21:51:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/tags/%E7%A7%92%E6%9D%80/</loc>
+    <lastmod>2021-04-16T21:51:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap35/</loc>
+    <lastmod>2021-04-16T21:50:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyyl1.github.io/post/storage/redis/geekbang/chap34/</loc>
     <lastmod>2021-04-15T20:50:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -114,27 +163,6 @@
   </url>
   
   <url>
-    <loc>https://wyyl1.github.io/post/</loc>
-    <lastmod>2021-04-15T20:50:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://wyyl1.github.io/tags/redis/</loc>
-    <lastmod>2021-04-15T20:50:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://wyyl1.github.io/tags/</loc>
-    <lastmod>2021-04-15T20:50:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://wyyl1.github.io/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%9A%84%E6%80%9D%E8%80%83/</loc>
     <lastmod>2021-04-15T20:50:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -157,13 +185,6 @@
   
   <url>
     <loc>https://wyyl1.github.io/tags/%E5%9F%BA%E4%BA%8E-lambda-%E7%9A%84%E9%A2%86%E5%9F%9F%E7%89%B9%E5%AE%9A%E8%AF%AD%E8%A8%80/</loc>
-    <lastmod>2021-04-15T20:50:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/</loc>
     <lastmod>2021-04-15T20:50:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
