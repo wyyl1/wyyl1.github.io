@@ -42,3 +42,7 @@ categories: ["目录"]
 #### 特点
 
 - 宣称 [性能远超 Neo4j](https://www.oschina.net/question/4487475_2320452)
+
+### 图论
+
+[Algorithms Course - Graph Theory Tutorial from a Google Engineer](https://www.youtube.com/watch?v=09_LlHjoEiY)

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>第 11 章 用 Optional 取代 null - </title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="aoe" />
+
+<script src="/js/baidu_tongji.js"></script><meta name="description" content="笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克" /><meta name="keywords" content="wyyl1, Hugo" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.81.0 with theme even" />
+
+
+<link rel="canonical" href="https://wyyl1.github.io/post/java/book/modern-java-in-action/chap11/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.af7fd1da18d66c2b017df5b4cae508ef44cfcac3fb4c7c7a327fe4f4f9e28b08.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="第 11 章 用 Optional 取代 null" />
+<meta property="og:description" content="笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wyyl1.github.io/post/java/book/modern-java-in-action/chap11/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-15T20:50:05&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-15T20:50:05&#43;08:00" />
+
+<meta itemprop="name" content="第 11 章 用 Optional 取代 null">
+<meta itemprop="description" content="笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克"><meta itemprop="datePublished" content="2021-04-15T20:50:05&#43;08:00" />
+<meta itemprop="dateModified" content="2021-04-15T20:50:05&#43;08:00" />
+<meta itemprop="wordCount" content="747">
+<meta itemprop="keywords" content="Java,Java实战,Optional 取代 null," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="第 11 章 用 Optional 取代 null"/>
+<meta name="twitter:description" content="笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wyyl1</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/post/dir">
+        <li class="mobile-menu-item">目录</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wyyl1</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/dir">目录</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">第 11 章 用 Optional 取代 null</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-04-15 </span>
+        <div class="post-category">
+            <a href="/categories/java/"> Java </a>
+            <a href="/categories/java%E5%AE%9E%E6%88%98%E7%AC%AC2%E7%89%88/"> Java实战（第2版） </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#113-应用-optional-的几种模式">11.3 应用 Optional 的几种模式</a></li>
+        <li><a href="#1131-创建-optional-对象">11.3.1 创建 Optional 对象</a>
+          <ul>
+            <li><a href="#01-声明一个空的-optional">01 声明一个空的 Optional</a></li>
+            <li><a href="#02-依据一个非空值创建-optional">02 依据一个非空值创建 Optional</a></li>
+            <li><a href="#03-可接受-null-的-optional">03 可接受 null 的 Optional</a></li>
+          </ul>
+        </li>
+        <li><a href="#1132-使用-map-从-optional-对象中提取和转换值">11.3.2 使用 map 从 Optional 对象中提取和转换值</a></li>
+        <li><a href="#1133-使用-flatmap-链接-optional-对象">11.3.3 使用 flatMap 链接 Optional 对象</a>
+          <ul>
+            <li><a href="#01-使用-optional-获取-car-的保险公司名称">01 使用 Optional 获取 car 的保险公司名称</a></li>
+          </ul>
+        </li>
+        <li><a href="#1134-操纵由-optional-对象构成的-stream">11.3.4 操纵由 Optional 对象构成的 Stream</a></li>
+        <li><a href="#1135-默认行为及解引用-optional-对象">11.3.5 默认行为及解引用 Optional 对象</a></li>
+        <li><a href="#114-使用-optional-的实战示例">11.4 使用 Optional 的实战示例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p>笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克罗夫特.</p>
+</blockquote>
+<h2 id="113-应用-optional-的几种模式">11.3 应用 Optional 的几种模式</h2>
+<h2 id="1131-创建-optional-对象">11.3.1 创建 Optional 对象</h2>
+<h3 id="01-声明一个空的-optional">01 声明一个空的 Optional</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Car</span><span class="o">&gt;</span> <span class="n">optCar</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">empty</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="02-依据一个非空值创建-optional">02 依据一个非空值创建 Optional</h3>
+<ul>
+<li>如果 car 是一个 null， 代码会立即抛出 NullPointerException</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Car</span><span class="o">&gt;</span> <span class="n">optCar</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">car</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="03-可接受-null-的-optional">03 可接受 null 的 Optional</h3>
+<ul>
+<li>如果 car 是 null，那么得到的 Optional 对象就是空对象</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Car</span><span class="o">&gt;</span> <span class="n">optCar</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">ofNullable</span><span class="o">(</span><span class="n">car</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="1132-使用-map-从-optional-对象中提取和转换值">11.3.2 使用 map 从 Optional 对象中提取和转换值</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Insurance</span><span class="o">&gt;</span> <span class="n">optInsurance</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">ofNullable</span><span class="o">(</span><span class="n">insurance</span><span class="o">);</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">name</span> <span class="o">=</span> <span class="n">optInsurance</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">Insurance</span><span class="o">::</span><span class="n">getName</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="1133-使用-flatmap-链接-optional-对象">11.3.3 使用 flatMap 链接 Optional 对象</h2>
+<h3 id="01-使用-optional-获取-car-的保险公司名称">01 使用 Optional 获取 car 的保险公司名称</h3>
+<ul>
+<li>🧨 一样会抛出 NullPointerException</li>
+<li>不需要大量的 if else 分支判断</li>
+<li>通过类型系统让你的域模型中隐藏的知识显示地提现在代码中
+<ul>
+<li>人不一定有车、有保险</li>
+<li>保险公司一定有名称（如果没有，是因为数据出错，而不是代码问题）</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getCarInsuranceName</span><span class="o">(</span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">person</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">person</span><span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">Person</span><span class="o">::</span><span class="n">getCar</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">Car</span><span class="o">::</span><span class="n">getInsurance</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">Insurance</span><span class="o">::</span><span class="n">getName</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">orElse</span><span class="o">(</span><span class="s">&#34;Unknown&#34;</span><span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="1134-操纵由-optional-对象构成的-stream">11.3.4 操纵由 Optional 对象构成的 Stream</h2>
+<ul>
+<li>🧨 一样会抛出 NullPointerException</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getCarInsuranceNames</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">persons</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">persons</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">Person</span><span class="o">::</span><span class="n">getCar</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">optCar</span> <span class="o">-&gt;</span> <span class="n">optCar</span><span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">Car</span><span class="o">::</span><span class="n">getInsurance</span><span class="o">))</span>
+        <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">optInsurance</span> <span class="o">-&gt;</span> <span class="n">optInsurance</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">Insurance</span><span class="o">::</span><span class="n">getName</span><span class="o">))</span>
+        <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">Optional</span><span class="o">::</span><span class="n">stream</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">toSet</span><span class="o">());</span>
+  <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="1135-默认行为及解引用-optional-对象">11.3.5 默认行为及解引用 Optional 对象</h2>
+<ul>
+<li>get()
+<ul>
+<li>最简单但最不安全</li>
+<li>相对于嵌套式的 null 检查，并未体现出多大改进</li>
+</ul>
+</li>
+<li>orElse(T other)
+<ul>
+<li>允许在 Optional 对象不包含值时提供一个默认值</li>
+</ul>
+</li>
+<li>orElseGet(Supplier&lt;? extends T&gt; supplier)
+<ul>
+<li>是 orElse 方法的延迟调用版</li>
+<li>Supplier 方法只有在 Optional 对象不含值时才执行调用</li>
+<li>如果创建默认值耗时费力，建议采用这种方式，提升程序性能</li>
+<li>或者自己非常确定某个方法仅在 Optional 为空时才调用，也可以采用这种方式</li>
+</ul>
+</li>
+<li>or(Supplier&lt;? extends Optional&lt;? extends T&raquo; supplier)
+<ul>
+<li>与 orElseGet 方法很像</li>
+<li>不过它不会解包 Optional 对象中的值，即便该值是存在的</li>
+<li>实战中
+<ul>
+<li>Optional 对象含有值：不会执行任何额外操作，直接返回该 Optional 对象</li>
+<li>Optional 对象为空：该方法会延迟的返回一个不同的 Optional 对象</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>orElseThrow(Supplier&lt;? extends X&gt; exceptionSupplier)
+<ul>
+<li>和 get 方法非常类似</li>
+<li>遭遇 Optional 对象为空时都会抛出一个异常</li>
+<li>但使用 orElseThrow 你可以定制希望抛出的异常类型</li>
+</ul>
+</li>
+<li>ifPresent(Consumer&lt;? super T&gt; action)
+<ul>
+<li>变量值存在时，执行一个以参数形式传入的方法</li>
+<li>否则就不进行任何操作</li>
+</ul>
+</li>
+<li>ifPresentOrElse(Consumer&lt;? super T&gt; action, Runnable emptyAction)
+<ul>
+<li>Java 9 引入的一个新的实例方法</li>
+<li>该方法不同于 ifPresent</li>
+<li>接受一个 Runnable 方法，如果 Optional 对象为空，就执行该方法所定义的动作</li>
+</ul>
+</li>
+</ul>
+<h2 id="114-使用-optional-的实战示例">11.4 使用 Optional 的实战示例</h2>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">aoe</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-04-15
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/java/">Java</a>
+          <a href="/tags/java%E5%AE%9E%E6%88%98/">Java实战</a>
+          <a href="/tags/optional-%E5%8F%96%E4%BB%A3-null/">Optional 取代 null</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/java/book/modern-java-in-action/chap10/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">第 10 章 基于 Lambda 的领域特定语言</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/java/book/modern-java-in-action/chap14/">
+            <span class="next-text nav-default">第 14 章 Java 模块系统</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://wyyl1.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="hexo-link" href="https://beian.miit.gov.cn">浙ICP备16025224号-1</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>aoe</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+<script src="/js/baidu_tongji.js"></script>
+
+
+</body>
+</html>

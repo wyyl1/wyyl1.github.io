@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>目录 on </title>
+    <link>https://wyyl1.github.io/tags/%E7%9B%AE%E5%BD%95/</link>
+    <description>Recent content in 目录 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 15 Apr 2021 20:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/%E7%9B%AE%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java实战（第2版）学习笔记</title>
+      <link>https://wyyl1.github.io/post/java/book/modern-java-in-action/dir/</link>
+      <pubDate>Thu, 15 Apr 2021 20:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/java/book/modern-java-in-action/dir/</guid>
+      <description>简介 书名：Java实战（第2版） 书号：978-7-115-52148-4 原书名：Modern Java in Action: Lambda, streams, functional and reactive programming 原书号：97816172935</description>
+    </item>
+    
+  </channel>
+</rss>

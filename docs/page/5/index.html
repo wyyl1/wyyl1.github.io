@@ -18,7 +18,7 @@
 
 <meta name="author" content="aoe" />
 
-<script src="/js/baidu_tongji.js"></script><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
+<script src="/js/baidu_tongji.js"></script><meta name="description" content="wyyl1 学习笔记" /><meta name="keywords" content="wyyl1, Hugo" />
 
 
 
@@ -44,14 +44,14 @@
 
 
 <meta property="og:title" content="" />
-<meta property="og:description" content="Hugo theme even example site." />
+<meta property="og:description" content="wyyl1 学习笔记" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wyyl1.github.io/" />
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="wyyl1 学习笔记"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+<meta name="twitter:description" content="wyyl1 学习笔记"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -66,7 +66,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Wyyl1</a>
+    <a href="/" class="logo">wyyl1</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -97,7 +97,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Wyyl1</a>
+  <a href="/" class="logo">wyyl1</a>
 </div>
 
 
@@ -128,9 +128,9 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap17/">17 | 为什么CPU结构也会影响Redis的性能？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap32/">32 | Redis主从同步与故障切换，有哪些坑？</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-04-01 </span>
+      <span class="post-time"> 2021-04-14 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -139,19 +139,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      原文 主流的 CPU 架构 要避免 Redis 总是在不同 CPU 核上来回调度执行，可以使用 taskset 命令把一个程序绑定在一个核上运行。 执行下面的命令，就把 Redis 实例绑在了 0 号核上，
+      原文 主从数据不一致 出现原因 主从库间的命令复制是异步进行的 网络延迟 即使从库及时收到了主库的命令，但是，也可能会因为正在处理其它复杂度高的命令（
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap17/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap32/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap16/">16 | 异步机制：如何避免单线程模型的阻塞？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap33/">33 | 脑裂：一次奇怪的数据丢失</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-04-01 </span>
+      <span class="post-time"> 2021-04-14 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -160,19 +160,41 @@
   
   <div class="post-content">
     <div class="post-summary">
-      原文 影响 Redis 性能的 5 大方面 Redis 内部的阻塞式操作； CPU 核和 NUMA 架构的影响； Redis 关键系统配置； Redis 内存碎片；Redis 缓冲区。 Redis 实例有哪些阻塞点？ 和 Redis 交互时
+      原文 脑裂，就是指在主从集群中，同时有两个主节点，它们都能接收写请求。而脑裂最直接的影响，就是客户端不知道应该往哪个主节点写入数据，结果就是不
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap16/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap33/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap15/">15 | 消息队列的考验：Redis有哪些解决方案？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/practice/rest-api/best-practices-rest-api-design/">REST API 设计最佳实践</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-31 </span>
+      <span class="post-time"> 2021-04-14 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%AE%9E%E8%B7%B5/"> 实践 </a>
+          <a href="/categories/rest-api/"> REST API </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      表现层状态转换 （英语：Representational State Transfer，缩写：REST） 无状态 参考资料 Best practices for REST API design RESTful API Design: 13 Best Practices to Make Your Users Happy 什
+    </div>
+    <div class="read-more">
+      <a href="/post/practice/rest-api/best-practices-rest-api-design/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/storage/graph/gremlin/the-gremlin-console/">The Gremlin Console</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-04-12 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -181,40 +203,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      原文 消息队列的消息存取需求 消息保序 重复消息处理 消息可靠性保证 基于 List 的消息队列解决方案 List 本身就是按先进先出的顺序对数据进行存取 LPUSH 命令 把要发送的
+      The Gremlin Console 官网文档 需要参考官网图数据关系示例图学习 找到 V(1) 不同类型的箭头指向的 V（顶点）- 只能找到部分顶点 1 2 3 4 g.V(1).outE(). group(). by(label). by(inV()) valueMap() 以 Map 格式返回 使用 next() 有时
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap15/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/graph/gremlin/the-gremlin-console/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/getting_started/">Java 入门</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/graph/gremlin/recipes/">The Gremlin Recipes</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-30 </span>
-      <div class="post-category">
-          <a href="/categories/java/"> Java </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      前言 目录简介 可持续发展线路：个人见解，看看就好 推荐书籍：封神之路 大部分图书都没有注明版本，因为技术更新太快，看的时候找最新版。 购买极客时间课
-    </div>
-    <div class="read-more">
-      <a href="/post/java/getting_started/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap14/">14 | 如何在Redis中保存时间序列数据？</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-03-26 </span>
+      <span class="post-time"> 2021-04-12 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -223,10 +224,10 @@
   
   <div class="post-content">
     <div class="post-summary">
-      时间序列数据的读写特点 写入特点 插入数据快 要求我们选择的数据类型，在进行数据插入时，复杂度要低，尽量不要阻塞 读特点 查询单条记录 查询时间范围内的
+      The Gremlin Recipes 官网文档 Traversal Recipes 遍历 Between Vertices 顶点之间 g.V(1).bothE()：顶点的所有边 g.V(1).bothE().where(otherV().ha
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap14/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/graph/gremlin/recipes/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -277,6 +278,10 @@
   <span class="theme-info">
     主题 - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="hexo-link" href="https://beian.miit.gov.cn">浙ICP备16025224号-1</a>
   </span>
 
   

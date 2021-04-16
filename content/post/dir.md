@@ -8,7 +8,7 @@ categories: ["目录"]
 
 ## Java
 
-- [Java实战（第2版）学习笔记](Java/book_Modern_Java_in_Action/index.md)
+- [Java实战（第2版）学习笔记](/post/java/book/modern-java-in-action/dir/)
 
 ## [存储](/post/storage/dir)
 

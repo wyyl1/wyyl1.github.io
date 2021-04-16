@@ -6,7 +6,16 @@
     <description>Recent content in 存储 on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 14 Apr 2021 21:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Apr 2021 20:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>34 | 第23~33讲课后思考题答案及常见问题答疑</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap34/</link>
+      <pubDate>Thu, 15 Apr 2021 20:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap34/</guid>
+      <description>原文</description>
+    </item>
+    
     <item>
       <title>32 | Redis主从同步与故障切换，有哪些坑？</title>
       <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap32/</link>
@@ -14,6 +23,15 @@
       
       <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap32/</guid>
       <description>原文 主从数据不一致 出现原因 主从库间的命令复制是异步进行的 网络延迟 即使从库及时收到了主库的命令，但是，也可能会因为正在处理其它复杂度高的命令（</description>
+    </item>
+    
+    <item>
+      <title>33 | 脑裂：一次奇怪的数据丢失</title>
+      <link>https://wyyl1.github.io/post/storage/redis/geekbang/chap33/</link>
+      <pubDate>Wed, 14 Apr 2021 21:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/storage/redis/geekbang/chap33/</guid>
+      <description>原文 脑裂，就是指在主从集群中，同时有两个主节点，它们都能接收写请求。而脑裂最直接的影响，就是客户端不知道应该往哪个主节点写入数据，结果就是不</description>
     </item>
     
     <item>

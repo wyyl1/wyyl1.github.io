@@ -18,7 +18,7 @@
 
 <meta name="author" content="aoe" />
 
-<script src="/js/baidu_tongji.js"></script><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
+<script src="/js/baidu_tongji.js"></script><meta name="description" content="wyyl1 学习笔记" /><meta name="keywords" content="wyyl1, Hugo" />
 
 
 
@@ -44,14 +44,14 @@
 
 
 <meta property="og:title" content="" />
-<meta property="og:description" content="Hugo theme even example site." />
+<meta property="og:description" content="wyyl1 学习笔记" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://wyyl1.github.io/" />
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="wyyl1 学习笔记"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+<meta name="twitter:description" content="wyyl1 学习笔记"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -66,7 +66,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Wyyl1</a>
+    <a href="/" class="logo">wyyl1</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -97,7 +97,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">Wyyl1</a>
+  <a href="/" class="logo">wyyl1</a>
 </div>
 
 
@@ -128,21 +128,105 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/dev_tools/vs_code/hot_key/">VS Code 快捷键</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap18/">18 | 波动的响应延迟：如何应对变慢的Redis？（上）</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-19 </span>
+      <span class="post-time"> 2021-04-01 </span>
       <div class="post-category">
-          <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"> 开发工具 </a>
+          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      快捷键 功能 补充说明 TAB / SHIFT + TAB 选中后整段左右移动 多行一起移动 Cmd + F2 全局替换文字 Option + Shift + ↓ / ↑ 复制当前行 Cmd + Shift + K 删除当前行 Option + ↑ 当前行向上移动
+      原文 Redis 真的变慢了吗？ 查看 Redis 的响应延迟 当前环境下的 Redis 基线性能 redis-cli 命令提供了–intrinsic-latency 选项，可以用来监测和统计测试期间内
     </div>
     <div class="read-more">
-      <a href="/post/dev_tools/vs_code/hot_key/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap18/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap17/">17 | 为什么CPU结构也会影响Redis的性能？</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-04-01 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      原文 主流的 CPU 架构 要避免 Redis 总是在不同 CPU 核上来回调度执行，可以使用 taskset 命令把一个程序绑定在一个核上运行。 执行下面的命令，就把 Redis 实例绑在了 0 号核上，
+    </div>
+    <div class="read-more">
+      <a href="/post/storage/redis/geekbang/chap17/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap16/">16 | 异步机制：如何避免单线程模型的阻塞？</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-04-01 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      原文 影响 Redis 性能的 5 大方面 Redis 内部的阻塞式操作； CPU 核和 NUMA 架构的影响； Redis 关键系统配置； Redis 内存碎片；Redis 缓冲区。 Redis 实例有哪些阻塞点？ 和 Redis 交互时
+    </div>
+    <div class="read-more">
+      <a href="/post/storage/redis/geekbang/chap16/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap15/">15 | 消息队列的考验：Redis有哪些解决方案？</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-03-31 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      原文 消息队列的消息存取需求 消息保序 重复消息处理 消息可靠性保证 基于 List 的消息队列解决方案 List 本身就是按先进先出的顺序对数据进行存取 LPUSH 命令 把要发送的
+    </div>
+    <div class="read-more">
+      <a href="/post/storage/redis/geekbang/chap15/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/java/getting_started/">Java 入门</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-03-30 </span>
+      <div class="post-category">
+          <a href="/categories/java/"> Java </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      前言 目录简介 可持续发展线路：个人见解，看看就好 推荐书籍：封神之路 大部分图书都没有注明版本，因为技术更新太快，看的时候找最新版。 购买极客时间课
+    </div>
+    <div class="read-more">
+      <a href="/post/java/getting_started/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -154,7 +238,10 @@
         <i class="iconfont icon-left"></i>
         <span class="prev-text">上一页</span>
       </a>
-    
+    <a class="next" href="/page/10/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
   </nav>
         </div>
         
@@ -190,6 +277,10 @@
   <span class="theme-info">
     主题 - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="hexo-link" href="https://beian.miit.gov.cn">浙ICP备16025224号-1</a>
   </span>
 
   

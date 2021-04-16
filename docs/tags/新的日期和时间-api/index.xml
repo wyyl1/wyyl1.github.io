@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>新的日期和时间 API on </title>
+    <link>https://wyyl1.github.io/tags/%E6%96%B0%E7%9A%84%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4-api/</link>
+    <description>Recent content in 新的日期和时间 API on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 15 Apr 2021 20:50:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/%E6%96%B0%E7%9A%84%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4-api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第12章 新的日期和时间 API</title>
+      <link>https://wyyl1.github.io/post/java/book/modern-java-in-action/chap12/</link>
+      <pubDate>Thu, 15 Apr 2021 20:50:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/java/book/modern-java-in-action/chap12/</guid>
+      <description>笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克</description>
+    </item>
+    
+  </channel>
+</rss>
