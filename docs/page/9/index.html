@@ -128,9 +128,9 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap25/">25 | 缓存异常（上）：如何解决缓存和数据库的数据不一致问题？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap33/">33 | 脑裂：一次奇怪的数据丢失</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-04-02 </span>
+      <span class="post-time"> 2021-04-14 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -139,40 +139,41 @@
   
   <div class="post-content">
     <div class="post-summary">
-      原文 在实际应用 Redis 缓存时，我们经常会遇到一些异常问题，概括来说有 4 个方面： 缓存中的数据和数据库中的不一致 缓存雪崩 缓存击穿 缓存穿透 缓存和数据库的
+      原文 脑裂，就是指在主从集群中，同时有两个主节点，它们都能接收写请求。而脑裂最直接的影响，就是客户端不知道应该往哪个主节点写入数据，结果就是不
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap25/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap33/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap24/">24 | 替换策略：缓存满了怎么办？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/practice/rest-api/best-practices-rest-api-design/">REST API 设计最佳实践</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-04-02 </span>
+      <span class="post-time"> 2021-04-14 </span>
       <div class="post-category">
-          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
+          <a href="/categories/%E5%AE%9E%E8%B7%B5/"> 实践 </a>
+          <a href="/categories/rest-api/"> REST API </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      原文 设置多大的缓存容量合适？ 建议把缓存容量设置为总数据量的 15% 到 30%，兼顾访问性能和内存空间开销。 Redis 缓存有哪些淘汰策略？ 默认情况下，Redi
+      表现层状态转换 （英语：Representational State Transfer，缩写：REST） 无状态 参考资料 Best practices for REST API design RESTful API Design: 13 Best Practices to Make Your Users Happy 什
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap24/" class="read-more-link">阅读更多</a>
+      <a href="/post/practice/rest-api/best-practices-rest-api-design/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap23/">23 | 旁路缓存：Redis是如何工作的？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/graph/gremlin/the-gremlin-console/">The Gremlin Console</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-04-02 </span>
+      <span class="post-time"> 2021-04-12 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -181,19 +182,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      原文 缓存的特征 Redis 缓存处理请求的两种情况 Redis 作为旁路缓存的使用操作 缓存的类型 只读缓存 读写缓存
+      The Gremlin Console 官网文档 需要参考官网图数据关系示例图学习 找到 V(1) 不同类型的箭头指向的 V（顶点）- 只能找到部分顶点 1 2 3 4 g.V(1).outE(). group(). by(label). by(inV()) valueMap() 以 Map 格式返回 使用 next() 有时
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap23/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/graph/gremlin/the-gremlin-console/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap22/">22 | 第11～21讲课后思考题答案及常见问题答疑</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/graph/gremlin/recipes/">The Gremlin Recipes</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-04-02 </span>
+      <span class="post-time"> 2021-04-12 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -202,31 +203,33 @@
   
   <div class="post-content">
     <div class="post-summary">
-      原文 使用 MEMORY USAGE 命令（需要 Redis 4.0 及以上版本），查询一个键值对占用的内存空间。 1 MEMORY USAGE user:info
+      The Gremlin Recipes 官网文档 Traversal Recipes 遍历 Between Vertices 顶点之间 g.V(1).bothE()：顶点的所有边 g.V(1).bothE().where(otherV().ha
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap22/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/graph/gremlin/recipes/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap21/">21 | 缓冲区：一个可能引发“惨案”的地方</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/linux/book/vbird/linux-basic-4e/dir/">《鸟哥的Linux私房菜-基础篇》学习笔记</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-04-02 </span>
+      <span class="post-time"> 2021-04-10 </span>
       <div class="post-category">
-          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
+          <a href="/categories/linux/"> Linux </a>
+          <a href="/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C-%E5%9F%BA%E7%A1%80%E7%AF%87/"> 鸟哥的Linux私房菜-基础篇 </a>
+          <a href="/categories/%E7%9B%AE%E5%BD%95/"> 目录 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      原文 缓冲区是用来避免请求或数据丢失的惨案的，但也只有用对了，才能真正起到“避免”的作用 暂存客户端发送的命令数 暂存服务器端返回给客户端的数据结
+      原书： 《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 第零章、计算机概论 第一章、Linux 是什么与如何学习 第二章、首次登入与在线求助 第三
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap21/" class="read-more-link">阅读更多</a>
+      <a href="/post/linux/book/vbird/linux-basic-4e/dir/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

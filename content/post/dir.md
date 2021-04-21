@@ -29,7 +29,7 @@ categories: ["目录"]
 
 ### 鸟哥的私房菜
 
-- [《鸟哥的Linux私房菜-基础篇》学习笔记](Linux/vbird/linux_basic_4e/index.md)
+- [《鸟哥的Linux私房菜-基础篇》学习笔记](/post/linux/book/vbird/linux-basic-4e/dir)
 
 ## 实践
 

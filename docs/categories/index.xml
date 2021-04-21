@@ -6,7 +6,25 @@
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 17 Apr 2021 21:43:12 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Apr 2021 10:20:00 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://wyyl1.github.io/categories/linux/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>鸟哥的Linux私房菜-基础篇</title>
+      <link>https://wyyl1.github.io/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C-%E5%9F%BA%E7%A1%80%E7%AF%87/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C-%E5%9F%BA%E7%A1%80%E7%AF%87/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>存储</title>
       <link>https://wyyl1.github.io/categories/%E5%AD%98%E5%82%A8/</link>
@@ -62,20 +80,20 @@
     </item>
     
     <item>
+      <title>目录</title>
+      <link>https://wyyl1.github.io/categories/%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Sat, 10 Apr 2021 10:20:00 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/categories/%E7%9B%AE%E5%BD%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>极客时间</title>
       <link>https://wyyl1.github.io/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/</link>
       <pubDate>Mon, 22 Mar 2021 20:23:05 +0800</pubDate>
       
       <guid>https://wyyl1.github.io/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>目录</title>
-      <link>https://wyyl1.github.io/categories/%E7%9B%AE%E5%BD%95/</link>
-      <pubDate>Mon, 22 Mar 2021 20:23:05 +0800</pubDate>
-      
-      <guid>https://wyyl1.github.io/categories/%E7%9B%AE%E5%BD%95/</guid>
       <description></description>
     </item>
     

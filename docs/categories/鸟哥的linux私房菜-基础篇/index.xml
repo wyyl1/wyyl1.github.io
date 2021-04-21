@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>鸟哥的Linux私房菜-基础篇 on </title>
+    <link>https://wyyl1.github.io/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C-%E5%9F%BA%E7%A1%80%E7%AF%87/</link>
+    <description>Recent content in 鸟哥的Linux私房菜-基础篇 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Apr 2021 10:20:00 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C-%E5%9F%BA%E7%A1%80%E7%AF%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第零章、计算机概论</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap00/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap00/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 容量单位 （进制转换） 0 / 1 这个二进制的单位称为 bit 。但 bit 太小，在存储数据时每份简单的</description>
+    </item>
+    
+    <item>
+      <title>第一章、Linux 是什么与如何学习</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap01/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0801</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap01/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 GNU 计划 GPL 授权 Linux 内核 GPL 优点 软件安全性交佳 软件执行效能交佳 软件除错时间较短 贡献的原始代</description>
+    </item>
+    
+    <item>
+      <title>第二章、首次登入与在线求助</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap02/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0802</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap02/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 显示目前支持的语系 1 $ locale 显示日期 1 $ date +%Y/%m/%d 显示日历 1 2 $ cal $ cal 2015 计算器 1 2 # quit 退出 $</description>
+    </item>
+    
+    <item>
+      <title>第三章 安装 CentOS 7.x</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap03/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0803</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap03/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥</description>
+    </item>
+    
+    <item>
+      <title>第四章、首次登入与在线求助</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap04/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0804</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap04/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 4.2.3 重要的几个热键 [Tab] 命令补全 文件补齐 若安装 bash-completion 软件，则在某些指令后面使用 [Tab] 按键时，可以</description>
+    </item>
+    
+    <item>
+      <title>第五章、Linux 的文件权限与目录配置</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap05/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0805</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap05/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 文件可存取的身份 owner 文件拥有者 group 群组（每个账号可以有多个群组） others 其他人 每种身份的权限</description>
+    </item>
+    
+    <item>
+      <title>第六章 Linux 文件与目录管理</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap06/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0806</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap06/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 6.1.2 目录的相关操作 操作符 功能 . 当前目录 .. 上一层目录 - 前一个工作目录 ~ 当前用户的家目录</description>
+    </item>
+    
+    <item>
+      <title>第七章 Linux 磁盘与文件系统管理</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap07/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0807</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap07/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者：鳥哥 7.2 文件系统的简单操作 7.2.1 磁盘与目录的容量 df：列出文件系统的整体磁盘使用量 du：评估</description>
+    </item>
+    
+    <item>
+      <title>第八章、文件与文件系统的压缩,打包与备份</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap08/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0808</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap08/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 8.1 压缩文件的用途与技术 8.2 Linux 系统常见的压缩指令 在Linux的环境中，压缩文件的扩展名</description>
+    </item>
+    
+    <item>
+      <title>第九章、vim 程序编辑器</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap09/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0809</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap09/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 9.2 vi 的使用 基本上 vi 共分为三种模式 一般指令模式 (command mode) 编辑模式 (insert mode) 在一般指令模式中可以进</description>
+    </item>
+    
+    <item>
+      <title>第二十章、基础系统设置与备份策略</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap20/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0820</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap20/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 20.1 系统基本设置 网络基础-鸟哥 手动设置固定 IP 自动取得 IP 参数 修改主机名称 1 2 3 4 5 6 7</description>
+    </item>
+    
+    <item>
+      <title>《鸟哥的Linux私房菜-基础篇》学习笔记</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/dir/</link>
+      <pubDate>Sat, 10 Apr 2021 10:20:00 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/dir/</guid>
+      <description>原书： 《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 第零章、计算机概论 第一章、Linux 是什么与如何学习 第二章、首次登入与在线求助 第三</description>
+    </item>
+    
+  </channel>
+</rss>
