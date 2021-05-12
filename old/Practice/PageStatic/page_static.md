@@ -32,9 +32,26 @@
 ### Simple
 
 - [Academic](https://themes.gohugo.io/academic/)  😁 😁 😁
+  - [page-builder](https://wowchemy.com/docs/getting-started/page-builder/)
 - [Hugo Theme Bootie Docs](https://themes.gohugo.io/bootie-docs/)  😁  分类多了很乱
 - [Clarity](https://themes.gohugo.io/hugo-clarity/) 
 
 ### Personal
 
 ### Light
+
+### google-analytics
+
+- [Github Style](https://themes.gohugo.io/github-style/)
+
+### fast
+
+- [Timer Hugo](https://themes.gohugo.io/timer-hugo/) 😁 😁 😁
+
+### minimalistic
+
+- [Liva Hugo](https://themes.gohugo.io/liva-hugo/) 😁 😁 😁
+
+### company
+
+- [Hugo Icon](https://themes.gohugo.io/hugo-icon/) 😁 

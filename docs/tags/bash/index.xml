@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BASH on </title>
+    <link>https://wyyl1.github.io/tags/bash/</link>
+    <description>Recent content in BASH on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Apr 2021 10:20:00 +0810</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第十章、认识与学习BASH</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap10/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0810</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap10/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 10.1 认识 BASH 这个 Shell</description>
+    </item>
+    
+  </channel>
+</rss>

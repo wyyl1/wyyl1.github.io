@@ -22,3 +22,7 @@ categories: ["实践","REST API"]
   - 使用误区举例
 - [GitHub REST API](https://docs.github.com/cn/rest)
   - 实现参考
+- [API 设计最佳实践的思考 InfoQ](https://www.infoq.cn/article/5s63kshbovyynzn_zwbb)
+- [API 设计最佳实践的思考 博客园](https://www.cnblogs.com/rsapaper/p/10846560.html)
+- [Microsoft API design best practices](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
+- [Google Cloud API guide](https://cloud.google.com/apis/design)
