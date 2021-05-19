@@ -13,7 +13,7 @@
       <pubDate>Tue, 20 Apr 2021 10:20:00 +0810</pubDate>
       
       <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap10/</guid>
-      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 10.1 认识 BASH 这个 Shell</description>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 10.1 认识 BASH 这个 Shell 10.1.3 系统的合法 shell 与 /etc/shells 功能 /bin/bash (就是 Linux 默认的 shell) 系统上合法的 shell 要写入 /etc/shells 这个文</description>
     </item>
     
   </channel>

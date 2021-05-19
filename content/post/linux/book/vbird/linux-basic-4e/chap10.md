@@ -267,3 +267,63 @@ cmd; cmd;
   2. 若 cmd1 执 cmd2 行完毕且为错误 ($?≠0)，则开始执行 cmd2。
 
 ## 10.6 管线命令 (pipe)
+
+> 管线命令“ | ”仅能处理经由前面一个指令传来的正确信息，也就是 standard output 的 信息，对于 stdandard error 并没有直接处理的能力。
+> 
+> 在每个管线后面接的第一个数据必定是“指令”喔!而且这个指令必须要能够接受 standard input 的数据才行，这样的指令才可以是为“管线命令”，例如 less, more, head, tail 等都是可以 接受 standard input 的管线命令啦。
+
+- 管线命令仅会处理 standard output，对于 standard error output 会予以忽略 
+- 管线命令必须要能够接受来自前一个指令的数据成为 standard input 继续处理才行。
+
+### 10.6.1 撷取命令: cut, grep
+
+#### cut 
+
+- 分割字符串
+- 在处理多空格相连的数据时，比较吃力，可以使用 awk
+
+#### grep
+
+```cmd
+# 将 last 当中，有出现 root 的那一行就取出来;
+last | grep 'root'
+
+# 只要没有 root 的就取出!
+last | grep -v 'root'
+```
+
+### 10.6.2 排序命令: sort, wc, uniq
+
+#### uniq
+
+去重
+
+```cmd
+# 使用 last 将帐号列出，仅取出帐号栏，进行排序后仅取出一位;
+last | cut -d ' ' -f1 | sort | uniq
+
+# 如果我还想要知道每个人的登陆总次数呢?
+last | cut -d ' ' -f1 | sort | uniq -c
+```
+
+#### wc
+
+统计文件中有多少字、行、字符数
+
+### 10.6.3 双向重导向: tee
+
+### 10.6.4 字符转换命令: tr, col, join, paste, expand
+
+#### tr
+
+字符串替换、删除
+
+### 10.6.5 分区命令: split
+
+将一个文件按行数、大小（b、k、m)拆分成多个小文件
+
+### 10.6.6 参数代换: xargs
+
+会使用 xargs 的原因是， 很多指令其实并不支持管线命令，因此我们可以通过 xargs 来提供该指令引用 standard input 之用
+
+### 10.6.7 关于减号 - 的用途

@@ -6,7 +6,16 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 20 Apr 2021 10:20:00 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 May 2021 10:00:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>idea 插件</title>
+      <link>https://wyyl1.github.io/post/dev_tools/idea/idea-plugins/</link>
+      <pubDate>Thu, 06 May 2021 10:00:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/dev_tools/idea/idea-plugins/</guid>
+      <description>代码总是被嫌弃写的太烂？装上这个IDEA插件再试试！ SonarLint：是一个代码质量检测插件，可以帮助我们检测出代码中的坏味道 SonarQ</description>
+    </item>
+    
     <item>
       <title>第零章、计算机概论</title>
       <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap00/</link>
@@ -103,7 +112,16 @@
       <pubDate>Tue, 20 Apr 2021 10:20:00 +0810</pubDate>
       
       <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap10/</guid>
-      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 10.1 认识 BASH 这个 Shell</description>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 10.1 认识 BASH 这个 Shell 10.1.3 系统的合法 shell 与 /etc/shells 功能 /bin/bash (就是 Linux 默认的 shell) 系统上合法的 shell 要写入 /etc/shells 这个文</description>
+    </item>
+    
+    <item>
+      <title>第十一章、正则表达式与文件格式化处理</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap11/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0811</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap11/</guid>
+      <description>11.1 开始之前:什么是正则表达式 11.2 基础正则表达式 强悍的符号 特殊符号 代表意义 xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx</description>
     </item>
     
     <item>
@@ -761,6 +779,15 @@
       
       <guid>https://wyyl1.github.io/post/java/spring/spring-cache/</guid>
       <description>Spring Cache 玩转Spring Cache &amp;mdash; 扩展缓存注解支持失效时间TTL【享学Spring】</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://wyyl1.github.io/post/practice/graph-ql/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/practice/graph-ql/summary/</guid>
+      <description>GraphQL 简介 为什么我使用 GraphQL 而放弃 REST API？- InfoQ</description>
     </item>
     
     <item>

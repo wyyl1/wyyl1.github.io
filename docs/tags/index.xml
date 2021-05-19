@@ -6,7 +6,25 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 20 Apr 2021 10:20:00 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 May 2021 10:00:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>idea</title>
+      <link>https://wyyl1.github.io/tags/idea/</link>
+      <pubDate>Thu, 06 May 2021 10:00:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/tags/idea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>插件</title>
+      <link>https://wyyl1.github.io/tags/%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Thu, 06 May 2021 10:00:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/tags/%E6%8F%92%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Linux</title>
       <link>https://wyyl1.github.io/tags/linux/</link>
@@ -112,6 +130,15 @@
       <pubDate>Tue, 20 Apr 2021 10:20:00 +0810</pubDate>
       
       <guid>https://wyyl1.github.io/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>正则表达式与文件格式化处理</title>
+      <link>https://wyyl1.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%A4%84%E7%90%86/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0811</pubDate>
+      
+      <guid>https://wyyl1.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%A4%84%E7%90%86/</guid>
       <description></description>
     </item>
     

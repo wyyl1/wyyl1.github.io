@@ -103,7 +103,16 @@
       <pubDate>Tue, 20 Apr 2021 10:20:00 +0810</pubDate>
       
       <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap10/</guid>
-      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 10.1 认识 BASH 这个 Shell</description>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 10.1 认识 BASH 这个 Shell 10.1.3 系统的合法 shell 与 /etc/shells 功能 /bin/bash (就是 Linux 默认的 shell) 系统上合法的 shell 要写入 /etc/shells 这个文</description>
+    </item>
+    
+    <item>
+      <title>第十一章、正则表达式与文件格式化处理</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap11/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0811</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap11/</guid>
+      <description>11.1 开始之前:什么是正则表达式 11.2 基础正则表达式 强悍的符号 特殊符号 代表意义 xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx</description>
     </item>
     
     <item>
