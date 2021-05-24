@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>《鸟哥的Linux私房菜-基础篇》学习笔记 - </title>
+  <title>第十三章、Linux 帐号管理与 ACL 权限设置 - </title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -18,7 +18,7 @@
 
 <meta name="author" content="aoe" />
 
-<script src="/js/baidu_tongji.js"></script><meta name="description" content="原书： 《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 第零章、计算机概论 第一章、Linux 是什么与如何学习 第二章、首次登入与在线求助 第三" /><meta name="keywords" content="wyyl1, Hugo" />
+<script src="/js/baidu_tongji.js"></script><meta name="description" content="原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 13.1 Linux 的帐号与群组 13.1.1 使用者识别码: UID 与 GID /etc/passwd ID 与帐号的对应就在 /etc/group 群组关系å 每一个文件都" /><meta name="keywords" content="wyyl1, Hugo" />
 
 
 
@@ -28,7 +28,7 @@
 <meta name="generator" content="Hugo 0.81.0 with theme even" />
 
 
-<link rel="canonical" href="https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/dir/" />
+<link rel="canonical" href="https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap13/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,20 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="《鸟哥的Linux私房菜-基础篇》学习笔记" />
-<meta property="og:description" content="原书： 《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 第零章、计算机概论 第一章、Linux 是什么与如何学习 第二章、首次登入与在线求助 第三" />
+<meta property="og:title" content="第十三章、Linux 帐号管理与 ACL 权限设置" />
+<meta property="og:description" content="原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 13.1 Linux 的帐号与群组 13.1.1 使用者识别码: UID 与 GID /etc/passwd ID 与帐号的对应就在 /etc/group 群组关系å 每一个文件都" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/dir/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-04-10T10:20:00&#43;08:00" />
-<meta property="article:modified_time" content="2021-04-10T10:20:00&#43;08:00" />
+<meta property="og:url" content="https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap13/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-20T10:20:00&#43;08:13" />
+<meta property="article:modified_time" content="2021-04-20T10:20:00&#43;08:13" />
 
-<meta itemprop="name" content="《鸟哥的Linux私房菜-基础篇》学习笔记">
-<meta itemprop="description" content="原书： 《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 第零章、计算机概论 第一章、Linux 是什么与如何学习 第二章、首次登入与在线求助 第三"><meta itemprop="datePublished" content="2021-04-10T10:20:00&#43;08:00" />
-<meta itemprop="dateModified" content="2021-04-10T10:20:00&#43;08:00" />
-<meta itemprop="wordCount" content="250">
-<meta itemprop="keywords" content="Linux,鸟哥的Linux私房菜-基础篇,目录," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="《鸟哥的Linux私房菜-基础篇》学习笔记"/>
-<meta name="twitter:description" content="原书： 《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 第零章、计算机概论 第一章、Linux 是什么与如何学习 第二章、首次登入与在线求助 第三"/>
+<meta itemprop="name" content="第十三章、Linux 帐号管理与 ACL 权限设置">
+<meta itemprop="description" content="原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 13.1 Linux 的帐号与群组 13.1.1 使用者识别码: UID 与 GID /etc/passwd ID 与帐号的对应就在 /etc/group 群组关系å 每一个文件都"><meta itemprop="datePublished" content="2021-04-20T10:20:00&#43;08:13" />
+<meta itemprop="dateModified" content="2021-04-20T10:20:00&#43;08:13" />
+<meta itemprop="wordCount" content="772">
+<meta itemprop="keywords" content="Linux,帐号管理与 ACL 权限设置,鸟哥的Linux私房菜-基础篇," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="第十三章、Linux 帐号管理与 ACL 权限设置"/>
+<meta name="twitter:description" content="原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 13.1 Linux 的帐号与群组 13.1.1 使用者识别码: UID 与 GID /etc/passwd ID 与帐号的对应就在 /etc/group 群组关系å 每一个文件都"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -131,14 +131,13 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">《鸟哥的Linux私房菜-基础篇》学习笔记</h1>
+      <h1 class="post-title">第十三章、Linux 帐号管理与 ACL 权限设置</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-04-10 </span>
+        <span class="post-time"> 2021-04-20 </span>
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C-%E5%9F%BA%E7%A1%80%E7%AF%87/"> 鸟哥的Linux私房菜-基础篇 </a>
-            <a href="/categories/%E7%9B%AE%E5%BD%95/"> 目录 </a>
             </div>
         
       </div>
@@ -147,47 +146,130 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#131-linux-的帐号与群组">13.1 Linux 的帐号与群组</a>
+          <ul>
+            <li><a href="#1311-使用者识别码-uid-与-gid">13.1.1 使用者识别码: UID 与 GID</a></li>
+            <li><a href="#1312-使用者帐号">13.1.2 使用者帐号</a></li>
+            <li><a href="#1313-关于群组-有效与初始群组groups-newgrp">13.1.3 关于群组: 有效与初始群组、groups, newgrp</a></li>
+          </ul>
+        </li>
+        <li><a href="#132-帐号管理">13.2 帐号管理</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
       <blockquote>
-<p>原书：
-<a href="https://tiramisutes.github.io/images/PDF/vbird-linux-basic-4e.pdf"  target="_blank"  rel="noopener">《鸟哥的Linux私房菜-基础篇》第四版</a> | 作者：
+<p>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者：
 <a href="http://linux.vbird.org/"  target="_blank"  rel="noopener">鳥哥</a></p>
 </blockquote>
+<h2 id="131-linux-的帐号与群组">13.1 Linux 的帐号与群组</h2>
+<h3 id="1311-使用者识别码-uid-与-gid">13.1.1 使用者识别码: UID 与 GID</h3>
+<ul>
+<li>/etc/passwd ID 与帐号的对应就在</li>
+<li>/etc/group 群组关系å</li>
+</ul>
+<p><strong>每一个文件都具有的属性</strong></p>
+<ul>
+<li>一个是使用者 ID (User ID ，简称 <strong>UID</strong>)</li>
+<li>一个是群组 ID (Group ID ，简称 <strong>GID</strong>)</li>
+</ul>
+<p>查看系统中有没有一个名为 aoe 的用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cmd" data-lang="cmd">$ id aoe
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="1312-使用者帐号">13.1.2 使用者帐号</h3>
+<ol>
+<li>登入 Linux 主机</li>
+<li>/etc/passwd 是否有输入的账号</li>
+<li>将账号对应的 UID 与 GID （/etc/group) 中读出来</li>
+<li>/etc/shadow 核对密码：找出对应的账号与 UID</li>
+</ol>
+<h4 id="etcpasswd-文件结构">/etc/passwd 文件结构</h4>
+<p>每一行都代表一个帐号，有几行就代表有几个帐号在你的系统 中! 不过需要特别留意的是，里头很多帐号本来就是系统正常运行所必须要的，我们可以简 称他为系统帐号， 例如 bin, daemon, adm, nobody 等等，这些帐号请不要随意的杀掉他呢!</p>
+<p>第三个字段是 <strong>UID</strong>
+第四个字段是 <strong>GID</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cmd" data-lang="cmd">$ cat /etc/passwd <span class="p">|</span> grep aoe
+aoe❌1000:1000:i3:/home/aoe:/bin/bash
+</code></pre></td></tr></table>
+</div>
+</div><p>UID 详细说明见文章图表</p>
+<h4 id="etcshadow文件结构">/etc/shadow文件结构</h4>
+<p>存放密码</p>
+<h3 id="1313-关于群组-有效与初始群组groups-newgrp">13.1.3 关于群组: 有效与初始群组、groups, newgrp</h3>
+<h4 id="etcgroup-文件结构">/etc/group 文件结构</h4>
 <ul>
 <li>
-<a href="../chap00"  target="_blank" >第零章、计算机概论</a></li>
-<li>
-<a href="../chap01"  target="_blank" >第一章、Linux 是什么与如何学习</a></li>
-<li>
-<a href="../chap02"  target="_blank" >第二章、首次登入与在线求助</a></li>
-<li>
-<a href="../chap03"  target="_blank" >第三章、安装 CentOS 7.x</a></li>
-<li>
-<a href="../chap04"  target="_blank" >第四章、首次登入与在线求助</a></li>
-<li>
-<a href="../chap05"  target="_blank" >第五章、Linux 的文件权限与目录配置</a></li>
-<li>
-<a href="../chap06"  target="_blank" >第六章、Linux 文件与目录管理</a></li>
-<li>
-<a href="../chap07"  target="_blank" >第七章、Linux 磁盘与文件系统管理</a></li>
-<li>
-<a href="../chap08"  target="_blank" >第八章、文件与文件系统的压缩,打包与备份</a></li>
-<li>
-<a href="../chap09"  target="_blank" >第九章、vim 程序编辑器</a></li>
-<li>
-<a href="../chap10"  target="_blank" >第十章、认识与学习BASH</a></li>
-<li>
-<a href="../chap11"  target="_blank" >第十一章、正则表达式与文件格式化处理</a></li>
-<li>
-<a href="../chap12"  target="_blank" >第十二章、学习 Shell Scripts</a></li>
-<li>
-<a href="../chap13"  target="_blank" >第十三章、Linux 帐号管理与 ACL 权限设置</a></li>
-<li>
-<a href="../chap20"  target="_blank" >第二十章、基础系统设置与备份策略</a></li>
+<ol>
+<li>群组名称:</li>
+</ol>
+<ul>
+<li>就是群组名称啦!同样用来给人类使用的，基本上需要与第三字段的GID对
+应。</li>
 </ul>
+</li>
+<li>
+<ol start="2">
+<li>群组密码:</li>
+</ol>
+<ul>
+<li>通常不需要设置，这个设置通常是给“群组管理员”使用的，目前很少有这个 机会设置群组管理员啦! 同样的，密码已经移动到 /etc/gshadow 去，因此这个字段只会 存在一个“x”而已;</li>
+</ul>
+</li>
+<li>
+<ol start="3">
+<li>GID:</li>
+</ol>
+<ul>
+<li>就是群组的ID啊。我们/etc/passwd第四个字段使用的GID对应的群组名，就是 由这里对应出来的!</li>
+</ul>
+</li>
+<li>
+<ol start="4">
+<li>此群组支持的帐号名称:</li>
+</ol>
+<ul>
+<li>我们知道一个帐号可以加入多个群组，那某个帐号想要加入此 群组时，将该帐号填入这个字段即可。 举例来说，如果我想要让 dmtsai 与 alex 也加入 root 这个群组，那么在第一行的最后面加上“dmtsai,alex”，注意不要有空格， 使成为 <code>root❌0:dmtsai,alex</code>就可以啰~</li>
+</ul>
+</li>
+</ul>
+<h4 id="有效群组effective-group与初始群组initial-group">有效群组(effective group)与初始群组(initial group)</h4>
+<p>查看自己拥有的群组</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cmd" data-lang="cmd">groups
+</code></pre></td></tr></table>
+</div>
+</div><p>newgrp: 有效群组的切换</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cmd" data-lang="cmd">newgrp users
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="132-帐号管理">13.2 帐号管理</h2>
 
     </div>
 
@@ -199,7 +281,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2021-04-10
+        2021-04-20
         
     </span>
   </p>
@@ -209,17 +291,17 @@
 <footer class="post-footer">
       <div class="post-tags">
           <a href="/tags/linux/">Linux</a>
+          <a href="/tags/%E5%B8%90%E5%8F%B7%E7%AE%A1%E7%90%86%E4%B8%8E-acl-%E6%9D%83%E9%99%90%E8%AE%BE%E7%BD%AE/">帐号管理与 ACL 权限设置</a>
           <a href="/tags/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C-%E5%9F%BA%E7%A1%80%E7%AF%87/">鸟哥的Linux私房菜-基础篇</a>
-          <a href="/tags/%E7%9B%AE%E5%BD%95/">目录</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/storage/graph/gremlin/recipes/">
+        <a class="prev" href="/post/linux/book/vbird/linux-basic-4e/chap12/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">The Gremlin Recipes</span>
+            <span class="prev-text nav-default">第十二章、学习 Shell Scripts</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/storage/graph/gremlin/getting_started/">
-            <span class="next-text nav-default">Gremlin 入门</span>
+        <a class="next" href="/post/linux/book/vbird/linux-basic-4e/chap20/">
+            <span class="next-text nav-default">第二十章、基础系统设置与备份策略</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

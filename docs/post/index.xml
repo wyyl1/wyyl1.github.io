@@ -121,7 +121,25 @@
       <pubDate>Tue, 20 Apr 2021 10:20:00 +0811</pubDate>
       
       <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap11/</guid>
-      <description>11.1 开始之前:什么是正则表达式 11.2 基础正则表达式 强悍的符号 特殊符号 代表意义 xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxx xxx</description>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 11.1 开始之前:什么是正则表达式 11.2 基础正则表达式 强悍的符号 特殊符号 代表意义 [:alnum:] 代表英文大</description>
+    </item>
+    
+    <item>
+      <title>第十二章、学习 Shell Scripts</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap12/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0812</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap12/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 12.1 什么是 Shell scripts 12.1.1 干嘛学习 shell scripts 虽然 shell script 号称是程序 (program) ，但实际上， shell script 处理数据的速度上 是不</description>
+    </item>
+    
+    <item>
+      <title>第十三章、Linux 帐号管理与 ACL 权限设置</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap13/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0813</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap13/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 13.1 Linux 的帐号与群组 13.1.1 使用者识别码: UID 与 GID /etc/passwd ID 与帐号的对应就在 /etc/group 群组关系å 每一个文件都</description>
     </item>
     
     <item>

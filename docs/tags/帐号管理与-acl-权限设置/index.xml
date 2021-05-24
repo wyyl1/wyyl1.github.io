@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>帐号管理与 ACL 权限设置 on </title>
+    <link>https://wyyl1.github.io/tags/%E5%B8%90%E5%8F%B7%E7%AE%A1%E7%90%86%E4%B8%8E-acl-%E6%9D%83%E9%99%90%E8%AE%BE%E7%BD%AE/</link>
+    <description>Recent content in 帐号管理与 ACL 权限设置 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Apr 2021 10:20:00 +0813</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/%E5%B8%90%E5%8F%B7%E7%AE%A1%E7%90%86%E4%B8%8E-acl-%E6%9D%83%E9%99%90%E8%AE%BE%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第十三章、Linux 帐号管理与 ACL 权限设置</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap13/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0813</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap13/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 13.1 Linux 的帐号与群组 13.1.1 使用者识别码: UID 与 GID /etc/passwd ID 与帐号的对应就在 /etc/group 群组关系å 每一个文件都</description>
+    </item>
+    
+  </channel>
+</rss>

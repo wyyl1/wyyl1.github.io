@@ -128,6 +128,48 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap06/">06 数据同步：主从库如何实现数据一致？</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-03-19 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Redis 具有高可靠性 一是数据尽量少丢失 AOF 和 RDB 实现 二是服务尽量少中断 增加副本冗余量 主从库间网络断了怎么办？ repl_backlog_buffer 是一个环形缓冲区，主库会记录自己写到的位
+    </div>
+    <div class="read-more">
+      <a href="/post/storage/redis/geekbang/chap06/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap07/">07 哨兵机制：主库挂了，如何不间断服务？</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-03-19 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      从库切换为主库，涉及三个问题 主库真的挂了吗？ 该选择哪个从库作为主库？ 怎么把新主库的相关信息通知给从库和客户端呢？ 在 Redis 主从集群中，哨兵机制是实
+    </div>
+    <div class="read-more">
+      <a href="/post/storage/redis/geekbang/chap07/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap08/">08 哨兵集群：哨兵挂了，主从库还能切换吗？</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-03-19 </span>
@@ -185,48 +227,6 @@
     </div>
     <div class="read-more">
       <a href="/post/storage/redis/geekbang/extra_meal01/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/dir/">存储</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-03-19 </span>
-      <div class="post-category">
-          <a href="/categories/%E7%9B%AE%E5%BD%95/"> 目录 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Redis 极客时间 | 《Redis核心技术与实战》学习笔记 优秀资料 分布式锁的实现之 redis 篇(小米信息部技术团队) 图数据库 Apache TinkerPop Gremlin 官网 Gremlin 入门 The Gremlin Console 入门 The Gremlin Recipes 入
-    </div>
-    <div class="read-more">
-      <a href="/post/storage/dir/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/dir/">编程入门</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-03-19 </span>
-      <div class="post-category">
-          <a href="/categories/%E7%9B%AE%E5%BD%95/"> 目录 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Java Java实战（第2版）学习笔记 存储 Redis 开发工具 VS Code VS Code 快捷键 Git Git Gitflow Linux 鸟哥的私房菜 《鸟哥的Linux私房菜-基础篇》学习笔记 实践 页面静态化 Hugo 感
-    </div>
-    <div class="read-more">
-      <a href="/post/dir/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

@@ -16,5 +16,14 @@
       <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 10.1 认识 BASH 这个 Shell 10.1.3 系统的合法 shell 与 /etc/shells 功能 /bin/bash (就是 Linux 默认的 shell) 系统上合法的 shell 要写入 /etc/shells 这个文</description>
     </item>
     
+    <item>
+      <title>第十二章、学习 Shell Scripts</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap12/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0812</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap12/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 12.1 什么是 Shell scripts 12.1.1 干嘛学习 shell scripts 虽然 shell script 号称是程序 (program) ，但实际上， shell script 处理数据的速度上 是不</description>
+    </item>
+    
   </channel>
 </rss>
