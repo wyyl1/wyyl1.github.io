@@ -2,6 +2,14 @@
 
 - [新 V2Ray 白话文指南](https://guide.v2fly.org/)
 
+## Ubuntu
+
+配置文件目录
+
+```cmd
+/usr/local/etc/v2ray/config.json
+```
+
 systemctl enable v2ray; systemctl start v2ray
 
 ## MacOS
