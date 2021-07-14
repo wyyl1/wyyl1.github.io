@@ -128,9 +128,9 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap14/">14 | 如何在Redis中保存时间序列数据？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap19/">19 | 波动的响应延迟：如何应对变慢的Redis？（下）</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-26 </span>
+      <span class="post-time"> 2021-04-01 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -139,19 +139,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      时间序列数据的读写特点 写入特点 插入数据快 要求我们选择的数据类型，在进行数据插入时，复杂度要低，尽量不要阻塞 读特点 查询单条记录 查询时间范围内的
+      原文 文件系统：AOF 模式 write 只要把日志记录写到内核缓冲区，就可以返回了，并不需要等待日志实际写回到磁盘 fsync 需要把日志记录写回到磁盘后才能返回，时
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap14/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap19/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap12/">12 | 有一亿个keys要统计，应该用哪种集合？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap20/">20 | 删除数据后，为什么内存占用率还是很高？</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-23 </span>
+      <span class="post-time"> 2021-04-01 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -160,19 +160,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      集合类型常见的四种统计模式 聚合统计 排序统计 二值状态统计 基数统计 聚合统计 交集 并集 差集 举例：每天的新增用户数和第二天的留存用户数 一个集合记录所有
+      原文 什么是内存碎片？ 如何判断是否有内存碎片？ 内存利用率的高低直接关系到 Redis 运行效率的高低 为了让用户能监控到实时的内存使用情况，Redis 自身提
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap12/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap20/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap13/">13 | GEO是什么？还可以定义新的数据类型吗？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap18/">18 | 波动的响应延迟：如何应对变慢的Redis？（上）</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-23 </span>
+      <span class="post-time"> 2021-04-01 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -181,19 +181,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      GEO 面向 LBS (Location-Based Service) 应用的数据类型 GEO 的底层结构 GEO 类型的底层数据结构就是用 Sorted Set 来实现的 GeoHash 编码：将一组经纬度转为一个浮点数 Redis 的基本对象结构 RedisObject 的内部组成包
+      原文 Redis 真的变慢了吗？ 查看 Redis 的响应延迟 当前环境下的 Redis 基线性能 redis-cli 命令提供了–intrinsic-latency 选项，可以用来监测和统计测试期间内
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap13/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap18/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap11/">11 “万金油”的String，为什么不好用了？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap17/">17 | 为什么CPU结构也会影响Redis的性能？</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-23 </span>
+      <span class="post-time"> 2021-04-01 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -202,32 +202,31 @@
   
   <div class="post-content">
     <div class="post-summary">
-      为什么 String 类型内存开销大？ 除了记录实际数据，String 类型还需要额外的内存空间记录数据长度、空间使用等信息，这些信息也叫作元数据。 当实际保存
+      原文 主流的 CPU 架构 要避免 Redis 总是在不同 CPU 核上来回调度执行，可以使用 taskset 命令把一个程序绑定在一个核上运行。 执行下面的命令，就把 Redis 实例绑在了 0 号核上，
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap11/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap17/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/dir/">极客时间 | 《Redis核心技术与实战》学习笔记</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap16/">16 | 异步机制：如何避免单线程模型的阻塞？</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-22 </span>
+      <span class="post-time"> 2021-04-01 </span>
       <div class="post-category">
-          <a href="/categories/%E7%9B%AE%E5%BD%95/"> 目录 </a>
-          <a href="/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"> 极客时间 </a>
+          <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      基础篇 06 | 数据同步：主从库如何实现数据一致？ 07 | 哨兵机制：主库挂了，如何不间断服务？ 08 | 哨兵集群：哨兵挂了，主从库还能切换吗？ 09 | 切片集群：
+      原文 影响 Redis 性能的 5 大方面 Redis 内部的阻塞式操作； CPU 核和 NUMA 架构的影响； Redis 关键系统配置； Redis 内存碎片；Redis 缓冲区。 Redis 实例有哪些阻塞点？ 和 Redis 交互时
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/dir/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap16/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

@@ -128,9 +128,9 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap18/">18 | 波动的响应延迟：如何应对变慢的Redis？（上）</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap24/">24 | 替换策略：缓存满了怎么办？</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-04-01 </span>
+      <span class="post-time"> 2021-04-02 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -139,19 +139,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      原文 Redis 真的变慢了吗？ 查看 Redis 的响应延迟 当前环境下的 Redis 基线性能 redis-cli 命令提供了–intrinsic-latency 选项，可以用来监测和统计测试期间内
+      原文 设置多大的缓存容量合适？ 建议把缓存容量设置为总数据量的 15% 到 30%，兼顾访问性能和内存空间开销。 Redis 缓存有哪些淘汰策略？ 默认情况下，Redi
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap18/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap24/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap17/">17 | 为什么CPU结构也会影响Redis的性能？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap23/">23 | 旁路缓存：Redis是如何工作的？</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-04-01 </span>
+      <span class="post-time"> 2021-04-02 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -160,19 +160,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      原文 主流的 CPU 架构 要避免 Redis 总是在不同 CPU 核上来回调度执行，可以使用 taskset 命令把一个程序绑定在一个核上运行。 执行下面的命令，就把 Redis 实例绑在了 0 号核上，
+      原文 缓存的特征 Redis 缓存处理请求的两种情况 Redis 作为旁路缓存的使用操作 缓存的类型 只读缓存 读写缓存
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap17/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap23/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap16/">16 | 异步机制：如何避免单线程模型的阻塞？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap22/">22 | 第11～21讲课后思考题答案及常见问题答疑</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-04-01 </span>
+      <span class="post-time"> 2021-04-02 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -181,19 +181,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      原文 影响 Redis 性能的 5 大方面 Redis 内部的阻塞式操作； CPU 核和 NUMA 架构的影响； Redis 关键系统配置； Redis 内存碎片；Redis 缓冲区。 Redis 实例有哪些阻塞点？ 和 Redis 交互时
+      原文 使用 MEMORY USAGE 命令（需要 Redis 4.0 及以上版本），查询一个键值对占用的内存空间。 1 MEMORY USAGE user:info
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap16/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap22/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap15/">15 | 消息队列的考验：Redis有哪些解决方案？</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/storage/redis/geekbang/chap21/">21 | 缓冲区：一个可能引发“惨案”的地方</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-31 </span>
+      <span class="post-time"> 2021-04-02 </span>
       <div class="post-category">
           <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
           </div>
@@ -202,19 +202,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      原文 消息队列的消息存取需求 消息保序 重复消息处理 消息可靠性保证 基于 List 的消息队列解决方案 List 本身就是按先进先出的顺序对数据进行存取 LPUSH 命令 把要发送的
+      原文 缓冲区是用来避免请求或数据丢失的惨案的，但也只有用对了，才能真正起到“避免”的作用 暂存客户端发送的命令数 暂存服务器端返回给客户端的数据结
     </div>
     <div class="read-more">
-      <a href="/post/storage/redis/geekbang/chap15/" class="read-more-link">阅读更多</a>
+      <a href="/post/storage/redis/geekbang/chap21/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/getting_started/">Java 入门</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/timed_task/">定时任务</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2021-03-30 </span>
+      <span class="post-time"> 2021-04-02 </span>
       <div class="post-category">
           <a href="/categories/java/"> Java </a>
           </div>
@@ -223,10 +223,10 @@
   
   <div class="post-content">
     <div class="post-summary">
-      前言 目录简介 可持续发展线路：个人见解，看看就好 推荐书籍：封神之路 大部分图书都没有注明版本，因为技术更新太快，看的时候找最新版。 购买极客时间课
+      Elastic-Job Apache 官方文档 参考资料 分布式定时任务调度框架实践 分布式锁的实现之 redis 篇
     </div>
     <div class="read-more">
-      <a href="/post/java/getting_started/" class="read-more-link">阅读更多</a>
+      <a href="/post/java/timed_task/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

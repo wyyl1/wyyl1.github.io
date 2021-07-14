@@ -29,3 +29,9 @@ run v2ray-core and register it to launch at login via:
 ```cmd
 brew services start v2ray-core
 ```
+
+重启
+
+```cmd
+brew services restart v2ray
+```

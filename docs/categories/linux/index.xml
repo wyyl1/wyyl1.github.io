@@ -134,6 +134,42 @@
     </item>
     
     <item>
+      <title>第十四章、磁盘配额(Quota)与进阶文件系统管理</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap14/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0814</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap14/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥</description>
+    </item>
+    
+    <item>
+      <title>第十五章、例行性工作调度(crontab)</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap15/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0815</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap15/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 15.1 什么是例行性工作调度 15.1.1 Linux 工作调度的种类: at, cron at :at 是个可以处理仅执行一次就结束调度</description>
+    </item>
+    
+    <item>
+      <title>第十七章、认识系统服务 (daemons)</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap17/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0816</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap17/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 17.1 什么是 daemon 与服务 (service)</description>
+    </item>
+    
+    <item>
+      <title>第十六章、程序管理与 SELinux 初探</title>
+      <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap16/</link>
+      <pubDate>Tue, 20 Apr 2021 10:20:00 +0816</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap16/</guid>
+      <description>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 16.1 什么是进程 (process) 常驻在内存当中的程序通常都是负责一些系统所提供的功能以服务使用者各项</description>
+    </item>
+    
+    <item>
       <title>第二十章、基础系统设置与备份策略</title>
       <link>https://wyyl1.github.io/post/linux/book/vbird/linux-basic-4e/chap20/</link>
       <pubDate>Tue, 20 Apr 2021 10:20:00 +0820</pubDate>
