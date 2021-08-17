@@ -52,6 +52,11 @@
 
 - [Liva Hugo](https://themes.gohugo.io/liva-hugo/) 😁 😁 😁
 
+### 自己找到的
+- [LoveIt](https://github.com/dillonzq/LoveIt) 😁 😁 😁
+  - 真实案例 [晴耕雨讀](http://0x3f.org/)
+- [bookworm](https://themes.gohugo.io/themes/bookworm/) 😁 😁 😁
+
 ### company
 
 - [Hugo Icon](https://themes.gohugo.io/hugo-icon/) 😁 
