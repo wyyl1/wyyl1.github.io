@@ -10,6 +10,30 @@ categories: ["Java","Java编程方法论:响应式Spring Reactor 3设计与实�
 
 ## 4.1 filter 操作
 
+```java
+@Test
+public void filter_test() {
+    Flux.range(1, 10)
+            .filter(i -> i % 2 == 0)
+            .subscribe(System.out::println);
+}
+```
+
 ## 4.2 transform 操作
+
+```java
+// 不是 orange 的单词变成大写
+@Test
+public void advancedCompose() {
+    Function<Flux<String>, Flux<String>> filterAndMap =
+            f -> f.filter(color -> !color.equals("orange"))
+                    .map(String::toUpperCase);
+
+    Flux.fromIterable(Arrays.asList("blue", "green", "orange", "purple"))
+            .doOnNext(System.out::println)
+            .transform(filterAndMap)
+            .subscribe(d -> System.out.println("Subscriber to Transformed MapAndFilter: " + d));
+}
+```
 
 ## 4.3 compose 与 transformDeferred 操作
