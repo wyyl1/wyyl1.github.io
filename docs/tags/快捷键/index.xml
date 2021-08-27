@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 19 Mar 2021 21:13:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VS Code 快捷键</title>
-      <link>https://wyyl1.github.io/post/dev_tools/vs_code/hot_key/</link>
+      <link>https://wyyl1.github.io/post/dev-tools/vs-code/hot_key/</link>
       <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
       
-      <guid>https://wyyl1.github.io/post/dev_tools/vs_code/hot_key/</guid>
+      <guid>https://wyyl1.github.io/post/dev-tools/vs-code/hot_key/</guid>
       <description>快捷键 功能 补充说明 TAB / SHIFT + TAB 选中后整段左右移动 多行一起移动 Cmd + F2 全局替换文字 Option + Shift + ↓ / ↑ 复制当前行 Cmd + Shift + K 删除当前行 Option + ↑ 当前行向上移动</description>
     </item>
     

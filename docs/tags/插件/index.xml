@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 06 May 2021 10:00:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/%E6%8F%92%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>idea 插件</title>
-      <link>https://wyyl1.github.io/post/dev_tools/idea/idea-plugins/</link>
+      <link>https://wyyl1.github.io/post/dev-tools/idea/idea-plugins/</link>
       <pubDate>Thu, 06 May 2021 10:00:05 +0800</pubDate>
       
-      <guid>https://wyyl1.github.io/post/dev_tools/idea/idea-plugins/</guid>
+      <guid>https://wyyl1.github.io/post/dev-tools/idea/idea-plugins/</guid>
       <description>代码总是被嫌弃写的太烂？装上这个IDEA插件再试试！ SonarLint：是一个代码质量检测插件，可以帮助我们检测出代码中的坏味道 SonarQ</description>
     </item>
     

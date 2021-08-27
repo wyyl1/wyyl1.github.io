@@ -6,14 +6,32 @@
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Jul 2021 21:00:03 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Aug 2021 21:13:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo 常用命令</title>
+      <link>https://wyyl1.github.io/post/practice/page-static/hugo_commands/</link>
+      <pubDate>Thu, 26 Aug 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/practice/page-static/hugo_commands/</guid>
+      <description>更新升级 查看版本 1 hugo version 使用 Brew 升级 hugo 版本 1 brew upgrade hugo 日常使用 Create a New Site 1 hugo new site quickstart Add Some Content 1 hugo new posts/my-first-post.md Start the Hugo server 1 2 3 4 5 hugo server -D hugo server -D -p 1314 hugo server -D -p 1315 --config config-aoeai.toml Build static pages</description>
+    </item>
+    
     <item>
       <title>第 3 章 调度器</title>
       <link>https://wyyl1.github.io/post/java/book/spring-reactor-3/chap03/</link>
       <pubDate>Fri, 09 Jul 2021 21:00:03 +0800</pubDate>
       
       <guid>https://wyyl1.github.io/post/java/book/spring-reactor-3/chap03/</guid>
-      <description>笔记来源：《Java编程方法论:响应式Spring Reactor 3设计与实现》ISBN:9787121394768 作者：知秋 出版时间：2020年09月</description>
+      <description>笔记来源：《Java编程方法论:响应式Spring Reactor 3设计与实现》ISBN:9787121394768 作者：知秋 出版时间：2020年09月 3.1</description>
+    </item>
+    
+    <item>
+      <title>第 4 章 对 Reactor 操作的解读</title>
+      <link>https://wyyl1.github.io/post/java/book/spring-reactor-3/chap04/</link>
+      <pubDate>Fri, 09 Jul 2021 21:00:03 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/java/book/spring-reactor-3/chap04/</guid>
+      <description>笔记来源：《Java编程方法论:响应式Spring Reactor 3设计与实现》ISBN:9787121394768 作者：知秋 出版时间：2020年09月 4.1</description>
     </item>
     
     <item>
@@ -36,10 +54,10 @@
     
     <item>
       <title>idea 插件</title>
-      <link>https://wyyl1.github.io/post/dev_tools/idea/idea-plugins/</link>
+      <link>https://wyyl1.github.io/post/dev-tools/idea/idea-plugins/</link>
       <pubDate>Thu, 06 May 2021 10:00:05 +0800</pubDate>
       
-      <guid>https://wyyl1.github.io/post/dev_tools/idea/idea-plugins/</guid>
+      <guid>https://wyyl1.github.io/post/dev-tools/idea/idea-plugins/</guid>
       <description>代码总是被嫌弃写的太烂？装上这个IDEA插件再试试！ SonarLint：是一个代码质量检测插件，可以帮助我们检测出代码中的坏味道 SonarQ</description>
     </item>
     
@@ -819,37 +837,37 @@
     
     <item>
       <title>Git</title>
-      <link>https://wyyl1.github.io/post/dev_tools/git/git/</link>
+      <link>https://wyyl1.github.io/post/dev-tools/git/git/</link>
       <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
       
-      <guid>https://wyyl1.github.io/post/dev_tools/git/git/</guid>
+      <guid>https://wyyl1.github.io/post/dev-tools/git/git/</guid>
       <description>常用命令 忽略文件 官方文档 忽略已检入的文件，则必须在添加忽略该文件的规则之前取消跟踪它。 从终端取消跟踪文件。 1 git rm --cached FILENAME</description>
     </item>
     
     <item>
       <title>Gitflow</title>
-      <link>https://wyyl1.github.io/post/dev_tools/git/gitflow/</link>
+      <link>https://wyyl1.github.io/post/dev-tools/git/gitflow/</link>
       <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
       
-      <guid>https://wyyl1.github.io/post/dev_tools/git/gitflow/</guid>
+      <guid>https://wyyl1.github.io/post/dev-tools/git/gitflow/</guid>
       <description>git-flow 的工作流程 Gitflow Workflow git-flow cheatsheet Git-Flow 基本教學 Github文档 Youtube视频 The gitflow workflow - in less than 5 mins.</description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://wyyl1.github.io/post/practice/page_static/hugo/</link>
+      <link>https://wyyl1.github.io/post/practice/page-static/hugo/</link>
       <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
       
-      <guid>https://wyyl1.github.io/post/practice/page_static/hugo/</guid>
+      <guid>https://wyyl1.github.io/post/practice/page-static/hugo/</guid>
       <description>官网 快速入门 Create a New Site 1 hugo new site quickstart Add Some Content 1 hugo new posts/my-first-post.md Start the Hugo server 1 hugo server -D Build static pages 1 hugo -D 常用配置 文章默认模板 Archetypes | Hugo - Static Site Generator | Tutorial 8 1 themes/even/archetypes/default.md 自定义目录模板 1 2 3 4 themes/even/archetypes/dir1.md</description>
     </item>
     
     <item>
       <title>VS Code 快捷键</title>
-      <link>https://wyyl1.github.io/post/dev_tools/vs_code/hot_key/</link>
+      <link>https://wyyl1.github.io/post/dev-tools/vs-code/hot_key/</link>
       <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
       
-      <guid>https://wyyl1.github.io/post/dev_tools/vs_code/hot_key/</guid>
+      <guid>https://wyyl1.github.io/post/dev-tools/vs-code/hot_key/</guid>
       <description>快捷键 功能 补充说明 TAB / SHIFT + TAB 选中后整段左右移动 多行一起移动 Cmd + F2 全局替换文字 Option + Shift + ↓ / ↑ 复制当前行 Cmd + Shift + K 删除当前行 Option + ↑ 当前行向上移动</description>
     </item>
     
@@ -895,7 +913,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wyyl1.github.io/post/practice/k8s/dir/</guid>
-      <description>K8S 实践 https://kubesphere.io/ https://metersphere.io/ smart doc https://gitee.com/smart-doc-team/smart-doc https://github.com/apache/skywalking</description>
+      <description>K8S 实践 https://kubesphere.io/ 持续测试 https://metersphere.io/ smart doc https://gitee.com/smart-doc-team/smart-doc https://github.com/apache/skywalking</description>
     </item>
     
     <item>

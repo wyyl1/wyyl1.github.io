@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 19 Mar 2021 21:13:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo</title>
-      <link>https://wyyl1.github.io/post/practice/page_static/hugo/</link>
+      <link>https://wyyl1.github.io/post/practice/page-static/hugo/</link>
       <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
       
-      <guid>https://wyyl1.github.io/post/practice/page_static/hugo/</guid>
+      <guid>https://wyyl1.github.io/post/practice/page-static/hugo/</guid>
       <description>官网 快速入门 Create a New Site 1 hugo new site quickstart Add Some Content 1 hugo new posts/my-first-post.md Start the Hugo server 1 hugo server -D Build static pages 1 hugo -D 常用配置 文章默认模板 Archetypes | Hugo - Static Site Generator | Tutorial 8 1 themes/even/archetypes/default.md 自定义目录模板 1 2 3 4 themes/even/archetypes/dir1.md</description>
     </item>
     

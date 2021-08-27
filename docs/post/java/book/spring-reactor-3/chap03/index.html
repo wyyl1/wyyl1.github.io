@@ -16,16 +16,16 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="aoe" />
+<meta name="author" content="wyyl1" />
 
-<script src="/js/baidu_tongji.js"></script><meta name="description" content="笔记来源：《Java编程方法论:响应式Spring Reactor 3设计与实现》ISBN:9787121394768 作者：知秋 出版时间：2020年09月" /><meta name="keywords" content="wyyl1, Hugo" />
-
-
+<script src="/js/baidu_tongji.js"></script><meta name="description" content="笔记来源：《Java编程方法论:响应式Spring Reactor 3设计与实现》ISBN:9787121394768 作者：知秋 出版时间：2020年09月 3.1" /><meta name="keywords" content="wyyl1, 万有引力一, Hugo" />
 
 
 
 
-<meta name="generator" content="Hugo 0.81.0 with theme even" />
+
+
+<meta name="generator" content="Hugo 0.82.0 with theme even" />
 
 
 <link rel="canonical" href="https://wyyl1.github.io/post/java/book/spring-reactor-3/chap03/" />
@@ -37,24 +37,24 @@
 
 
 
-<link href="/sass/main.min.af7fd1da18d66c2b017df5b4cae508ef44cfcac3fb4c7c7a327fe4f4f9e28b08.css" rel="stylesheet">
+<link href="/sass/main.min.39a3e01cac9473be1356f3572fcfe34b2e363efabad244a99a40f28a812c837e.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="第 3 章 调度器" />
-<meta property="og:description" content="笔记来源：《Java编程方法论:响应式Spring Reactor 3设计与实现》ISBN:9787121394768 作者：知秋 出版时间：2020年09月" />
+<meta property="og:description" content="笔记来源：《Java编程方法论:响应式Spring Reactor 3设计与实现》ISBN:9787121394768 作者：知秋 出版时间：2020年09月 3.1" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wyyl1.github.io/post/java/book/spring-reactor-3/chap03/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-07-09T21:00:03&#43;08:00" />
 <meta property="article:modified_time" content="2021-07-09T21:00:03&#43;08:00" />
 
 <meta itemprop="name" content="第 3 章 调度器">
-<meta itemprop="description" content="笔记来源：《Java编程方法论:响应式Spring Reactor 3设计与实现》ISBN:9787121394768 作者：知秋 出版时间：2020年09月"><meta itemprop="datePublished" content="2021-07-09T21:00:03&#43;08:00" />
+<meta itemprop="description" content="笔记来源：《Java编程方法论:响应式Spring Reactor 3设计与实现》ISBN:9787121394768 作者：知秋 出版时间：2020年09月 3.1"><meta itemprop="datePublished" content="2021-07-09T21:00:03&#43;08:00" />
 <meta itemprop="dateModified" content="2021-07-09T21:00:03&#43;08:00" />
-<meta itemprop="wordCount" content="69">
+<meta itemprop="wordCount" content="298">
 <meta itemprop="keywords" content="Java,调度器," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="第 3 章 调度器"/>
-<meta name="twitter:description" content="笔记来源：《Java编程方法论:响应式Spring Reactor 3设计与实现》ISBN:9787121394768 作者：知秋 出版时间：2020年09月"/>
+<meta name="twitter:description" content="笔记来源：《Java编程方法论:响应式Spring Reactor 3设计与实现》ISBN:9787121394768 作者：知秋 出版时间：2020年09月 3.1"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -82,11 +82,11 @@
     <a href="/">
         <li class="mobile-menu-item">首页</li>
       </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
+        <li class="mobile-menu-item">文章</li>
       </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
+        <li class="mobile-menu-item">标签</li>
       </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
+        <li class="mobile-menu-item">分类</li>
       </a><a href="/post/dir">
         <li class="mobile-menu-item">目录</li>
       </a>
@@ -112,11 +112,11 @@
     <li class="menu-item">
         <a class="menu-item-link" href="/">首页</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
+        <a class="menu-item-link" href="/post/">文章</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
+        <a class="menu-item-link" href="/tags/">标签</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
+        <a class="menu-item-link" href="/categories/">分类</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/post/dir">目录</a>
       </li>
@@ -147,20 +147,102 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#31-深入理解-schedulerselastic">3.1 深入理解 Schedulers.elastic</a></li>
+        <li><a href="#32-深入解读-publishon">3.2 深入解读 publishOn</a></li>
+        <li><a href="#33-深入解读-subscribeon">3.3 深入解读 subscribeOn</a></li>
+        <li><a href="#34-fluxparallel--flowableparallel-的并行玩法">3.4 Flux.parallel &amp; Flowable.parallel 的并行玩法</a></li>
+        <li><a href="#35-parallelfluxrunon--parallelflowablerunon-的调度实现">3.5 ParallelFlux.runOn &amp; ParallelFlowable.runOn 的调度实现</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
       <blockquote>
 <p>笔记来源：《Java编程方法论:响应式Spring Reactor 3设计与实现》ISBN:9787121394768 作者：知秋 出版时间：2020年09月</p>
 </blockquote>
+<h2 id="31-深入理解-schedulerselastic">3.1 深入理解 Schedulers.elastic</h2>
+<h2 id="32-深入解读-publishon">3.2 深入解读 publishOn</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">DemoSubscriber_test_flux_generate3</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
+    <span class="n">Flux</span><span class="o">.</span><span class="na">generate</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">::</span><span class="k">new</span><span class="o">,</span> <span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="n">sink</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="n">100</span><span class="o">);</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;所发射元素产生的线程: &#34;</span><span class="o">+</span><span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getName</span><span class="o">());</span>
+        <span class="n">sink</span><span class="o">.</span><span class="na">next</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="n">sleep</span><span class="o">(</span><span class="n">2</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="n">6</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">sink</span><span class="o">.</span><span class="na">complete</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">list</span><span class="o">;</span>
+    <span class="o">})</span>
+            <span class="o">.</span><span class="na">publishOn</span><span class="o">(</span><span class="n">Schedulers</span><span class="o">.</span><span class="na">elastic</span><span class="o">(),</span><span class="n">2</span><span class="o">)</span>
+<span class="c1">//                .publishOn(custom_Scheduler(),2)
+</span><span class="c1"></span>            <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;[%s] %s&#34;</span><span class="o">,</span> <span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getName</span><span class="o">(),</span> <span class="n">x</span><span class="o">))</span>
+            <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+    <span class="n">sleep</span><span class="o">(</span><span class="n">2000</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>注释掉会有意外惊喜</p>
+<ul>
+<li>sleep(2);</li>
+<li>.publishOn(custom_Scheduler(),2)</li>
+</ul>
+<h2 id="33-深入解读-subscribeon">3.3 深入解读 subscribeOn</h2>
+<blockquote>
+<ul>
+<li>订阅只会产生一次，source.subscribe(this) 只会执行一次</li>
+<li>如果执行链中存在多个 subscribeOn 方法
+<ul>
+<li>只有第一个有效果</li>
+<li>其他只执行政策的元素下发操作</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="34-fluxparallel--flowableparallel-的并行玩法">3.4 Flux.parallel &amp; Flowable.parallel 的并行玩法</h2>
+<h2 id="35-parallelfluxrunon--parallelflowablerunon-的调度实现">3.5 ParallelFlux.runOn &amp; ParallelFlowable.runOn 的调度实现</h2>
+<ul>
+<li>可以适配多个订阅者</li>
+</ul>
 
     </div>
 
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">文章作者</span>
-    <span class="item-content">aoe</span>
+    <span class="item-content">wyyl1</span>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
@@ -178,9 +260,13 @@
           <a href="/tags/%E8%B0%83%E5%BA%A6%E5%99%A8/">调度器</a>
           </div>
       <nav class="post-nav">
-        
-        <a class="next" href="/post/java/book/spring-reactor-3/chap02/">
-            <span class="next-text nav-default">第 2 章 对Flux的探索</span>
+        <a class="prev" href="/post/practice/page-static/hugo_commands/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Hugo 常用命令</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/java/book/spring-reactor-3/chap04/">
+            <span class="next-text nav-default">第 4 章 对 Reactor 操作的解读</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -199,21 +285,8 @@
 
     <footer id="footer" class="footer">
       <div class="social-links">
-      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
-      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
-      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
-      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
-      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
-      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
-      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
-      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
-      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
-      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
-      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
-      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
-      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
-      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+      <a href="https://github.com/wyyl1" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/349506199" class="iconfont icon-bilibili" title="bilibili"></a>
   <a href="https://wyyl1.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
@@ -235,7 +308,7 @@
 
   <span class="copyright-year">
     &copy; 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>aoe</span>
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>wyyl1</span>
   </span>
 </div>
 
