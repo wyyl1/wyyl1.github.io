@@ -1,0 +1,67 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>第六章 Linux 文件与目录管理 -</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="wyyl1"><script src=/js/baidu_tongji.js></script><meta name=description content="《鸟哥的Linux私房菜-基础篇》第四版学习笔记目录 原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 6.1.2 目录的相关操作 操作符 功能 . 当"><meta name=keywords content="wyyl1,万有引力一,Hugo"><meta name=generator content="Hugo 0.82.0 with theme even"><link rel=canonical href=https://wyyl1.github.io/post/7/6/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.39a3e01cac9473be1356f3572fcfe34b2e363efabad244a99a40f28a812c837e.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="第六章 Linux 文件与目录管理"><meta property="og:description" content="《鸟哥的Linux私房菜-基础篇》第四版学习笔记目录 原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 6.1.2 目录的相关操作 操作符 功能 . 当"><meta property="og:type" content="article"><meta property="og:url" content="https://wyyl1.github.io/post/7/6/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-04-20T10:20:00+08:06"><meta property="article:modified_time" content="2021-04-20T10:20:00+08:06"><meta itemprop=name content="第六章 Linux 文件与目录管理"><meta itemprop=description content="《鸟哥的Linux私房菜-基础篇》第四版学习笔记目录 原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 6.1.2 目录的相关操作 操作符 功能 . 当"><meta itemprop=datePublished content="2021-04-20T10:20:00+08:06"><meta itemprop=dateModified content="2021-04-20T10:20:00+08:06"><meta itemprop=wordCount content="836"><meta itemprop=keywords content="Linux,文件与目录管理,鸟哥的Linux私房菜-基础篇,"><meta name=twitter:card content="summary"><meta name=twitter:title content="第六章 Linux 文件与目录管理"><meta name=twitter:description content="《鸟哥的Linux私房菜-基础篇》第四版学习笔记目录 原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 6.1.2 目录的相关操作 操作符 功能 . 当"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>wyyl1</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>文章</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/post/dir><li class=mobile-menu-item>目录</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>wyyl1</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>文章</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/post/dir>目录</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>第六章 Linux 文件与目录管理</h1><div class=post-meta><span class=post-time>2021-04-20</span><div class=post-category><a href=/categories/linux/>Linux</a>
+<a href=/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C-%E5%9F%BA%E7%A1%80%E7%AF%87/>鸟哥的Linux私房菜-基础篇</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#612-目录的相关操作>6.1.2 目录的相关操作</a></li><li><a href=#pwd--p>pwd -P</a></li><li><a href=#mkdir--mp-新建目录>mkdir -mp 新建目录</a></li><li><a href=#613-关于执行文件路径的变量path>6.1.3 关于执行文件路径的变量：$PATH</a></li><li><a href=#621-文件与目录的检视ls>6.2.1 文件与目录的检视：ls</a></li><li><a href=#622-复制删除与移动-cp-rm-mv>6.2.2 复制、删除与移动 cp rm mv</a></li><li><a href=#623-取得路径的文件名与目录名称>6.2.3 取得路径的文件名与目录名称</a></li><li><a href=#63-文件内容查阅>6.3 文件内容查阅</a></li><li><a href=#more>more</a></li><li><a href=#641-文件预设权限-umask>6.4.1 文件预设权限 umask</a></li><li><a href=#642-文件隐藏属性>6.4.2 文件隐藏属性</a></li><li><a href=#644-观察文件类型-file>6.4.4 观察文件类型 file</a></li><li><a href=#651-脚本文件名的搜寻>6.5.1 脚本文件名的搜寻</a></li><li><a href=#652-文件档名的搜寻>6.5.2 文件档名的搜寻</a></li></ul></li></ul></nav></div></div><div class=post-content><p><a href=../dir target=_blank>《鸟哥的Linux私房菜-基础篇》第四版学习笔记目录</a></p><blockquote><p>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者：
+<a href=http://linux.vbird.org/ target=_blank rel=noopener>鳥哥</a></p></blockquote><h2 id=612-目录的相关操作>6.1.2 目录的相关操作</h2><table><thead><tr><th>操作符</th><th>功能</th></tr></thead><tbody><tr><td>.</td><td>当前目录</td></tr><tr><td>..</td><td>上一层目录</td></tr><tr><td>-</td><td>前一个工作目录</td></tr><tr><td>~</td><td>当前用户的家目录</td></tr><tr><td>~account</td><td>account 用户的的家目录</td></tr></tbody></table><h2 id=pwd--p>pwd -P</h2><ul><li>-P 显示出真实的路径，而非使用连接（link）路径</li></ul><h2 id=mkdir--mp-新建目录>mkdir -mp 新建目录</h2><ul><li>-m 配置文件的权限</li><li>-p 递归建立所需所有目录</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>$ mkdir -p test1/test2/test3
+</code></pre></td></tr></table></div></div><p>建立权限为 rwx&ndash;x&ndash;x 的目录</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>$ mkdir -m 711 test
+</code></pre></td></tr></table></div></div><h2 id=613-关于执行文件路径的变量path>6.1.3 关于执行文件路径的变量：$PATH</h2><p>查看 PATH</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>$ echo $PATH
+</code></pre></td></tr></table></div></div><h2 id=621-文件与目录的检视ls>6.2.1 文件与目录的检视：ls</h2><ul><li>-l 包含文件属性与权限等</li><li>-h 将文件的容量以人类较易读的方式列出来</li><li>-R 连同子目录内容一起列出来</li><li>-S 以文件容量大小排序</li><li>-t 依时间排序</li><li>&ndash;full-time 以完整时间模式</li></ul><h2 id=622-复制删除与移动-cp-rm-mv>6.2.2 复制、删除与移动 cp rm mv</h2><h2 id=623-取得路径的文件名与目录名称>6.2.3 取得路径的文件名与目录名称</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>$ basename /home/aoe/k8s/test/
+test
+
+$ dirname /home/aoe/k8s/test/
+/home/aoe/k8s
+</code></pre></td></tr></table></div></div><h2 id=63-文件内容查阅>6.3 文件内容查阅</h2><ul><li>cat Concatenate 由第一行开始显示文件内容</li><li>tac 从最后一行开始显示文件内容</li><li>nl 显示的时候，顺道输出行号</li><li>more 一页一页的显示文件内容</li><li>less 与 more 类似，优点是可以向前翻页</li><li>head 只看头几行</li><li>tail 只看尾巴几行</li><li>od 以二进制的方式读取文件内容</li></ul><h2 id=more>more</h2><ul><li>空格键： 向下翻一页</li><li>Enter： 向下翻一行</li><li>/字符串：在显示的文档中，向下搜索【字符串】这个关键词</li><li>:f ：立刻显示出文件名以及目前显示的行数</li><li>q：立刻离开</li><li>b 或 ctrl + b：往回翻页，只对文件有用，对管线无用</li></ul><h2 id=641-文件预设权限-umask>6.4.1 文件预设权限 umask</h2><p>umask 指定<strong>目前用户在建立文件或目录时候的权限默认值</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd># 数字是拿掉的权限
+$ umask
+0002
+
+# -S (Symbolic)
+$ umask -S
+u=rwx,g=rwx,o=rx
+</code></pre></td></tr></table></div></div><h2 id=642-文件隐藏属性>6.4.2 文件隐藏属性</h2><ul><li>chattr<ul><li>只能在 Ext2/Ext3/Ext4 的 Linux 传统文件系统上面完整生效</li><li>其他的系统文件不保证完整支持，例如 xfs 仅支持部分参数</li></ul></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd># 执行后 root 用户也删除不了这个文件
+$ chattr + i 文件名
+
+# 取消 i 属性
+$ chattr -i 文件名
+</code></pre></td></tr></table></div></div><h2 id=644-观察文件类型-file>6.4.4 观察文件类型 file</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>$ file ~/.bashrc
+</code></pre></td></tr></table></div></div><h2 id=651-脚本文件名的搜寻>6.5.1 脚本文件名的搜寻</h2><ul><li>which 寻找 【执行裆】</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd># which -a command
+# -a 将所有由 PATH 目录中可以找到的指令均列出，而不止第一个被找到的指令名称
+$ which ifconfig
+</code></pre></td></tr></table></div></div><h2 id=652-文件档名的搜寻>6.5.2 文件档名的搜寻</h2><ul><li>find<ul><li>不常用</li><li>速度慢</li><li>扫描硬盘</li></ul></li><li>whereis<ul><li>只找系统中某些特定目录下的文件（-l 列出查询的几个主要目录）</li></ul></li><li>locate<ul><li>利用数据库搜索文件</li><li>在 /var/lib/mlocate/ 里面的数据中搜索</li><li>数据库默认每天更新一次，实时性较差</li><li>updatedb 命令可以更新数据库</li></ul></li></ul></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>wyyl1</span></p><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2021-04-20</span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/linux/>Linux</a>
+<a href=/tags/%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/>文件与目录管理</a>
+<a href=/tags/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C-%E5%9F%BA%E7%A1%80%E7%AF%87/>鸟哥的Linux私房菜-基础篇</a></div><nav class=post-nav><a class=prev href=/post/7/5/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">第五章、Linux 的文件权限与目录配置</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/post/7/7/><span class="next-text nav-default">第七章 Linux 磁盘与文件系统管理</span>
+<span class="next-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/wyyl1 class="iconfont icon-github" title=github></a><a href=https://space.bilibili.com/349506199 class="iconfont icon-bilibili" title=bilibili></a><a href=https://wyyl1.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>由 <a class=hexo-link href=https://gohugo.io>Hugo</a> 强力驱动</span>
+<span class=division>|</span>
+<span class=theme-info>主题 -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=division>|</span>
+<span class=theme-info><a class=hexo-link href=https://beian.miit.gov.cn>浙ICP备16025224号-1</a></span>
+<span class=copyright-year>&copy;
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>wyyl1</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script><script src=/js/baidu_tongji.js></script></body></html>

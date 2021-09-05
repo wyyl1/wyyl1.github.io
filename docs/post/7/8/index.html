@@ -1,0 +1,235 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>第八章、文件与文件系统的压缩,打包与备份 -</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="wyyl1"><script src=/js/baidu_tongji.js></script><meta name=description content="《鸟哥的Linux私房菜-基础篇》第四版学习笔记目录 原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 8.1 压缩文件的用途与技术 8.2 Linux 系统"><meta name=keywords content="wyyl1,万有引力一,Hugo"><meta name=generator content="Hugo 0.82.0 with theme even"><link rel=canonical href=https://wyyl1.github.io/post/7/8/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.39a3e01cac9473be1356f3572fcfe34b2e363efabad244a99a40f28a812c837e.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="第八章、文件与文件系统的压缩,打包与备份"><meta property="og:description" content="《鸟哥的Linux私房菜-基础篇》第四版学习笔记目录 原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 8.1 压缩文件的用途与技术 8.2 Linux 系统"><meta property="og:type" content="article"><meta property="og:url" content="https://wyyl1.github.io/post/7/8/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-04-20T10:20:00+08:08"><meta property="article:modified_time" content="2021-04-20T10:20:00+08:08"><meta itemprop=name content="第八章、文件与文件系统的压缩,打包与备份"><meta itemprop=description content="《鸟哥的Linux私房菜-基础篇》第四版学习笔记目录 原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 8.1 压缩文件的用途与技术 8.2 Linux 系统"><meta itemprop=datePublished content="2021-04-20T10:20:00+08:08"><meta itemprop=dateModified content="2021-04-20T10:20:00+08:08"><meta itemprop=wordCount content="4684"><meta itemprop=keywords content="Linux,压缩,打包与备份,鸟哥的Linux私房菜-基础篇,"><meta name=twitter:card content="summary"><meta name=twitter:title content="第八章、文件与文件系统的压缩,打包与备份"><meta name=twitter:description content="《鸟哥的Linux私房菜-基础篇》第四版学习笔记目录 原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者： 鳥哥 8.1 压缩文件的用途与技术 8.2 Linux 系统"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>wyyl1</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>文章</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/post/dir><li class=mobile-menu-item>目录</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>wyyl1</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>文章</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/post/dir>目录</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>第八章、文件与文件系统的压缩,打包与备份</h1><div class=post-meta><span class=post-time>2021-04-20</span><div class=post-category><a href=/categories/linux/>Linux</a>
+<a href=/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C-%E5%9F%BA%E7%A1%80%E7%AF%87/>鸟哥的Linux私房菜-基础篇</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#81-压缩文件的用途与技术>8.1 压缩文件的用途与技术</a></li><li><a href=#82-linux-系统常见的压缩指令>8.2 Linux 系统常见的压缩指令</a></li><li><a href=#821-gzip-zcatzmorezlesszgrep>8.2.1 gzip, zcat/zmore/zless/zgrep</a></li><li><a href=#822-bzip2-bzcatbzmorebzlessbzgrep>8.2.2 bzip2, bzcat/bzmore/bzless/bzgrep</a></li><li><a href=#823-xz-xzcatxzmorexzlessxzgrep>8.2.3 xz, xzcat/xzmore/xzless/xzgrep</a></li><li><a href=#83-打包指令-tar>8.3 打包指令: tar</a></li><li><a href=#831-tar>8.3.1 tar</a><ul><li><a href=#最简单的使用-tar-就只要记忆下面的方式即可>最简单的使用 tar 就只要记忆下面的方式即可:</a></li><li><a href=#备份-etc-最简单的方法就是使用-tar>备份 /etc 最简单的方法就是使用 tar</a></li><li><a href=#查阅-tar-文件的数据内容>查阅 tar 文件的数据内容</a></li><li><a href=#将备份的数据解压缩>将备份的数据解压缩</a></li><li><a href=#仅解开单一文件的方法>仅解开单一文件的方法</a></li><li><a href=#打包某目录但不含该目录下的某些文件>打包某目录，但不含该目录下的某些文件</a></li><li><a href=#仅备份比某个时刻还要新的文件>仅备份比某个时刻还要新的文件</a></li><li><a href=#基本名称-tarfile-tarball->基本名称: tarfile, tarball ?</a></li><li><a href=#特殊应用利用管线命令与数据流>特殊应用:利用管线命令与数据流</a></li><li><a href=#系统备份范例>系统备份范例</a></li><li><a href=#解压缩后的-selinux-课题>解压缩后的 SELinux 课题</a></li></ul></li><li><a href=#84-xfs-文件系统的备份与还原>8.4 XFS 文件系统的备份与还原</a></li><li><a href=#85-光盘写入工具>8.5 光盘写入工具</a></li><li><a href=#86-其他常见的压缩与备份工具>8.6 其他常见的压缩与备份工具</a><ul><li><a href=#861-dd>8.6.1 dd</a></li><li><a href=#862-cpio>8.6.2 cpio</a></li></ul></li><li><a href=#压缩算法比较>压缩算法比较</a></li></ul></li></ul></nav></div></div><div class=post-content><p><a href=../dir target=_blank>《鸟哥的Linux私房菜-基础篇》第四版学习笔记目录</a></p><blockquote><p>原书：《鸟哥的Linux私房菜-基础篇》第四版 | 作者：
+<a href=http://linux.vbird.org/ target=_blank rel=noopener>鳥哥</a></p></blockquote><h2 id=81-压缩文件的用途与技术>8.1 压缩文件的用途与技术</h2><h2 id=82-linux-系统常见的压缩指令>8.2 Linux 系统常见的压缩指令</h2><p>在Linux的环境中，压缩文件的扩展名大多是:“.tar, .tar.gz, .tgz, .gz, .Z, .bz2, *.xz”</p><p>常见的压缩文件扩展名</p><ul><li>*<strong>.Z</strong> <del>compress 程序压缩的文件(已过时)</del>;</li><li>*<strong>.zip</strong> zip 程序压缩的文件;</li><li>*<strong>.gz</strong> gzip 程序压缩的文件;</li><li>*<strong>.bz2</strong> bzip2 程序压缩的文件;</li><li>*<strong>.xz</strong> xz 程序压缩的文件;</li><li>*<strong>.tar</strong> tar 程序打包的数据，<strong>并没有压缩过</strong>;</li><li>*<strong>.tar.gz</strong> tar 程序打包的文件，其中并且经过 gzip 的压缩</li><li>*<strong>.tar.bz2</strong> tar 程序打包的文件，其中并且经过 bzip2 的压缩</li><li>*<strong>.tar.xz</strong> tar 程序打包的文件，其中并且经过 xz 的压缩</li></ul><p>gzip、bzip2、xz仅能针对一个文件来压缩与解压缩，如此一来， 每 次压缩与解压缩都要一大堆文件，岂不烦人?此时，那个所谓的“打包软件, tar”就显的很重要啦!</p><h2 id=821-gzip-zcatzmorezlesszgrep>8.2.1 gzip, zcat/zmore/zless/zgrep</h2><p>gzip 可以说是应用度最广的压缩指令了!目前 gzip 可以解开 compress, zip 与 gzip 等软件所 压缩的文件。 至于 gzip 所创建的压缩文件为 *.gz 的文件名喔!让我们来看看这个指令的语 法吧:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>gzip [-cdtv#] 文件名
+zcat 文件名.gz
+
+选项与参数:
+ -c :将压缩的数据输出到屏幕上，可通过数据流重导向来处理;
+ -d :解压缩的参数;
+ -t :可以用来检验一个压缩文件的一致性~看看文件有无错误;
+ -v :可以显示出原文件/压缩文件的压缩比等信息;
+ -# :# 为数字的意思，代表压缩等级，-1 最快，但是压缩比最差、-9 最慢，但是压缩比最好!默认是 -6
+</code></pre></td></tr></table></div></div><blockquote><p>当你使用 gzip 进行压缩时，在默认的状态下原本的文件会被压缩成为 .gz 的文件名，<strong>原始文件就不再存在了</strong>。
+与 gzip 相反， gzip -d 会将原本的 .gz 删除，回复到原本的 services 文件。</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd># 范例四:将范例三解开的 services 用最佳的压缩比压缩，并保留原本的文件
+gzip -9 -c services <span class=p>&gt;</span> services.gz
+</code></pre></td></tr></table></div></div><blockquote><p>如果你还想要从文字压缩文件当中找数据的话，可以通过 egrep 来搜寻关键字喔!而 不需要将压缩文件解开才以 grep 进行! 这对查询备份中的文本文件数据相当有用!</p><p>有备份数据使用的是 compress 创建出来的 .Z 文件，也无须担心，使用 znew 可以将该文件转成 gzip 的格示</p></blockquote><h2 id=822-bzip2-bzcatbzmorebzlessbzgrep>8.2.2 bzip2, bzcat/bzmore/bzless/bzgrep</h2><p>若说 gzip 是为了取代 compress 并提供更好的压缩比而成立的，那么 bzip2 则是为了取代 gzip 并提供更佳的压缩比而来的。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>bzip2 [-cdkzv#] 文件名
+bzcat 文件名.bz2
+
+选项与参数:
+ -c :将压缩的过程产生的数据输出到屏幕上!
+ -d :解压缩的参数
+ -k :保留原始文件，而不会删除原始的文件喔!
+ -z :压缩的参数 (默认值，可以不加)
+ -v :可以显示出原文件/压缩文件的压缩比等信息;
+ -# :与 gzip 同样的，都是在计算压缩比的参数， -9 最佳， -1 最快!
+</code></pre></td></tr></table></div></div><h2 id=823-xz-xzcatxzmorexzlessxzgrep>8.2.3 xz, xzcat/xzmore/xzless/xzgrep</h2><p>xz 的压缩比 bzip2 更高</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>xz [-dtlkc#] 文件名
+xcat 文件名.xz
+
+选项与参数:
+ -d :就是解压缩啊!
+ -t :测试压缩文件的完整性，看有没有错误
+ -l :列出压缩文件的相关信息
+ -k :保留原本的文件不删除~
+ -c :同样的，就是将数据由屏幕上输出的意思!
+ -# :同样的，也有较佳的压缩比的意思!
+</code></pre></td></tr></table></div></div><h2 id=83-打包指令-tar>8.3 打包指令: tar</h2><h2 id=831-tar>8.3.1 tar</h2><p>tar 的选项与参数非常的多!我们只讲几个常用的选项，更多选项您可以自行 man tar 查询啰!</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>tar [-z<span class=p>|</span>-j<span class=p>|</span>-J] [cv] [-f 待创建的新文件名] filename...  <span class=p>&lt;</span>===打包与压缩
+tar [-z<span class=p>|</span>-j<span class=p>|</span>-J] [tv] [-f 既有的 tar文件名]             <span class=p>&lt;</span>===查看文件名
+tar [-z<span class=p>|</span>-j<span class=p>|</span>-J] [xv] [-f 既有的 tar文件名] [-C 目录]    <span class=p>&lt;</span>===解压缩
+
+选项与参数:
+-c :创建打包文件，可搭配 -v 来察看过程中被打包的文件名(filename)
+-t :察看打包文件的内容含有哪些文件名，重点在察看“文件名”就是了;
+-x :解打包或解压缩的功能，可以搭配 -C (大写) 在特定目录解开
+特别留意的是， -c, -t, -x 不可同时出现在一串命令行中。
+-z :通过 gzip 的支持进行压缩/解压缩:此时文件名最好为 *.tar.gz
+-j :通过 bzip2 的支持进行压缩/解压缩:此时文件名最好为 *.tar.bz2
+-J :通过 xz 的支持进行压缩/解压缩:此时文件名最好为 *.tar.xz
+特别留意， -z, -j, -J 不可以同时出现在一串命令行中
+-v :在压缩/解压缩的过程中，将正在处理的文件名显示出来!
+-f filename:-f 后面要立刻接要被处理的文件名!建议 -f 单独写一个选项啰!(比较不会忘记)
+-C 目录 :这个选项用在解压缩，若要在特定目录解压缩，可以使用这个选项。
+
+其他后续练习会使用到的选项介绍:
+ -p(小写) :保留备份数据的原本权限与属性，常用于备份(-c)重要的配置文件
+ -P(大写) :保留绝对路径，亦即允许备份数据中含有根目录存在之意;
+ --exclude=FILE:在压缩的过程中，不要将 FILE 打包!
+</code></pre></td></tr></table></div></div><h3 id=最简单的使用-tar-就只要记忆下面的方式即可>最简单的使用 tar 就只要记忆下面的方式即可:</h3><ul><li><strong>压 缩</strong>:tar -jcv -f filename.tar.bz2 要被压缩的文件或目录名称</li><li><strong>查 询</strong>:tar -jtv -f filename.tar.bz2</li><li><strong>解压缩</strong>:tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录</li></ul><blockquote><p>tar 并不会主动的产生创建的文件名喔!我们 要自订啦! 所以扩展名就显的很重要了!
+如果不加 [-z|-j|-J] 的话，文件名最好取为 .tar 即可。</p></blockquote><blockquote><p>由于“ -f filename ”是紧接在一起的，过去很多文章常会写成“-jcvf filename”，这样是对 的， 但由于选项的顺序理论上是可以变换的，所以很多读者会误认为“-jvfc filename”也可以~ 事实上这样会导致产生的文件名变成 c ! 因为 -fc 嘛!所以啰，建议您在学习 tar 时，将“ -f filename ”与其他选项独立出来，会比较不容易发生问题。</p></blockquote><h3 id=备份-etc-最简单的方法就是使用-tar>备份 /etc 最简单的方法就是使用 tar</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>$ su - # 因为备份 /etc 需要 root 的权限，否则会出现一堆错误
+
+$ time tar -zpcv -f /root/etc.tar.gz /etc
+# time 会显示程序运行的时间!看 real 就好了!
+# 由于加上 -v 这个选项，因此正在作用中的文件名就会显示在屏幕上。
+# 至于 -p 的选项，重点在于“保留原本文件的权限与属性”之意。
+
+$ time tar -jpcv -f /root/etc.tar.bz2 /etc
+
+$ time tar -Jpcv -f /root/etc.tar.xz /etc
+
+$ ll /root/etc*
+
+$ du -sm /etc
+28 /etc # 实际目录约占有 28MB 的意思!
+</code></pre></td></tr></table></div></div><h3 id=查阅-tar-文件的数据内容>查阅 tar 文件的数据内容</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>tar -jtv -f /root/etc.tar.bz2
+</code></pre></td></tr></table></div></div><blockquote><p>如果加上 <strong>-v</strong> 这个选项时，详细的<strong>文件权限/属性</strong>都会被列出来!如果只是想要知道文件名而 已， 那么就将 -v 拿掉即可。从上面的数据我们可以发现一件很有趣的事情，那就是每个文件 名都没了根目录了!这也是上一个练习中出现的那个警告讯息“tar: Removing leading
+/' from member names(移除了文件名开头的 /' )”所告知的情况!</p><p>那为什么要拿掉根目录呢?主要是为了安全!我们使用 tar 备份的数据可能会需要解压缩回来 使用， 在 tar 所记录的文件名 (就是我们刚刚使用 tar -jtvf 所察看到的文件名) 那就是解压 缩后的实际文件名。 如果拿掉了根目录，假设你将备份数据在 /tmp 解开，那么解压缩的文件 名就会变成“/tmp/<u>etc/xxx</u>”。 但“如果没有拿掉根目录，解压缩后的文件名就会是绝对 路径， 亦即解压缩后的数据一定会被放置到 <u>/etc/xxx</u> 去!”如此一来，你的原本的 /etc/ 下面的数据， 就会被备份数据所覆盖过去了!</p></blockquote><p>如果你确定你就是需要备份根目录到 tar 的文件中，那可以使用 -P (大写) 这个选项，请看 下面的例子分析:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>tar -jpPcv -f /root/etc.and.root.tar.bz2 /etc
+</code></pre></td></tr></table></div></div><p>如果加上 -P 选项，那么文件名内的根目录就会存在喔!不过，鸟哥个人建议，还是<strong>不要加上 -P 这个选项</strong>来备份! 毕竟很多时候，我们备份是为了要未来追踪问题用的，倒不一定需要还原回原本的系统中! 所以拿掉根目录后，备份数据的应用会比较有弹性!也比较安全呢!</p><h3 id=将备份的数据解压缩>将备份的数据解压缩</h3><p>在当前目录解压缩</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>tar -jxv -f /root/etc.tar.bz2
+</code></pre></td></tr></table></div></div><p>在指定目录解压缩 -C 选项</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>tar -jxv -f /root/etc.tar.bz2 -C /tmp
+</code></pre></td></tr></table></div></div><h3 id=仅解开单一文件的方法>仅解开单一文件的方法</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd># 1. 先找到我们要的文件名，假设解开 shadow 文件
+$ tar -jtv -f /root/etc.tar.bz2 <span class=p>|</span> grep &#39;shadow&#39;
+
+-rw-r----- root/shadow    1211 2021-03-16 14:28 etc/shadow
+-rw-r----- root/shadow     701 2020-10-13 14:46 etc/gshadow-
+-rw-r----- root/shadow     713 2020-12-02 11:05 etc/gshadow
+-rw-r----- root/shadow    1211 2020-10-24 16:53 etc/shadow-
+
+# 2. 将该文件解开!语法与实际作法如下:
+# tar -jxv -f 压缩文件.tar.bz2 待解开文件名
+# 在本例中，你不能写成 /etc/shadow <span class=nv>!因为记录在 etc.tar.bz2 内的并没有 / 之故!</span>
+$ tar -jxv -f /root/etc.tar.bz2 etc/shadow
+
+$ ll etc
+</code></pre></td></tr></table></div></div><h3 id=打包某目录但不含该目录下的某些文件>打包某目录，但不含该目录下的某些文件</h3><p>假设我们想要打包 /etc/ /root 这几个重要的目录，但却不想要打包 /root/etc* 开头的文件，因 为该文件都是刚刚我们才创建的备份文件嘛! 而且假设这个新的打包文件要放置成为 /root/system.tar.bz2 ，当然这个文件自己不要打包自己 (因为这个文件放置在 /root 下面 啊!)，此时我们可以通过 &ndash;exclude 的帮忙! 那个 exclude 就是不包含的意思!所以你可 以这样做:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd>tar -jcv -f /root/system.tar.bz2 \
+--exclude=/root/etc* \
+--exclude=/root/system.tar.bz2 \
+/etc /root
+
+# 也可使用一行
+tar -jcv -f /root/system.tar.bz2 -- exclude=/root/etc* --exclude=/root/system.tar.bz2 /etc /root
+</code></pre></td></tr></table></div></div><blockquote><p>如果想要两行输入时，最后面 加上反斜线 (\) 并立刻按下 [enter] ， 就能够到第二行继续输入了</p></blockquote><h3 id=仅备份比某个时刻还要新的文件>仅备份比某个时刻还要新的文件</h3><p>某些情况下你会想要备份新的文件而已，并不想要备份旧文件!此时 &ndash;newer-mtime 这个选 项就粉重要啦! 其实有两个选项啦，一个是“ &ndash;newer ”另一个就是“ &ndash;newer-mtime ”，这两个 选项有何不同呢? 我们在<strong>第六章的 touch</strong> 介绍中谈到过三种不同的时间参数</p><ul><li>&ndash;newer 表示后续的日期包含“ mtime 与 ctime ”</li><li>&ndash;newer-mtime 则仅是 mtime</li></ul><h3 id=基本名称-tarfile-tarball->基本名称: tarfile, tarball ?</h3><ul><li>如果仅是打 包而已，就是“ tar -cv -f file.tar ”而已，这个文件我们称呼为 tarfile</li><li>如果还有进行压缩的支 持，例如“ tar -jcv -f file.tar.bz2 ”时，我们就称呼为 tarball</li></ul><h3 id=特殊应用利用管线命令与数据流>特殊应用:利用管线命令与数据流</h3><p>在 tar 的使用中，有一种方式最特殊，那就是通过标准输入输出的数据流重导向(standard input/standard output)， 以及管线命令 (pipe) 的方式，将待处理的文件一边打包一边解 压缩到目标目录去。 关于数据流重导向与管线命令更详细的数据我们会在<strong>第十章 bash</strong> 再跟大家介绍， 下面先来看一个例子吧!</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd># 1. 将 /etc 整个目录一边打包一边在 /tmp 解开
+<span class=k>cd</span> /tmp
+tar -cvf - /etc <span class=p>|</span> tar -xvf -
+</code></pre></td></tr></table></div></div><ul><li>这个动作有点像是 cp -r /etc /tmp 啦~依旧是有其有用途的!</li><li>要注意的地方在于输出文件变成 - 而输入文件也变成 - ，又有一个 | 存在~</li><li>这分别代表 standard output, standard input 与管线命令啦!</li><li>简单的想法中，你可以将 - 想成是在内存中的一个设备(缓冲区)。</li><li>更详细的数据流与管线命令，请翻到
+<a href=http://linux.vbird.org/linux_basic/0320bash.php target=_blank rel=noopener>bash</a> 章节啰!</li></ul><p>在上面的例子中，我们想要“将 /etc 下面的数据直接 copy 到目前所在的路径，也就是 /tmp 下 面”，但是又觉得使用 cp -r 有点麻烦，那么就直接以这个打包的方式来打包，其中，指令里面 的 - 就是表示那个被打包的文件啦! 由于我们不想要让中间文件存在，所以就以这一个方式 来进行复制的行为啦!</p><h3 id=系统备份范例>系统备份范例</h3><p>重要的目录有下面这几个:</p><ul><li>/etc/ (配置文件)</li><li>/home/ (使用者的主文件夹)</li><li>/var/spool/mail/ (系统中，所有帐号的邮件信箱)</li><li>/var/spool/cron/ (所有帐号的工作排成配置文件)</li><li>/root (系统管理员的主文件夹)</li></ul><p>假设你要将备份的数据放置到 /backups ，并且该目录仅 有 root 有权限进入! 此外，每次备份的文件名都希望不相同，例如使用:backup-system- 20150701.tar.bz2 之类的文件名来处理。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cmd data-lang=cmd># 1. 先处理要放置备份数据的目录与权限:
+<span class=k>mkdir</span> /backups
+chmod 700 /backups
+ll -d /backups
+
+# 2. 假设今天是 2015/07/01 ，则创建备份的方式如下:
+tar -jcv -f /backups/backup-system-20150701.tar.bz2 \
+--exclude=/root/*.bz2 --exclude=/root/*.gz --exclude=/home/loop* \
+/etc /home /var/spool/mail /var/spool/cron /root
+
+ll -h /backups/
+</code></pre></td></tr></table></div></div><h3 id=解压缩后的-selinux-课题>解压缩后的 SELinux 课题</h3><p>如果因为某些缘故，所以你的系统必须要以备份的数据来回填到原本 的系统中，那么得要特别注意复原后的系统的 SELinux 问题! 尤其是在系统文件上面!例如 /etc 下面的文件群。SELinux 是比较特别的细部权限设置，相关的介绍我们会在 <strong>16 章</strong>好好的 介绍一下。 在这里，你只要先知道，SELinux 的权限问题“可能会让你的系统无法存取某些配 置文件内容，导致影响到系统的正常使用权”。</p><p>简单的处理方式有这几个:</p><ul><li>通过各种可行的救援方式登陆系统，然后修改 /etc/selinux/config 文件，将 SELinux 改成 permissive 模式，重新开机后系统就正常了;</li><li>在第一次复原系统后，不要立即重新开机!先使用 restorecon -Rv /etc 自动修复一下 SELinux 的类型即可。</li><li>通过各种可行的方式登陆系统，创建 /.autorelabel 文件，重新开机后系统会自动修复 SELinux 的类型，并且又会再次重新开机，之后就正常了!</li></ul><p>鸟哥个人是比较偏好第 2 个方法，不过如果忘记了该步骤就重新开机呢?那鸟哥比较偏向使 用第 3 个方案来处理，这样就能够解决复原后的 SELinux 问题啰! 至于更详细的 SELinux ，我们得要讲完程序 (process) 之后，你才会有比较清楚的认知，因此还请慢慢学习，到 第 16 章你就知道问题点了! ^_^</p><h2 id=84-xfs-文件系统的备份与还原>8.4 XFS 文件系统的备份与还原</h2><h2 id=85-光盘写入工具>8.5 光盘写入工具</h2><h2 id=86-其他常见的压缩与备份工具>8.6 其他常见的压缩与备份工具</h2><h3 id=861-dd>8.6.1 dd</h3><p>dd 不理会文件系统，单纯有啥纪录啥，因此不论该磁盘内的文件系统你是否认识，它都可以备份、还原的!</p><h3 id=862-cpio>8.6.2 cpio</h3><p>因为 cpio 可以备份任何东西，包括设备设备文件。不过 cpio 有个大问 题， 那就是 cpio 不会主动的去找文件来备份!啊!那怎办?所以啰，一般来说， cpio 得要配合类似 find 等可以找到文件名的指令来告知 cpio 该被备份的数据在哪里啊!</p><h2 id=压缩算法比较>压缩算法比较</h2><p>压缩比由低到高(压缩时间由快到慢)：gzip &lt; bzip2 &lt; xz</p><table><thead><tr><th>参数</th><th>压缩算法</th><th>推荐文件后缀</th></tr></thead><tbody><tr><td>-z</td><td>gzip</td><td>*.tar.gz</td></tr><tr><td>-j</td><td>bzip2</td><td>*.tar.bz2</td></tr><tr><td>-J</td><td>xz</td><td>*.tar.xz</td></tr></tbody></table></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>wyyl1</span></p><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2021-04-20</span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/linux/>Linux</a>
+<a href=/tags/%E5%8E%8B%E7%BC%A9%E6%89%93%E5%8C%85%E4%B8%8E%E5%A4%87%E4%BB%BD/>压缩,打包与备份</a>
+<a href=/tags/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C-%E5%9F%BA%E7%A1%80%E7%AF%87/>鸟哥的Linux私房菜-基础篇</a></div><nav class=post-nav><a class=prev href=/post/7/7/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">第七章 Linux 磁盘与文件系统管理</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/post/7/9/><span class="next-text nav-default">第九章、vim 程序编辑器</span>
+<span class="next-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/wyyl1 class="iconfont icon-github" title=github></a><a href=https://space.bilibili.com/349506199 class="iconfont icon-bilibili" title=bilibili></a><a href=https://wyyl1.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>由 <a class=hexo-link href=https://gohugo.io>Hugo</a> 强力驱动</span>
+<span class=division>|</span>
+<span class=theme-info>主题 -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=division>|</span>
+<span class=theme-info><a class=hexo-link href=https://beian.miit.gov.cn>浙ICP备16025224号-1</a></span>
+<span class=copyright-year>&copy;
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>wyyl1</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script><script src=/js/baidu_tongji.js></script></body></html>
