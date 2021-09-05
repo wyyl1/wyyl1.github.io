@@ -1,28 +1,0 @@
-
-NWeb:TableWithoutCaptionCheck³" Add a description to this table.(¿‰˜ÿÿÿÿÿ
-m Web:TableHeaderHasIdOrScopeCheck¶";Add either an 'id' or a 'scope' attribute to this <th> tag.(·Ğä…ùÿÿÿÿ
-m Web:TableHeaderHasIdOrScopeCheck·";Add either an 'id' or a 'scope' attribute to this <th> tag.(îÏç€ÿÿÿÿÿ
-NWeb:TableWithoutCaptionCheckÛ" Add a description to this table.(øâ¯Çÿÿÿÿÿ
-@	Web:S5256Û"%Add "<th>" headers to this "<table>".(øâ¯Çÿÿÿÿÿ
-NWeb:TableWithoutCaptionCheckä" Add a description to this table.(øâ¯Çÿÿÿÿÿ
-@	Web:S5256ä"%Add "<th>" headers to this "<table>".(øâ¯Çÿÿÿÿÿ
-NWeb:TableWithoutCaptionCheckî" Add a description to this table.(øâ¯Çÿÿÿÿÿ
-@	Web:S5256î"%Add "<th>" headers to this "<table>".(øâ¯Çÿÿÿÿÿ
-NWeb:TableWithoutCaptionCheck" Add a description to this table.(øâ¯Çÿÿÿÿÿ
-@	Web:S5256"%Add "<th>" headers to this "<table>".(øâ¯Çÿÿÿÿÿ
-NWeb:TableWithoutCaptionCheck§" Add a description to this table.(øâ¯Çÿÿÿÿÿ
-@	Web:S5256§"%Add "<th>" headers to this "<table>".(øâ¯Çÿÿÿÿÿ
-NWeb:TableWithoutCaptionCheckÄ" Add a description to this table.(øâ¯Çÿÿÿÿÿ
-@	Web:S5256Ä"%Add "<th>" headers to this "<table>".(øâ¯Çÿÿÿÿÿ
-NWeb:TableWithoutCaptionCheckÕ" Add a description to this table.(øâ¯Çÿÿÿÿÿ
-@	Web:S5256Õ"%Add "<th>" headers to this "<table>".(øâ¯Çÿÿÿÿÿ
-NWeb:TableWithoutCaptionChecká" Add a description to this table.(øâ¯Çÿÿÿÿÿ
-@	Web:S5256á"%Add "<th>" headers to this "<table>".(øâ¯Çÿÿÿÿÿ
-DWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(Œÿ™¬
-IWeb:BoldAndItalicTagsCheck¤"Replace this <i> tag by <em>.(œ”°ÿÿÿÿÿ
-DWeb:BoldAndItalicTagsCheckÌ"Replace this <i> tag by <em>.(®ÿ°†
-IWeb:BoldAndItalicTagsCheckÓ"Replace this <i> tag by <em>.(Ò‚ãïşÿÿÿÿ
-Y	Web:S5255P"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(Ğ§¯ñ
-^	Web:S5255n"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(†Á¢ıÿÿÿÿ
-_	Web:S5255•"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(¤èåªøÿÿÿÿ
-_	Web:S5255›"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(åƒ£Åúÿÿÿÿ

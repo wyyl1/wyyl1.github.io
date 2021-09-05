@@ -1,18 +1,0 @@
-
-NWeb:TableWithoutCaptionCheck«" Add a description to this table.(¿‰˜ÿÿÿÿÿ
-h Web:TableHeaderHasIdOrScopeCheck®";Add either an 'id' or a 'scope' attribute to this <th> tag.(É×ÊÎ
-m Web:TableHeaderHasIdOrScopeCheck¯";Add either an 'id' or a 'scope' attribute to this <th> tag.(ÀŸµÒıÿÿÿÿ
-g Web:TableHeaderHasIdOrScopeCheck°";Add either an 'id' or a 'scope' attribute to this <th> tag.(’ãìF
-h Web:TableHeaderHasIdOrScopeCheck±";Add either an 'id' or a 'scope' attribute to this <th> tag.(ÊæŞ€
-h Web:TableHeaderHasIdOrScopeCheck²";Add either an 'id' or a 'scope' attribute to this <th> tag.(¤Ñùœ
-m Web:TableHeaderHasIdOrScopeCheck³";Add either an 'id' or a 'scope' attribute to this <th> tag.(æ˜êÏûÿÿÿÿ
-h Web:TableHeaderHasIdOrScopeCheck´";Add either an 'id' or a 'scope' attribute to this <th> tag.(•·»Š
-m Web:TableHeaderHasIdOrScopeCheckµ";Add either an 'id' or a 'scope' attribute to this <th> tag.(İ¾¼üüÿÿÿÿ
-DWeb:BoldAndItalicTagsCheckî"Replace this <i> tag by <em>.(Œÿ™¬
-IWeb:BoldAndItalicTagsCheckõ"Replace this <i> tag by <em>.(œ”°ÿÿÿÿÿ
-DWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(®ÿ°†
-IWeb:BoldAndItalicTagsCheck¤"Replace this <i> tag by <em>.(Ò‚ãïşÿÿÿÿ
-Y	Web:S5255P"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(Ğ§¯ñ
-^	Web:S5255n"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(†Á¢ıÿÿÿÿ
-_	Web:S5255•"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(¤èåªøÿÿÿÿ
-_	Web:S5255ì"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(åƒ£Åúÿÿÿÿ
