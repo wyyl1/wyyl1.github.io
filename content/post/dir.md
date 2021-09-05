@@ -1,40 +1,85 @@
 ---
-title: "编程入门"
+title: "目录"
 date: 2021-03-19T21:43:05+08:00
 draft: false
-tags: ["编程入门"]
+tags: ["目录"]
 categories: ["目录"]
 ---
 
 ## Java
 
-- [Java实战（第2版）学习笔记](/post/java/book/modern-java-in-action/dir/)
+- [《Java实战（第2版）》学习笔记](/post/0/dir/)
+- [《Java编程方法论:响应式Spring Reactor 3设计与实现》学习笔记](/post/2/dir/)
+- [零碎笔记](/post/3/dir/)
+  - [Java 入门推荐书籍](/post/3/1/)
 
-## [存储](/post/storage/dir)
+## 存储
 
-- [Redis](/post/storage/dir/#redis)
+### Redis
+
+- [极客时间 | 《Redis核心技术与实战》学习笔记](/post/1/dir/)
+
+### 图库
+
+- [Gremlin](/post/12/dir/)
 
 ## 开发工具
 
+### IntelliJ IDEA
+
+- [IntelliJ IDEA 常用插件](/post/5/1)
+
 ### VS Code
 
-- [VS Code 快捷键](/post/dev-tools/vs-code/hot_key)
+- [VS Code 快捷键](/post/6/1)
 
 ### Git
 
-- [Git](/post/dev-tools/git/git)
-- [Gitflow](/post/dev-tools/git/gitflow)
+- [Git](/post/4/1)
+- [Gitflow](/post/4/2)
 
 ## Linux
 
 ### 鸟哥的私房菜
 
-- [《鸟哥的Linux私房菜-基础篇》学习笔记](/post/linux/book/vbird/linux-basic-4e/dir)
+- [《鸟哥的Linux私房菜-基础篇》学习笔记](/post/7/dir)
 
 ## 实践
 
+### aoeai
+
+- [aoeai 设计](/post/8/0/)
+
+### K8S 实践
+
+- [K8S](/post/10/dir/)
+
+### 网络营销
+
+- [网络营销](/post/9/0/)
+
 ### 页面静态化
 
-- [Hugo](/post/practice/page-static/hugo)
+- [Hugo](/post/11/0)
+- [Hugo 常用命令](/post/11/1)
 
 ## [感兴趣的内容](Java/intrest/index.md)
+
+
+## 目录说明
+
+| 目录 | 说明 |
+| ---- | ---- |
+| 0 | 《Java实战（第2版）》学习笔记 Modern Java In Action|
+| 1 | 极客时间 《Redis核心技术与实战》学习笔记|
+| 2 | 《Java编程方法论:响应式Spring Reactor 3设计与实现》学习笔记|
+| 3 | 零碎笔记|
+| 4 | Git|
+| 5 | IntelliJ IDEA|
+| 6 | VS Code|
+| 7 | 《鸟哥的Linux私房菜-基础篇》学习笔记|
+| 8 | aoeai|
+| 9 | 网络营销|
+| 10 | K8S|
+| 11 | 页面静态化|
+| 12 | 图库 Gremlin|
