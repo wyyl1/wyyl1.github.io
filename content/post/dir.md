@@ -50,9 +50,9 @@ categories: ["目录"]
 
 - [aoeai 设计](/post/8/0/)
 
-### K8S 实践
+### [Docker](/post/13/dir/)
 
-- [K8S](/post/10/dir/)
+### [K8S](/post/10/dir/)
 
 ### 网络营销
 
@@ -83,3 +83,5 @@ categories: ["目录"]
 | 10 | K8S|
 | 11 | 页面静态化|
 | 12 | 图库 Gremlin|
+| 13 | Docker|
+| 14 | Nginx|

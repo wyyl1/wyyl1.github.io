@@ -2,7 +2,7 @@ baseURL = "http://wyyl1.com/"
 title = "万有引力一"
 
 # 生成网页保存目录
-publishDir = "docs-wyyl1.com"
+publishDir = "www.wyyl1.com"
 
 [params]
   version = "4.x"           # Used to give a friendly message when you have an incompatible update
