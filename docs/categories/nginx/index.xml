@@ -1,1 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nginx on</title><link>https://wyyl1.github.io/categories/nginx/</link><description>Recent content in Nginx on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 16 Sep 2021 21:00:01 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/nginx/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx 没有 www 转 www</title><link>https://wyyl1.github.io/post/14/0/</link><pubDate>Thu, 16 Sep 2021 21:00:01 +0800</pubDate><guid>https://wyyl1.github.io/post/14/0/</guid><description>Nginx 学习笔记目录 Nginx 官方推荐配置 1 2 3 4 5 6 7 8 9 10 11 server { listen 80; server_name example.org; return 301 http://www.example.org$request_uri; } server { listen 80; server_name www.example.org; ... } 参考文档 nginx 301 将不带www域名，重定向到www域名 Nginx 官方</description></item><item><title>Nginx 入门笔记</title><link>https://wyyl1.github.io/post/14/dir/</link><pubDate>Thu, 16 Sep 2021 21:00:00 +0800</pubDate><guid>https://wyyl1.github.io/post/14/dir/</guid><description>简介 Nginx 入门笔记 目录 Nginx 没有 www 转 www | Nginx non-www to www</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on </title>
+    <link>https://wyyl1.github.io/categories/nginx/</link>
+    <description>Recent content in Nginx on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 16 Sep 2021 21:00:01 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx 没有 www 转 www</title>
+      <link>https://wyyl1.github.io/post/14/0/</link>
+      <pubDate>Thu, 16 Sep 2021 21:00:01 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/14/0/</guid>
+      <description>Nginx 学习笔记目录 Nginx 官方推荐配置 1 2 3 4 5 6 7 8 9 10 11 server { listen 80; server_name example.org; return 301 http://www.example.org$request_uri; } server { listen 80; server_name www.example.org; ... } 参考文档 nginx 301 将不带www域名，重定向到www域名 Nginx 官方</description>
+    </item>
+    
+    <item>
+      <title>Nginx 入门笔记</title>
+      <link>https://wyyl1.github.io/post/14/dir/</link>
+      <pubDate>Thu, 16 Sep 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/14/dir/</guid>
+      <description>简介 Nginx 入门笔记 目录 Nginx 没有 www 转 www | Nginx non-www to www</description>
+    </item>
+    
+  </channel>
+</rss>

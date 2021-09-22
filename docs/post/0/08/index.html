@@ -1,298 +1,747 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>第 8 章 Collection API 的增强功能 -</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="wyyl1"><script src=/js/baidu_tongji.js></script><meta name=description content="笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克"><meta name=keywords content="wyyl1,万有引力一,Hugo"><meta name=generator content="Hugo 0.82.0 with theme even"><link rel=canonical href=https://wyyl1.github.io/post/0/08/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.39a3e01cac9473be1356f3572fcfe34b2e363efabad244a99a40f28a812c837e.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="第 8 章 Collection API 的增强功能"><meta property="og:description" content="笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克"><meta property="og:type" content="article"><meta property="og:url" content="https://wyyl1.github.io/post/0/08/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-04-15T00:00:08+08:00"><meta property="article:modified_time" content="2021-04-15T00:00:08+08:00"><meta itemprop=name content="第 8 章 Collection API 的增强功能"><meta itemprop=description content="笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克"><meta itemprop=datePublished content="2021-04-15T00:00:08+08:00"><meta itemprop=dateModified content="2021-04-15T00:00:08+08:00"><meta itemprop=wordCount content="1964"><meta itemprop=keywords content="Java,Java实战,Collection API 增强功能,"><meta name=twitter:card content="summary"><meta name=twitter:title content="第 8 章 Collection API 的增强功能"><meta name=twitter:description content="笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>wyyl1</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>文章</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/post/dir><li class=mobile-menu-item>目录</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>wyyl1</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>文章</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/post/dir>目录</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>第 8 章 Collection API 的增强功能</h1><div class=post-meta><span class=post-time>2021-04-15</span><div class=post-category><a href=/categories/java/>Java</a>
-<a href=/categories/java%E5%AE%9E%E6%88%98%E7%AC%AC2%E7%89%88/>Java实战（第2版）</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#81-集合工厂>8.1 集合工厂</a></li><li><a href=#811-list-工厂>8.1.1 List 工厂</a></li><li><a href=#812-set-工厂>8.1.2 Set 工厂</a></li><li><a href=#813-map-工厂>8.1.3 Map 工厂</a></li><li><a href=#82-使用-list-和-set>8.2 使用 List 和 Set</a></li><li><a href=#83-使用-map>8.3 使用 Map</a></li><li><a href=#mapentrycomparingbykey>Map.Entry.comparingByKey</a></li><li><a href=#computeifabsent>computeIfAbsent</a></li><li><a href=#computeifpresent>computeIfPresent</a></li><li><a href=#compute>compute</a></li><li><a href=#remove>remove</a></li><li><a href=#replaceall>replaceAll</a></li><li><a href=#merge>merge</a></li><li><a href=#merge-简化代码>merge 简化代码</a></li><li><a href=#84-改进的-concurrenthashmap>8.4 改进的 ConcurrentHashMap</a></li></ul></li></ul></nav></div></div><div class=post-content><blockquote><p>笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克罗夫特.</p></blockquote><p><a href=../dir target=_blank>Java实战（第2版）学习笔记目录</a></p><h2 id=81-集合工厂>8.1 集合工厂</h2><p>Arrays.asList</p><ul><li>创建一个固定大小的列表</li><li>列表的元素可以更新</li><li>列表的元素不能增加、删除</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=n>friends</span> <span class=o>=</span> <span class=n>Arrays</span><span class=o>.</span><span class=na>asList</span><span class=o>(</span><span class=s>&#34;Raphael&#34;</span><span class=o>,</span> <span class=s>&#34;Olivia&#34;</span><span class=o>);</span>
-</code></pre></td></tr></table></div></div><h2 id=811-list-工厂>8.1.1 List 工厂</h2><p>List.of 创建一个列表</p><ul><li>创建的是一个只读列表</li><li>可以更新元素</li><li>不能添加、删除元素</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=n>friends5</span> <span class=o>=</span> <span class=n>List</span><span class=o>.</span><span class=na>of</span><span class=o>(</span><span class=s>&#34;Raphael&#34;</span><span class=o>,</span> <span class=s>&#34;Olivia&#34;</span><span class=o>,</span> <span class=s>&#34;Thibaut&#34;</span><span class=o>);</span>
-</code></pre></td></tr></table></div></div><h2 id=812-set-工厂>8.1.2 Set 工厂</h2><p>Set.of</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=n>Set</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=n>friends</span> <span class=o>=</span> <span class=n>Set</span><span class=o>.</span><span class=na>of</span><span class=o>(</span><span class=s>&#34;Raphael&#34;</span><span class=o>,</span> <span class=s>&#34;Olivia&#34;</span><span class=o>,</span> <span class=s>&#34;Thibaut&#34;</span><span class=o>);</span>
-</code></pre></td></tr></table></div></div><h2 id=813-map-工厂>8.1.3 Map 工厂</h2><ul><li>Map.of</li><li>Map.ofEntries</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java> <span class=kd>private</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>creatingMaps</span><span class=o>()</span> <span class=o>{</span>
-    <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;--&gt; Creating a Map with Map.of()&#34;</span><span class=o>);</span>
-    <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>Integer</span><span class=o>&gt;</span> <span class=n>ageOfFriends</span> <span class=o>=</span> <span class=n>Map</span><span class=o>.</span><span class=na>of</span><span class=o>(</span><span class=s>&#34;Raphael&#34;</span><span class=o>,</span> <span class=n>30</span><span class=o>,</span> <span class=s>&#34;Olivia&#34;</span><span class=o>,</span> <span class=n>25</span><span class=o>,</span> <span class=s>&#34;Thibaut&#34;</span><span class=o>,</span> <span class=n>26</span><span class=o>);</span>
-    <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>ageOfFriends</span><span class=o>);</span>
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>第 8 章 Collection API 的增强功能 - </title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-    <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;--&gt; Creating a Map with Map.ofEntries()&#34;</span><span class=o>);</span>
-    <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>Integer</span><span class=o>&gt;</span> <span class=n>ageOfFriends2</span> <span class=o>=</span> <span class=n>Map</span><span class=o>.</span><span class=na>ofEntries</span><span class=o>(</span>
-        <span class=n>entry</span><span class=o>(</span><span class=s>&#34;Raphael&#34;</span><span class=o>,</span> <span class=n>30</span><span class=o>),</span>
-        <span class=n>entry</span><span class=o>(</span><span class=s>&#34;Olivia&#34;</span><span class=o>,</span> <span class=n>25</span><span class=o>),</span>
-        <span class=n>entry</span><span class=o>(</span><span class=s>&#34;Thibaut&#34;</span><span class=o>,</span> <span class=n>26</span><span class=o>));</span>
-    <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>ageOfFriends2</span><span class=o>);</span>
-  <span class=o>}</span>
-</code></pre></td></tr></table></div></div><h2 id=82-使用-list-和-set>8.2 使用 List 和 Set</h2><p>因为集合的修改烦琐且容易出错，所以添加了两个方法解决这个问题：</p><ul><li>removeIf</li><li>replaceAll</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=n>List</span><span class=o>&lt;</span><span class=n>Integer</span><span class=o>&gt;</span> <span class=n>list</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>
-<span class=n>list</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>1</span><span class=o>);</span>
-<span class=n>list</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>2</span><span class=o>);</span>
-<span class=n>list</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>30</span><span class=o>);</span>
-</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=n>list</span><span class=o>.</span><span class=na>removeIf</span><span class=o>(</span><span class=n>i</span> <span class=o>-&gt;</span> <span class=n>i</span> <span class=o>&gt;</span> <span class=n>10</span><span class=o>);</span>
-<span class=c1>// [1, 2]
-</span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java><span class=n>list</span><span class=o>.</span><span class=na>replaceAll</span><span class=o>(</span><span class=n>i</span> <span class=o>-&gt;</span> <span class=n>i</span> <span class=o>&gt;</span> <span class=n>10</span> <span class=o>?</span> <span class=n>i</span> <span class=o>/</span> <span class=n>10</span> <span class=o>:</span> <span class=n>i</span><span class=o>);</span>
-<span class=c1>// [1, 2, 3]
-</span></code></pre></td></tr></table></div></div><h2 id=83-使用-map>8.3 使用 Map</h2><ul><li>forEach 遍历 Map</li><li>排序<ul><li><a href=#Map.Entry.comparingByKey target=_blank>Entry.comparingByKey</a></li><li>Entry.comparingByValue</li></ul></li><li>getOrDefault 方法<ul><li>解决要查找的键在 Map 中不存在</li><li>第一个参数作为键，第二个参数为默认值</li></ul></li><li>计算模式<ul><li><a href=#computeIfAbsent target=_blank>computeIfAbsent</a>：给指定的键添加新的值（与原来的值进行合并操作）</li><li><a href=#computeIfPresent target=_blank>computeIfPresent</a>：如果指定的键在 Map 中存在，使用新值替换旧值；如果不存在，Map 内容无变化</li><li><a href=#compute target=_blank>compute</a>：添加键值对<ul><li>键已存在：更新值</li><li>键不存在：新增值</li></ul></li><li><a href=#remove target=_blank>remove</a>：删除数据<ul><li>remove(Object key, Object value) 可以防止误删数据</li></ul></li></ul></li><li>替换模式（8.3.6）<ul><li><a href=#replaceAll target=_blank>replaceAll</a>：<ul><li>改变 Map 中所有键的值</li><li>不能改变 Map 中键</li></ul></li><li>replace(K key, V value)</li><li>replace(K key, V oldValue, V newValue)</li></ul></li><li>merge 方法（8.3.7）<ul><li><a href=#merge target=_blank>处理键冲突时的情况</a></li><li><a href=#merge-%e7%ae%80%e5%8c%96%e4%bb%a3%e7%a0%81 target=_blank>简化代码</a></li></ul></li></ul><h2 id=mapentrycomparingbykey>Map.Entry.comparingByKey</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>String</span><span class=o>&gt;</span> <span class=n>favouriteMovies</span> <span class=o>=</span> <span class=n>Map</span><span class=o>.</span><span class=na>ofEntries</span><span class=o>(</span>
-                <span class=n>entry</span><span class=o>(</span><span class=s>&#34;Raphael&#34;</span><span class=o>,</span> <span class=s>&#34;Star Wars&#34;</span><span class=o>),</span>
-                <span class=n>entry</span><span class=o>(</span><span class=s>&#34;Cristina&#34;</span><span class=o>,</span> <span class=s>&#34;Matrix&#34;</span><span class=o>),</span>
-                <span class=n>entry</span><span class=o>(</span><span class=s>&#34;Olivia&#34;</span><span class=o>,</span> <span class=s>&#34;James Bond&#34;</span><span class=o>));</span>
-        <span class=n>favouriteMovies</span><span class=o>.</span><span class=na>entrySet</span><span class=o>().</span><span class=na>stream</span><span class=o>()</span>
-                <span class=o>.</span><span class=na>sorted</span><span class=o>(</span><span class=n>Map</span><span class=o>.</span><span class=na>Entry</span><span class=o>.</span><span class=na>comparingByKey</span><span class=o>())</span>
-                <span class=o>.</span><span class=na>forEachOrdered</span><span class=o>(</span><span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>::</span><span class=n>println</span><span class=o>);</span>
-</code></pre></td></tr></table></div></div><h2 id=computeifabsent>computeIfAbsent</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;&gt;</span> <span class=n>friendsToMovies</span> <span class=o>=</span> <span class=k>new</span> <span class=n>HashMap</span><span class=o>&lt;&gt;();</span>
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-        <span class=n>String</span> <span class=n>friend</span> <span class=o>=</span> <span class=s>&#34;小刚&#34;</span><span class=o>;</span>
-        <span class=n>friendsToMovies</span><span class=o>.</span><span class=na>computeIfAbsent</span><span class=o>(</span><span class=n>friend</span><span class=o>,</span> <span class=n>name</span> <span class=o>-&gt;</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;())</span>
-                <span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=s>&#34;星球大战&#34;</span><span class=o>);</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>friendsToMovies</span><span class=o>);</span>
-        <span class=c1>// {小刚=[星球大战]}
-</span><span class=c1></span>        <span class=n>friendsToMovies</span><span class=o>.</span><span class=na>computeIfAbsent</span><span class=o>(</span><span class=n>friend</span><span class=o>,</span> <span class=n>name</span> <span class=o>-&gt;</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;())</span>
-                <span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=s>&#34;星际争霸&#34;</span><span class=o>);</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>friendsToMovies</span><span class=o>);</span>
-        <span class=c1>// {小刚=[星球大战, 星际争霸]}
-</span><span class=c1></span>        <span class=n>friendsToMovies</span><span class=o>.</span><span class=na>computeIfAbsent</span><span class=o>(</span><span class=n>friend</span><span class=o>,</span> <span class=n>name</span> <span class=o>-&gt;</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;())</span>
-                <span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=s>&#34;星际争霸&#34;</span><span class=o>);</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>friendsToMovies</span><span class=o>);</span>
-        <span class=c1>// {小刚=[星球大战, 星际争霸, 星际争霸]}
-</span></code></pre></td></tr></table></div></div><h2 id=computeifpresent>computeIfPresent</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;&gt;</span> <span class=n>gameMap</span> <span class=o>=</span> <span class=k>new</span> <span class=n>HashMap</span><span class=o>&lt;&gt;();</span>
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-        <span class=n>String</span> <span class=n>friend</span> <span class=o>=</span> <span class=s>&#34;小刚&#34;</span><span class=o>;</span>
-        <span class=n>gameMap</span><span class=o>.</span><span class=na>computeIfAbsent</span><span class=o>(</span><span class=n>friend</span><span class=o>,</span> <span class=n>name</span> <span class=o>-&gt;</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;())</span>
-                <span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=s>&#34;星球大战&#34;</span><span class=o>);</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>//{小刚=[星球大战]}
-</span><span class=c1></span>        <span class=n>gameMap</span><span class=o>.</span><span class=na>computeIfPresent</span><span class=o>(</span><span class=n>friend</span><span class=o>,</span> <span class=o>(</span><span class=n>k</span><span class=o>,</span> <span class=n>v</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=n>List</span><span class=o>.</span><span class=na>of</span><span class=o>(</span><span class=s>&#34;星际争霸&#34;</span><span class=o>));</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>// {小刚=[星际争霸]}
-</span><span class=c1></span>        <span class=n>gameMap</span><span class=o>.</span><span class=na>computeIfPresent</span><span class=o>(</span><span class=n>friend</span><span class=o>,</span> <span class=o>(</span><span class=n>k</span><span class=o>,</span> <span class=n>v</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=n>List</span><span class=o>.</span><span class=na>of</span><span class=o>(</span><span class=s>&#34;暗黑3&#34;</span><span class=o>,</span> <span class=s>&#34;地球时代&#34;</span><span class=o>));</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>// {小刚=[暗黑3, 地球时代]}
-</span><span class=c1></span>        <span class=n>gameMap</span><span class=o>.</span><span class=na>computeIfPresent</span><span class=o>(</span><span class=s>&#34;没有这个键&#34;</span><span class=o>,</span> <span class=o>(</span><span class=n>k</span><span class=o>,</span> <span class=n>v</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=n>List</span><span class=o>.</span><span class=na>of</span><span class=o>(</span><span class=s>&#34;消消乐&#34;</span><span class=o>));</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>// {小刚=[暗黑3, 地球时代]}
-</span></code></pre></td></tr></table></div></div><h2 id=compute>compute</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;&gt;</span> <span class=n>gameMap</span> <span class=o>=</span> <span class=k>new</span> <span class=n>HashMap</span><span class=o>&lt;&gt;();</span>
 
-        <span class=n>String</span> <span class=n>friend</span> <span class=o>=</span> <span class=s>&#34;小刚&#34;</span><span class=o>;</span>
-        <span class=n>gameMap</span><span class=o>.</span><span class=na>computeIfAbsent</span><span class=o>(</span><span class=n>friend</span><span class=o>,</span> <span class=n>name</span> <span class=o>-&gt;</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;())</span>
-                <span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=s>&#34;星球大战&#34;</span><span class=o>);</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>//{小刚=[星球大战]}
-</span><span class=c1></span>        <span class=n>gameMap</span><span class=o>.</span><span class=na>compute</span><span class=o>(</span><span class=n>friend</span><span class=o>,</span> <span class=o>(</span><span class=n>k</span><span class=o>,</span> <span class=n>v</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=n>List</span><span class=o>.</span><span class=na>of</span><span class=o>(</span><span class=s>&#34;星际争霸&#34;</span><span class=o>));</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>// {小刚=[星际争霸]}
-</span><span class=c1></span>        <span class=n>gameMap</span><span class=o>.</span><span class=na>compute</span><span class=o>(</span><span class=n>friend</span><span class=o>,</span> <span class=o>(</span><span class=n>k</span><span class=o>,</span> <span class=n>v</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=n>List</span><span class=o>.</span><span class=na>of</span><span class=o>(</span><span class=s>&#34;暗黑3&#34;</span><span class=o>,</span> <span class=s>&#34;地球时代&#34;</span><span class=o>));</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>// {小刚=[暗黑3, 地球时代]}
-</span><span class=c1></span>        <span class=n>gameMap</span><span class=o>.</span><span class=na>compute</span><span class=o>(</span><span class=s>&#34;又来一个键&#34;</span><span class=o>,</span> <span class=o>(</span><span class=n>k</span><span class=o>,</span> <span class=n>v</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=n>List</span><span class=o>.</span><span class=na>of</span><span class=o>(</span><span class=s>&#34;红警&#34;</span><span class=o>));</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>// {小刚=[暗黑3, 地球时代], 又来一个键=[红警]}
-</span></code></pre></td></tr></table></div></div><h2 id=remove>remove</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>String</span><span class=o>&gt;</span> <span class=n>gameMap</span> <span class=o>=</span> <span class=k>new</span> <span class=n>HashMap</span><span class=o>&lt;&gt;();</span>
-        <span class=n>gameMap</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=s>&#34;暴雪1&#34;</span><span class=o>,</span> <span class=s>&#34;魔兽争霸&#34;</span><span class=o>);</span>
-        <span class=n>gameMap</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=s>&#34;暴雪2&#34;</span><span class=o>,</span> <span class=s>&#34;暗黑3&#34;</span><span class=o>);</span>
-        <span class=n>gameMap</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=s>&#34;暴雪3&#34;</span><span class=o>,</span> <span class=s>&#34;守望先锋&#34;</span><span class=o>);</span>
+<meta name="author" content="wyyl1" />
 
-        <span class=c1>// 防止误删数据
-</span><span class=c1></span>        <span class=n>gameMap</span><span class=o>.</span><span class=na>remove</span><span class=o>(</span><span class=s>&#34;暴雪1&#34;</span><span class=o>,</span> <span class=s>&#34;疯狂的麦克斯&#34;</span><span class=o>);</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>// {暴雪1=魔兽争霸, 暴雪3=守望先锋, 暴雪2=暗黑3}
-</span><span class=c1></span>        <span class=n>gameMap</span><span class=o>.</span><span class=na>remove</span><span class=o>(</span><span class=s>&#34;暴雪1&#34;</span><span class=o>,</span> <span class=s>&#34;魔兽争霸&#34;</span><span class=o>);</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>// {暴雪3=守望先锋, 暴雪2=暗黑3}
-</span></code></pre></td></tr></table></div></div><h2 id=replaceall>replaceAll</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>String</span><span class=o>&gt;</span> <span class=n>gameMap</span> <span class=o>=</span> <span class=k>new</span> <span class=n>HashMap</span><span class=o>&lt;&gt;();</span>
-        <span class=n>gameMap</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=s>&#34;blizzard1&#34;</span><span class=o>,</span> <span class=s>&#34;starcraft2&#34;</span><span class=o>);</span>
-        <span class=n>gameMap</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=s>&#34;blizzard2&#34;</span><span class=o>,</span> <span class=s>&#34;diablo4&#34;</span><span class=o>);</span>
-        <span class=n>gameMap</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=s>&#34;blizzard3&#34;</span><span class=o>,</span> <span class=s>&#34;warcraft3&#34;</span><span class=o>);</span>
+<script src="/js/baidu_tongji.js"></script><meta name="description" content="笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克" /><meta name="keywords" content="wyyl1, 万有引力一, Hugo" />
 
-        <span class=n>gameMap</span><span class=o>.</span><span class=na>replaceAll</span><span class=o>((</span><span class=n>k</span><span class=o>,</span> <span class=n>v</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=n>v</span><span class=o>.</span><span class=na>toUpperCase</span><span class=o>());</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>// {blizzard3=WARCRAFT3, blizzard2=DIABLO4, blizzard1=STARCRAFT2}
-</span><span class=c1></span>        <span class=c1>// 不能改变 key 的值
-</span><span class=c1></span>        <span class=n>gameMap</span><span class=o>.</span><span class=na>replaceAll</span><span class=o>((</span><span class=n>k</span><span class=o>,</span> <span class=n>v</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=n>k</span><span class=o>.</span><span class=na>toUpperCase</span><span class=o>());</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>// {blizzard3=BLIZZARD3, blizzard2=BLIZZARD2, blizzard1=BLIZZARD1}
-</span></code></pre></td></tr></table></div></div><h2 id=merge>merge</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>String</span><span class=o>&gt;</span> <span class=n>family</span> <span class=o>=</span> <span class=n>Map</span><span class=o>.</span><span class=na>ofEntries</span><span class=o>(</span>
-                <span class=n>entry</span><span class=o>(</span><span class=s>&#34;Teo&#34;</span><span class=o>,</span> <span class=s>&#34;Star Wars&#34;</span><span class=o>),</span>
-                <span class=n>entry</span><span class=o>(</span><span class=s>&#34;Cristina&#34;</span><span class=o>,</span> <span class=s>&#34;James Bond&#34;</span><span class=o>));</span>
-        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>String</span><span class=o>&gt;</span> <span class=n>friends</span> <span class=o>=</span> <span class=n>Map</span><span class=o>.</span><span class=na>ofEntries</span><span class=o>(</span><span class=n>entry</span><span class=o>(</span><span class=s>&#34;Raphael&#34;</span><span class=o>,</span> <span class=s>&#34;Star Wars&#34;</span><span class=o>));</span>
 
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;--&gt; Merging the old way, 当键重复时会被覆盖&#34;</span><span class=o>);</span>
-        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>String</span><span class=o>&gt;</span> <span class=n>everyone</span> <span class=o>=</span> <span class=k>new</span> <span class=n>HashMap</span><span class=o>&lt;&gt;(</span><span class=n>family</span><span class=o>);</span>
-        <span class=n>everyone</span><span class=o>.</span><span class=na>putAll</span><span class=o>(</span><span class=n>friends</span><span class=o>);</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>everyone</span><span class=o>);</span>
-        <span class=c1>// {Cristina=James Bond, Raphael=Star Wars, Teo=Star Wars}
-</span><span class=c1></span>
-        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>String</span><span class=o>&gt;</span> <span class=n>friends2</span> <span class=o>=</span> <span class=n>Map</span><span class=o>.</span><span class=na>ofEntries</span><span class=o>(</span>
-                <span class=n>entry</span><span class=o>(</span><span class=s>&#34;Raphael&#34;</span><span class=o>,</span> <span class=s>&#34;Star Wars&#34;</span><span class=o>),</span>
-                <span class=n>entry</span><span class=o>(</span><span class=s>&#34;Cristina&#34;</span><span class=o>,</span> <span class=s>&#34;Matrix&#34;</span><span class=o>));</span>
 
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;--&gt; Merging maps using merge(), 可以处理键重复时的情况&#34;</span><span class=o>);</span>
-        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>String</span><span class=o>&gt;</span> <span class=n>everyone2</span> <span class=o>=</span> <span class=k>new</span> <span class=n>HashMap</span><span class=o>&lt;&gt;(</span><span class=n>family</span><span class=o>);</span>
-        <span class=n>friends2</span><span class=o>.</span><span class=na>forEach</span><span class=o>((</span><span class=n>k</span><span class=o>,</span> <span class=n>v</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=n>everyone2</span><span class=o>.</span><span class=na>merge</span><span class=o>(</span><span class=n>k</span><span class=o>,</span> <span class=n>v</span><span class=o>,</span> <span class=o>(</span><span class=n>movie1</span><span class=o>,</span> <span class=n>movie2</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=n>movie1</span> <span class=o>+</span> <span class=s>&#34; &amp; &#34;</span> <span class=o>+</span> <span class=n>movie2</span><span class=o>));</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>everyone2</span><span class=o>);</span>
-        <span class=c1>// {Raphael=Star Wars, Cristina=James Bond &amp; Matrix, Teo=Star Wars}
-</span></code></pre></td></tr></table></div></div><h2 id=merge-简化代码>merge 简化代码</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-java data-lang=java>        <span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=o>,</span> <span class=n>Integer</span><span class=o>&gt;</span> <span class=n>gameMap</span> <span class=o>=</span> <span class=k>new</span> <span class=n>HashMap</span><span class=o>&lt;&gt;();</span>
-        <span class=n>String</span> <span class=n>gameName</span> <span class=o>=</span> <span class=s>&#34;巫师3&#34;</span><span class=o>;</span>
-        <span class=n>Integer</span> <span class=n>count</span> <span class=o>=</span> <span class=n>gameMap</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>gameName</span><span class=o>);</span>
-        <span class=k>if</span> <span class=o>(</span><span class=n>count</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
-            <span class=n>gameMap</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=n>gameName</span><span class=o>,</span> <span class=n>1</span><span class=o>);</span>
-        <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
-            <span class=n>gameMap</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=n>gameName</span><span class=o>,</span> <span class=n>count</span> <span class=o>+</span> <span class=n>1</span><span class=o>);</span>
-        <span class=o>}</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>// {巫师3=1}
-</span><span class=c1></span>
-        <span class=c1>// 简化代码
-</span><span class=c1></span>        <span class=n>gameMap</span><span class=o>.</span><span class=na>merge</span><span class=o>(</span><span class=n>gameName</span><span class=o>,</span> <span class=n>1</span><span class=o>,</span> <span class=o>(</span><span class=n>k</span><span class=o>,</span> <span class=n>v</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=n>v</span> <span class=o>+</span> <span class=n>1</span><span class=o>);</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>// {巫师3=2}
-</span><span class=c1></span>
-        <span class=n>gameMap</span><span class=o>.</span><span class=na>merge</span><span class=o>(</span><span class=s>&#34;英雄无敌&#34;</span><span class=o>,</span> <span class=n>1</span><span class=o>,</span> <span class=o>(</span><span class=n>k</span><span class=o>,</span> <span class=n>v</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=n>v</span> <span class=o>+</span> <span class=n>1</span><span class=o>);</span>
-        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>gameMap</span><span class=o>);</span>
-        <span class=c1>// {英雄无敌=1, 巫师3=2}
-</span></code></pre></td></tr></table></div></div><h2 id=84-改进的-concurrenthashmap>8.4 改进的 ConcurrentHashMap</h2><p>推荐使用 mappingCount 代替 size 方法</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
-<span class=item-content>wyyl1</span></p><p class=copyright-item><span class=item-title>上次更新</span>
-<span class=item-content>2021-04-15</span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/java/>Java</a>
-<a href=/tags/java%E5%AE%9E%E6%88%98/>Java实战</a>
-<a href=/tags/collection-api-%E5%A2%9E%E5%BC%BA%E5%8A%9F%E8%83%BD/>Collection API 增强功能</a></div><nav class=post-nav><a class=prev href=/post/0/10/><i class="iconfont icon-left"></i>
-<span class="prev-text nav-default">第 10 章 基于 Lambda 的领域特定语言</span>
-<span class="prev-text nav-mobile">上一篇</span></a>
-<a class=next href=/post/0/07/><span class="next-text nav-default">第 7 章 并行数据处理与性能</span>
-<span class="next-text nav-mobile">下一篇</span>
-<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/wyyl1 class="iconfont icon-github" title=github></a><a href=https://space.bilibili.com/349506199 class="iconfont icon-bilibili" title=bilibili></a><a href=https://wyyl1.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>由 <a class=hexo-link href=https://gohugo.io>Hugo</a> 强力驱动</span>
-<span class=division>|</span>
-<span class=theme-info>主题 -
-<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
-<span class=division>|</span>
-<span class=theme-info><a class=hexo-link href=https://beian.miit.gov.cn>浙ICP备16025224号-2</a></span>
-<span class=copyright-year>&copy;
-2021<span class=heart><i class="iconfont icon-heart"></i></span><span>wyyl1</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script><script src=/js/baidu_tongji.js></script></body></html>
+
+
+
+<meta name="generator" content="Hugo 0.82.0 with theme even" />
+
+
+<link rel="canonical" href="https://wyyl1.github.io/post/0/08/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.39a3e01cac9473be1356f3572fcfe34b2e363efabad244a99a40f28a812c837e.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="第 8 章 Collection API 的增强功能" />
+<meta property="og:description" content="笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wyyl1.github.io/post/0/08/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-15T00:00:08&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-15T00:00:08&#43;08:00" />
+
+<meta itemprop="name" content="第 8 章 Collection API 的增强功能">
+<meta itemprop="description" content="笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克"><meta itemprop="datePublished" content="2021-04-15T00:00:08&#43;08:00" />
+<meta itemprop="dateModified" content="2021-04-15T00:00:08&#43;08:00" />
+<meta itemprop="wordCount" content="1964">
+<meta itemprop="keywords" content="Java,Java实战,Collection API 增强功能," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="第 8 章 Collection API 的增强功能"/>
+<meta name="twitter:description" content="笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wyyl1</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/dir">
+        <li class="mobile-menu-item">目录</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wyyl1</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/dir">目录</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">第 8 章 Collection API 的增强功能</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-04-15 </span>
+        <div class="post-category">
+            <a href="/categories/java/"> Java </a>
+            <a href="/categories/java%E5%AE%9E%E6%88%98%E7%AC%AC2%E7%89%88/"> Java实战（第2版） </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#81-集合工厂">8.1 集合工厂</a></li>
+        <li><a href="#811-list-工厂">8.1.1 List 工厂</a></li>
+        <li><a href="#812-set-工厂">8.1.2 Set 工厂</a></li>
+        <li><a href="#813-map-工厂">8.1.3 Map 工厂</a></li>
+        <li><a href="#82-使用-list-和-set">8.2 使用 List 和 Set</a></li>
+        <li><a href="#83-使用-map">8.3 使用 Map</a></li>
+        <li><a href="#mapentrycomparingbykey">Map.Entry.comparingByKey</a></li>
+        <li><a href="#computeifabsent">computeIfAbsent</a></li>
+        <li><a href="#computeifpresent">computeIfPresent</a></li>
+        <li><a href="#compute">compute</a></li>
+        <li><a href="#remove">remove</a></li>
+        <li><a href="#replaceall">replaceAll</a></li>
+        <li><a href="#merge">merge</a></li>
+        <li><a href="#merge-简化代码">merge 简化代码</a></li>
+        <li><a href="#84-改进的-concurrenthashmap">8.4 改进的 ConcurrentHashMap</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p>笔记来源：《Java实战（第2版）》ISBN:978-7-115-52148-4 作者：拉乌尔·加布里埃尔·乌尔玛,马里奥·富斯科,艾伦·米克罗夫特.</p>
+</blockquote>
+<p>
+<a href="../dir"  target="_blank" >Java实战（第2版）学习笔记目录</a></p>
+<h2 id="81-集合工厂">8.1 集合工厂</h2>
+<p>Arrays.asList</p>
+<ul>
+<li>创建一个固定大小的列表</li>
+<li>列表的元素可以更新</li>
+<li>列表的元素不能增加、删除</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">friends</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&#34;Raphael&#34;</span><span class="o">,</span> <span class="s">&#34;Olivia&#34;</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="811-list-工厂">8.1.1 List 工厂</h2>
+<p>List.of 创建一个列表</p>
+<ul>
+<li>创建的是一个只读列表</li>
+<li>可以更新元素</li>
+<li>不能添加、删除元素</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">friends5</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Raphael&#34;</span><span class="o">,</span> <span class="s">&#34;Olivia&#34;</span><span class="o">,</span> <span class="s">&#34;Thibaut&#34;</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="812-set-工厂">8.1.2 Set 工厂</h2>
+<p>Set.of</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">friends</span> <span class="o">=</span> <span class="n">Set</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Raphael&#34;</span><span class="o">,</span> <span class="s">&#34;Olivia&#34;</span><span class="o">,</span> <span class="s">&#34;Thibaut&#34;</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="813-map-工厂">8.1.3 Map 工厂</h2>
+<ul>
+<li>Map.of</li>
+<li>Map.ofEntries</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"> <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">creatingMaps</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;--&gt; Creating a Map with Map.of()&#34;</span><span class="o">);</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">ageOfFriends</span> <span class="o">=</span> <span class="n">Map</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Raphael&#34;</span><span class="o">,</span> <span class="n">30</span><span class="o">,</span> <span class="s">&#34;Olivia&#34;</span><span class="o">,</span> <span class="n">25</span><span class="o">,</span> <span class="s">&#34;Thibaut&#34;</span><span class="o">,</span> <span class="n">26</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ageOfFriends</span><span class="o">);</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;--&gt; Creating a Map with Map.ofEntries()&#34;</span><span class="o">);</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">ageOfFriends2</span> <span class="o">=</span> <span class="n">Map</span><span class="o">.</span><span class="na">ofEntries</span><span class="o">(</span>
+        <span class="n">entry</span><span class="o">(</span><span class="s">&#34;Raphael&#34;</span><span class="o">,</span> <span class="n">30</span><span class="o">),</span>
+        <span class="n">entry</span><span class="o">(</span><span class="s">&#34;Olivia&#34;</span><span class="o">,</span> <span class="n">25</span><span class="o">),</span>
+        <span class="n">entry</span><span class="o">(</span><span class="s">&#34;Thibaut&#34;</span><span class="o">,</span> <span class="n">26</span><span class="o">));</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ageOfFriends2</span><span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="82-使用-list-和-set">8.2 使用 List 和 Set</h2>
+<p>因为集合的修改烦琐且容易出错，所以添加了两个方法解决这个问题：</p>
+<ul>
+<li>removeIf</li>
+<li>replaceAll</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">2</span><span class="o">);</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">30</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">list</span><span class="o">.</span><span class="na">removeIf</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">10</span><span class="o">);</span>
+<span class="c1">// [1, 2]
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">list</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">10</span> <span class="o">?</span> <span class="n">i</span> <span class="o">/</span> <span class="n">10</span> <span class="o">:</span> <span class="n">i</span><span class="o">);</span>
+<span class="c1">// [1, 2, 3]
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="83-使用-map">8.3 使用 Map</h2>
+<ul>
+<li>forEach 遍历 Map</li>
+<li>排序
+<ul>
+<li>
+<a href="#Map.Entry.comparingByKey"  target="_blank" >Entry.comparingByKey</a></li>
+<li>Entry.comparingByValue</li>
+</ul>
+</li>
+<li>getOrDefault 方法
+<ul>
+<li>解决要查找的键在 Map 中不存在</li>
+<li>第一个参数作为键，第二个参数为默认值</li>
+</ul>
+</li>
+<li>计算模式
+<ul>
+<li>
+<a href="#computeIfAbsent"  target="_blank" >computeIfAbsent</a>：给指定的键添加新的值（与原来的值进行合并操作）</li>
+<li>
+<a href="#computeIfPresent"  target="_blank" >computeIfPresent</a>：如果指定的键在 Map 中存在，使用新值替换旧值；如果不存在，Map 内容无变化</li>
+<li>
+<a href="#compute"  target="_blank" >compute</a>：添加键值对
+<ul>
+<li>键已存在：更新值</li>
+<li>键不存在：新增值</li>
+</ul>
+</li>
+<li>
+<a href="#remove"  target="_blank" >remove</a>：删除数据
+<ul>
+<li>remove(Object key, Object value) 可以防止误删数据</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>替换模式（8.3.6）
+<ul>
+<li>
+<a href="#replaceAll"  target="_blank" >replaceAll</a>：
+<ul>
+<li>改变 Map 中所有键的值</li>
+<li>不能改变 Map 中键</li>
+</ul>
+</li>
+<li>replace(K key, V value)</li>
+<li>replace(K key, V oldValue, V newValue)</li>
+</ul>
+</li>
+<li>merge 方法（8.3.7）
+<ul>
+<li>
+<a href="#merge"  target="_blank" >处理键冲突时的情况</a></li>
+<li>
+<a href="#merge-%e7%ae%80%e5%8c%96%e4%bb%a3%e7%a0%81"  target="_blank" >简化代码</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="mapentrycomparingbykey">Map.Entry.comparingByKey</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">favouriteMovies</span> <span class="o">=</span> <span class="n">Map</span><span class="o">.</span><span class="na">ofEntries</span><span class="o">(</span>
+                <span class="n">entry</span><span class="o">(</span><span class="s">&#34;Raphael&#34;</span><span class="o">,</span> <span class="s">&#34;Star Wars&#34;</span><span class="o">),</span>
+                <span class="n">entry</span><span class="o">(</span><span class="s">&#34;Cristina&#34;</span><span class="o">,</span> <span class="s">&#34;Matrix&#34;</span><span class="o">),</span>
+                <span class="n">entry</span><span class="o">(</span><span class="s">&#34;Olivia&#34;</span><span class="o">,</span> <span class="s">&#34;James Bond&#34;</span><span class="o">));</span>
+        <span class="n">favouriteMovies</span><span class="o">.</span><span class="na">entrySet</span><span class="o">().</span><span class="na">stream</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">sorted</span><span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">.</span><span class="na">comparingByKey</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">forEachOrdered</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="computeifabsent">computeIfAbsent</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">friendsToMovies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+
+        <span class="n">String</span> <span class="n">friend</span> <span class="o">=</span> <span class="s">&#34;小刚&#34;</span><span class="o">;</span>
+        <span class="n">friendsToMovies</span><span class="o">.</span><span class="na">computeIfAbsent</span><span class="o">(</span><span class="n">friend</span><span class="o">,</span> <span class="n">name</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;())</span>
+                <span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;星球大战&#34;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">friendsToMovies</span><span class="o">);</span>
+        <span class="c1">// {小刚=[星球大战]}
+</span><span class="c1"></span>        <span class="n">friendsToMovies</span><span class="o">.</span><span class="na">computeIfAbsent</span><span class="o">(</span><span class="n">friend</span><span class="o">,</span> <span class="n">name</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;())</span>
+                <span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;星际争霸&#34;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">friendsToMovies</span><span class="o">);</span>
+        <span class="c1">// {小刚=[星球大战, 星际争霸]}
+</span><span class="c1"></span>        <span class="n">friendsToMovies</span><span class="o">.</span><span class="na">computeIfAbsent</span><span class="o">(</span><span class="n">friend</span><span class="o">,</span> <span class="n">name</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;())</span>
+                <span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;星际争霸&#34;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">friendsToMovies</span><span class="o">);</span>
+        <span class="c1">// {小刚=[星球大战, 星际争霸, 星际争霸]}
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="computeifpresent">computeIfPresent</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">gameMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+
+        <span class="n">String</span> <span class="n">friend</span> <span class="o">=</span> <span class="s">&#34;小刚&#34;</span><span class="o">;</span>
+        <span class="n">gameMap</span><span class="o">.</span><span class="na">computeIfAbsent</span><span class="o">(</span><span class="n">friend</span><span class="o">,</span> <span class="n">name</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;())</span>
+                <span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;星球大战&#34;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">//{小刚=[星球大战]}
+</span><span class="c1"></span>        <span class="n">gameMap</span><span class="o">.</span><span class="na">computeIfPresent</span><span class="o">(</span><span class="n">friend</span><span class="o">,</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;星际争霸&#34;</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">// {小刚=[星际争霸]}
+</span><span class="c1"></span>        <span class="n">gameMap</span><span class="o">.</span><span class="na">computeIfPresent</span><span class="o">(</span><span class="n">friend</span><span class="o">,</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;暗黑3&#34;</span><span class="o">,</span> <span class="s">&#34;地球时代&#34;</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">// {小刚=[暗黑3, 地球时代]}
+</span><span class="c1"></span>        <span class="n">gameMap</span><span class="o">.</span><span class="na">computeIfPresent</span><span class="o">(</span><span class="s">&#34;没有这个键&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;消消乐&#34;</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">// {小刚=[暗黑3, 地球时代]}
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="compute">compute</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">gameMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+
+        <span class="n">String</span> <span class="n">friend</span> <span class="o">=</span> <span class="s">&#34;小刚&#34;</span><span class="o">;</span>
+        <span class="n">gameMap</span><span class="o">.</span><span class="na">computeIfAbsent</span><span class="o">(</span><span class="n">friend</span><span class="o">,</span> <span class="n">name</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;())</span>
+                <span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;星球大战&#34;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">//{小刚=[星球大战]}
+</span><span class="c1"></span>        <span class="n">gameMap</span><span class="o">.</span><span class="na">compute</span><span class="o">(</span><span class="n">friend</span><span class="o">,</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;星际争霸&#34;</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">// {小刚=[星际争霸]}
+</span><span class="c1"></span>        <span class="n">gameMap</span><span class="o">.</span><span class="na">compute</span><span class="o">(</span><span class="n">friend</span><span class="o">,</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;暗黑3&#34;</span><span class="o">,</span> <span class="s">&#34;地球时代&#34;</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">// {小刚=[暗黑3, 地球时代]}
+</span><span class="c1"></span>        <span class="n">gameMap</span><span class="o">.</span><span class="na">compute</span><span class="o">(</span><span class="s">&#34;又来一个键&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;红警&#34;</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">// {小刚=[暗黑3, 地球时代], 又来一个键=[红警]}
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="remove">remove</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">gameMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">gameMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;暴雪1&#34;</span><span class="o">,</span> <span class="s">&#34;魔兽争霸&#34;</span><span class="o">);</span>
+        <span class="n">gameMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;暴雪2&#34;</span><span class="o">,</span> <span class="s">&#34;暗黑3&#34;</span><span class="o">);</span>
+        <span class="n">gameMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;暴雪3&#34;</span><span class="o">,</span> <span class="s">&#34;守望先锋&#34;</span><span class="o">);</span>
+
+        <span class="c1">// 防止误删数据
+</span><span class="c1"></span>        <span class="n">gameMap</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="s">&#34;暴雪1&#34;</span><span class="o">,</span> <span class="s">&#34;疯狂的麦克斯&#34;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">// {暴雪1=魔兽争霸, 暴雪3=守望先锋, 暴雪2=暗黑3}
+</span><span class="c1"></span>        <span class="n">gameMap</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="s">&#34;暴雪1&#34;</span><span class="o">,</span> <span class="s">&#34;魔兽争霸&#34;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">// {暴雪3=守望先锋, 暴雪2=暗黑3}
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="replaceall">replaceAll</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">gameMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">gameMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;blizzard1&#34;</span><span class="o">,</span> <span class="s">&#34;starcraft2&#34;</span><span class="o">);</span>
+        <span class="n">gameMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;blizzard2&#34;</span><span class="o">,</span> <span class="s">&#34;diablo4&#34;</span><span class="o">);</span>
+        <span class="n">gameMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;blizzard3&#34;</span><span class="o">,</span> <span class="s">&#34;warcraft3&#34;</span><span class="o">);</span>
+
+        <span class="n">gameMap</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">((</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">v</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">// {blizzard3=WARCRAFT3, blizzard2=DIABLO4, blizzard1=STARCRAFT2}
+</span><span class="c1"></span>        <span class="c1">// 不能改变 key 的值
+</span><span class="c1"></span>        <span class="n">gameMap</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">((</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">k</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">// {blizzard3=BLIZZARD3, blizzard2=BLIZZARD2, blizzard1=BLIZZARD1}
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="merge">merge</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">family</span> <span class="o">=</span> <span class="n">Map</span><span class="o">.</span><span class="na">ofEntries</span><span class="o">(</span>
+                <span class="n">entry</span><span class="o">(</span><span class="s">&#34;Teo&#34;</span><span class="o">,</span> <span class="s">&#34;Star Wars&#34;</span><span class="o">),</span>
+                <span class="n">entry</span><span class="o">(</span><span class="s">&#34;Cristina&#34;</span><span class="o">,</span> <span class="s">&#34;James Bond&#34;</span><span class="o">));</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">friends</span> <span class="o">=</span> <span class="n">Map</span><span class="o">.</span><span class="na">ofEntries</span><span class="o">(</span><span class="n">entry</span><span class="o">(</span><span class="s">&#34;Raphael&#34;</span><span class="o">,</span> <span class="s">&#34;Star Wars&#34;</span><span class="o">));</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;--&gt; Merging the old way, 当键重复时会被覆盖&#34;</span><span class="o">);</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">everyone</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;(</span><span class="n">family</span><span class="o">);</span>
+        <span class="n">everyone</span><span class="o">.</span><span class="na">putAll</span><span class="o">(</span><span class="n">friends</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">everyone</span><span class="o">);</span>
+        <span class="c1">// {Cristina=James Bond, Raphael=Star Wars, Teo=Star Wars}
+</span><span class="c1"></span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">friends2</span> <span class="o">=</span> <span class="n">Map</span><span class="o">.</span><span class="na">ofEntries</span><span class="o">(</span>
+                <span class="n">entry</span><span class="o">(</span><span class="s">&#34;Raphael&#34;</span><span class="o">,</span> <span class="s">&#34;Star Wars&#34;</span><span class="o">),</span>
+                <span class="n">entry</span><span class="o">(</span><span class="s">&#34;Cristina&#34;</span><span class="o">,</span> <span class="s">&#34;Matrix&#34;</span><span class="o">));</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;--&gt; Merging maps using merge(), 可以处理键重复时的情况&#34;</span><span class="o">);</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">everyone2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;(</span><span class="n">family</span><span class="o">);</span>
+        <span class="n">friends2</span><span class="o">.</span><span class="na">forEach</span><span class="o">((</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">everyone2</span><span class="o">.</span><span class="na">merge</span><span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">,</span> <span class="o">(</span><span class="n">movie1</span><span class="o">,</span> <span class="n">movie2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">movie1</span> <span class="o">+</span> <span class="s">&#34; &amp; &#34;</span> <span class="o">+</span> <span class="n">movie2</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">everyone2</span><span class="o">);</span>
+        <span class="c1">// {Raphael=Star Wars, Cristina=James Bond &amp; Matrix, Teo=Star Wars}
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="merge-简化代码">merge 简化代码</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">gameMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">String</span> <span class="n">gameName</span> <span class="o">=</span> <span class="s">&#34;巫师3&#34;</span><span class="o">;</span>
+        <span class="n">Integer</span> <span class="n">count</span> <span class="o">=</span> <span class="n">gameMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">gameName</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">count</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">gameMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">gameName</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">gameMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">gameName</span><span class="o">,</span> <span class="n">count</span> <span class="o">+</span> <span class="n">1</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">// {巫师3=1}
+</span><span class="c1"></span>
+        <span class="c1">// 简化代码
+</span><span class="c1"></span>        <span class="n">gameMap</span><span class="o">.</span><span class="na">merge</span><span class="o">(</span><span class="n">gameName</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">v</span> <span class="o">+</span> <span class="n">1</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">// {巫师3=2}
+</span><span class="c1"></span>
+        <span class="n">gameMap</span><span class="o">.</span><span class="na">merge</span><span class="o">(</span><span class="s">&#34;英雄无敌&#34;</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">v</span> <span class="o">+</span> <span class="n">1</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gameMap</span><span class="o">);</span>
+        <span class="c1">// {英雄无敌=1, 巫师3=2}
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="84-改进的-concurrenthashmap">8.4 改进的 ConcurrentHashMap</h2>
+<p>推荐使用 mappingCount 代替 size 方法</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wyyl1</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-04-15
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/java/">Java</a>
+          <a href="/tags/java%E5%AE%9E%E6%88%98/">Java实战</a>
+          <a href="/tags/collection-api-%E5%A2%9E%E5%BC%BA%E5%8A%9F%E8%83%BD/">Collection API 增强功能</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/0/10/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">第 10 章 基于 Lambda 的领域特定语言</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/0/07/">
+            <span class="next-text nav-default">第 7 章 并行数据处理与性能</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/wyyl1" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/349506199" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://wyyl1.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="hexo-link" href="https://beian.miit.gov.cn">浙ICP备16025224号-2</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>wyyl1</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+<script src="/js/baidu_tongji.js"></script>
+
+
+</body>
+</html>

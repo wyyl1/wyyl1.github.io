@@ -1,17 +1,356 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>15 | 消息队列的考验：Redis有哪些解决方案？ -</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="wyyl1"><script src=/js/baidu_tongji.js></script><meta name=description content="极客时间 | 《Redis核心技术与实战》学习笔记目录 原文 消息队列的消息存取需求 消息保序 重复消息处理 消息可靠性保证 基于 List 的消息队列解决方案 List 本身"><meta name=keywords content="wyyl1,万有引力一,Hugo"><meta name=generator content="Hugo 0.82.0 with theme even"><link rel=canonical href=https://wyyl1.github.io/post/1/15/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.39a3e01cac9473be1356f3572fcfe34b2e363efabad244a99a40f28a812c837e.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="15 | 消息队列的考验：Redis有哪些解决方案？"><meta property="og:description" content="极客时间 | 《Redis核心技术与实战》学习笔记目录 原文 消息队列的消息存取需求 消息保序 重复消息处理 消息可靠性保证 基于 List 的消息队列解决方案 List 本身"><meta property="og:type" content="article"><meta property="og:url" content="https://wyyl1.github.io/post/1/15/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-03-31T20:50:05+08:00"><meta property="article:modified_time" content="2021-03-31T20:50:05+08:00"><meta itemprop=name content="15 | 消息队列的考验：Redis有哪些解决方案？"><meta itemprop=description content="极客时间 | 《Redis核心技术与实战》学习笔记目录 原文 消息队列的消息存取需求 消息保序 重复消息处理 消息可靠性保证 基于 List 的消息队列解决方案 List 本身"><meta itemprop=datePublished content="2021-03-31T20:50:05+08:00"><meta itemprop=dateModified content="2021-03-31T20:50:05+08:00"><meta itemprop=wordCount content="2682"><meta itemprop=keywords content="Redis,"><meta name=twitter:card content="summary"><meta name=twitter:title content="15 | 消息队列的考验：Redis有哪些解决方案？"><meta name=twitter:description content="极客时间 | 《Redis核心技术与实战》学习笔记目录 原文 消息队列的消息存取需求 消息保序 重复消息处理 消息可靠性保证 基于 List 的消息队列解决方案 List 本身"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>wyyl1</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>文章</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/post/dir><li class=mobile-menu-item>目录</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>wyyl1</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>文章</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/post/dir>目录</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>15 | 消息队列的考验：Redis有哪些解决方案？</h1><div class=post-meta><span class=post-time>2021-03-31</span><div class=post-category><a href=/categories/%E5%AD%98%E5%82%A8/>存储</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#消息队列的消息存取需求>消息队列的消息存取需求</a></li><li><a href=#基于-list-的消息队列解决方案>基于 List 的消息队列解决方案</a></li><li><a href=#基于-streams-的消息队列解决方案>基于 Streams 的消息队列解决方案</a></li><li><a href=#小结>小结</a></li><li><a href=#精选留言>精选留言</a><ul><li><a href=#kaito>Kaito</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><p><a href=../dir target=_blank>极客时间 | 《Redis核心技术与实战》学习笔记目录</a></p><p><a href=https://time.geekbang.org/column/article/284291 target=_blank rel=noopener>原文</a></p><h2 id=消息队列的消息存取需求>消息队列的消息存取需求</h2><ul><li>消息保序</li><li>重复消息处理</li><li>消息可靠性保证</li></ul><h2 id=基于-list-的消息队列解决方案>基于 List 的消息队列解决方案</h2><p>List 本身就是按<strong>先进先出</strong>的顺序对数据进行存取</p><ul><li>LPUSH 命令<ul><li>把要发送的消息依次写入 List</li></ul></li><li>RPOP 命令<ul><li>从 List 的另一端按照消息的写入顺序，依次读取消息</li></ul></li><li><strong>BRPOP 命令也称为阻塞式读取</strong><ul><li>客户端在没有读到队列数据时，自动阻塞，直到有新的数据写入队列，再开始读取新数据</li></ul></li><li>BRPOPLPUSH 命令<ul><li>保证消息可靠性</li><li>让消费者程序从一个 List 中读取消息，同时，Redis 会把这个消息再插入到另一个 List（可以叫作备份 List）留存</li><li>如果消费者程序读了消息但没能正常处理，等它重启后，就可以从备份 List 中重新读取消息并进行处理</li></ul></li></ul><h2 id=基于-streams-的消息队列解决方案>基于 Streams 的消息队列解决方案</h2><blockquote><p>Streams 是 Redis 5.0 <strong>专门针对消息队列</strong>场景设计的数据类型
-和 List 相比，Streams 同样能够满足消息队列的三大需求。而且，它还支持消费组形式的消息读取</p></blockquote><p>Streams 是 Redis 专门为消息队列设计的数据类型</p><ul><li>XADD：插入消息，保证有序，可以自动生成全局唯一 ID；</li><li>XREAD：用于读取消息，可以按 ID 读取数据；</li><li>XREADGROUP：按<strong>消费组</strong>形式读取消息；<ul><li>消息队列中的消息一旦被消费组里的一个消费者读取了，就不能再被该消费组内的其他消费者读取了</li><li>目的是让组内的多个消费者共同分担读取消息</li></ul></li><li>XPENDING 和 XACK：<ul><li>XPENDING 命令可以用来查询每个消费组内所有消费者已读取但尚未确认的消息</li><li>XACK 命令用于向消息队列确认消息处理已完成</li><li>为了保证消费者在发生故障或宕机再次重启后，仍然可以读取未处理完的消息，Streams 会自动使用内部队列（也称为 PENDING List）留存消费组里每个消费者读取的消息，直到消费者使用 <strong>XACK</strong> 命令通知 Streams“消息已经处理完成”。</li><li>如果消费者没有成功处理消息，它就不会给 Streams 发送 XACK 命令，消息仍然会留存。此时，消费者可以在重启后，用 <strong>XPENDING</strong> 命令查看已读取、但尚未确认处理完成的消息。</li></ul></li></ul><h2 id=小结>小结</h2><ul><li>Streams 是 Redis 5.0 专门针对消息队列场景设计的数据类型，支持：有序、判重、可靠性。</li><li>一个 Redis 能搞定的消息队列，还要什么其他消息队列？</li><li>Redis 是一个非常轻量级的键值数据库，部署一个 Redis 实例就是启动一个进程，部署 Redis 集群，也就是部署多个 Redis 实例</li><li>Kafka、RabbitMQ 部署时，涉及额外的组件，例如 Kafka 的运行就需要再部署 ZooKeeper</li><li>相比 Redis 来说，Kafka 和 RabbitMQ 一般被认为是重量级的消息队列</li></ul><h2 id=精选留言>精选留言</h2><h3 id=kaito>Kaito</h3><p>如果一个生产者发送给消息队列的消息，需要被多个消费者进行读取和处理，你会使用Redis的什么数据类型来解决这个问题？</p><p>这种情况下，只能使用Streams数据类型来解决。使用Streams数据类型，创建多个消费者组，就可以实现同时消费生产者的数据。每个消费者组内可以再挂多个消费者分担读取消息进行消费，消费完成后，各自向Redis发送XACK，标记自己的消费组已经消费到了哪个位置，而且消费组之间互不影响。</p><p>另外，老师在介绍使用List用作队列时，为了保证消息可靠性，使用BRPOPLPUSH命令把消息取出的同时，还把消息插入到备份队列中，从而防止消费者故障导致消息丢失。</p><p>这种情况下，还需要额外做一些工作，也就是维护这个备份队列：每次执行BRPOPLPUSH命令后，因为都会把消息插入一份到备份队列中，所以当消费者成功消费取出的消息后，最好把备份队列中的消息删除，防止备份队列存储过多无用的数据，导致内存浪费。</p><p>这篇文章主要是讲消息队列的使用，借这个机会，也顺便总结一下使用消息队列时的注意点：</p><p>在使用消息队列时，重点需要关注的是如何保证不丢消息？</p><p>那么下面就来分析一下，哪些情况下，会丢消息，以及如何解决？</p><h4 id=1生产者在发布消息时异常>1、生产者在发布消息时异常：</h4><p>a) 网络故障或其他问题导致发布失败（直接返回错误，消息根本没发出去）
-b) 网络抖动导致发布超时（可能发送数据包成功，但读取响应结果超时了，不知道结果如何）</p><p>情况a还好，消息根本没发出去，那么重新发一次就好了。但是情况b没办法知道到底有没有发布成功，所以也只能再发一次。所以这两种情况，生产者都需要重新发布消息，直到成功为止（一般设定一个最大重试次数，超过最大次数依旧失败的需要报警处理）。这就会导致消费者可能会收到重复消息的问题，所以消费者需要保证在收到重复消息时，依旧能保证业务的正确性（设计幂等逻辑），一般需要根据具体业务来做，例如使用消息的唯一ID，或者版本号配合业务逻辑来处理。</p><h4 id=2消费者在处理消息时异常>2、消费者在处理消息时异常：</h4><p>也就是消费者把消息拿出来了，但是还没处理完，消费者就挂了。这种情况，需要消费者恢复时，依旧能处理之前没有消费成功的消息。使用List当作队列时，也就是利用老师文章所讲的备份队列来保证，代价是增加了维护这个备份队列的成本。而Streams则是采用ack的方式，消费成功后告知中间件，这种方式处理起来更优雅，成熟的队列中间件例如RabbitMQ、Kafka都是采用这种方式来保证消费者不丢消息的。</p><h4 id=3消息队列中间件丢失消息>3、消息队列中间件丢失消息</h4><p>上面2个层面都比较好处理，只要客户端和服务端配合好，就能保证生产者和消费者都不丢消息。但是，如果消息队列中间件本身就不可靠，也有可能会丢失消息，毕竟生产者和消费这都依赖它，如果它不可靠，那么生产者和消费者无论怎么做，都无法保证数据不丢失。</p><p>a) 在用Redis当作队列或存储数据时，是有可能丢失数据的：一个场景是，如果打开AOF并且是每秒写盘，因为这个写盘过程是异步的，Redis宕机时会丢失1秒的数据。而如果AOF改为同步写盘，那么写入性能会下降。另一个场景是，如果采用主从集群，如果写入量比较大，从库同步存在延迟，此时进行主从切换，也存在丢失数据的可能（从库还未同步完成主库发来的数据就被提成主库）。总的来说，<strong>Redis不保证严格的数据完整性和主从切换时的一致性</strong>。我们在使用Redis时需要注意。</p><p>b) 而采用RabbitMQ和Kafka这些专业的队列中间件时，就没有这个问题了。这些组件一般是部署一个集群，生产者在发布消息时，队列中间件一般会采用写多个节点+预写磁盘的方式保证消息的完整性，即便其中一个节点挂了，也能保证集群的数据不丢失。当然，为了做到这些，方案肯定比Redis设计的要复杂（毕竟是专们针对队列场景设计的）。</p><p>综上，Redis可以用作队列，而且性能很高，部署维护也很轻量，但缺点是无法严格保数据的完整性（个人认为这就是业界有争议要不要使用Redis当作队列的地方）。而使用专业的队列中间件，可以严格保证数据的完整性，但缺点是，部署维护成本高，用起来比较重。</p><p>所以我们需要根据具体情况进行选择，如果对于丢数据不敏感的业务，例如发短信、发通知的场景，可以采用Redis作队列。如果是金融相关的业务场景，例如交易、支付这类，建议还是使用专业的队列中间件。</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
-<span class=item-content>wyyl1</span></p><p class=copyright-item><span class=item-title>上次更新</span>
-<span class=item-content>2021-03-31</span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/redis/>Redis</a></div><nav class=post-nav><a class=prev href=/post/1/16/><i class="iconfont icon-left"></i>
-<span class="prev-text nav-default">16 | 异步机制：如何避免单线程模型的阻塞？</span>
-<span class="prev-text nav-mobile">上一篇</span></a>
-<a class=next href=/post/3/1/><span class="next-text nav-default">Java 入门推荐书籍</span>
-<span class="next-text nav-mobile">下一篇</span>
-<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/wyyl1 class="iconfont icon-github" title=github></a><a href=https://space.bilibili.com/349506199 class="iconfont icon-bilibili" title=bilibili></a><a href=https://wyyl1.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>由 <a class=hexo-link href=https://gohugo.io>Hugo</a> 强力驱动</span>
-<span class=division>|</span>
-<span class=theme-info>主题 -
-<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
-<span class=division>|</span>
-<span class=theme-info><a class=hexo-link href=https://beian.miit.gov.cn>浙ICP备16025224号-2</a></span>
-<span class=copyright-year>&copy;
-2021<span class=heart><i class="iconfont icon-heart"></i></span><span>wyyl1</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script><script src=/js/baidu_tongji.js></script></body></html>
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>15 | 消息队列的考验：Redis有哪些解决方案？ - </title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wyyl1" />
+
+<script src="/js/baidu_tongji.js"></script><meta name="description" content="极客时间 | 《Redis核心技术与实战》学习笔记目录 原文 消息队列的消息存取需求 消息保序 重复消息处理 消息可靠性保证 基于 List 的消息队列解决方案 List 本身" /><meta name="keywords" content="wyyl1, 万有引力一, Hugo" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.82.0 with theme even" />
+
+
+<link rel="canonical" href="https://wyyl1.github.io/post/1/15/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.39a3e01cac9473be1356f3572fcfe34b2e363efabad244a99a40f28a812c837e.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="15 | 消息队列的考验：Redis有哪些解决方案？" />
+<meta property="og:description" content="极客时间 | 《Redis核心技术与实战》学习笔记目录 原文 消息队列的消息存取需求 消息保序 重复消息处理 消息可靠性保证 基于 List 的消息队列解决方案 List 本身" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wyyl1.github.io/post/1/15/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-03-31T20:50:05&#43;08:00" />
+<meta property="article:modified_time" content="2021-03-31T20:50:05&#43;08:00" />
+
+<meta itemprop="name" content="15 | 消息队列的考验：Redis有哪些解决方案？">
+<meta itemprop="description" content="极客时间 | 《Redis核心技术与实战》学习笔记目录 原文 消息队列的消息存取需求 消息保序 重复消息处理 消息可靠性保证 基于 List 的消息队列解决方案 List 本身"><meta itemprop="datePublished" content="2021-03-31T20:50:05&#43;08:00" />
+<meta itemprop="dateModified" content="2021-03-31T20:50:05&#43;08:00" />
+<meta itemprop="wordCount" content="2682">
+<meta itemprop="keywords" content="Redis," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="15 | 消息队列的考验：Redis有哪些解决方案？"/>
+<meta name="twitter:description" content="极客时间 | 《Redis核心技术与实战》学习笔记目录 原文 消息队列的消息存取需求 消息保序 重复消息处理 消息可靠性保证 基于 List 的消息队列解决方案 List 本身"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wyyl1</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/dir">
+        <li class="mobile-menu-item">目录</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wyyl1</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/dir">目录</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">15 | 消息队列的考验：Redis有哪些解决方案？</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-03-31 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%AD%98%E5%82%A8/"> 存储 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#消息队列的消息存取需求">消息队列的消息存取需求</a></li>
+        <li><a href="#基于-list-的消息队列解决方案">基于 List 的消息队列解决方案</a></li>
+        <li><a href="#基于-streams-的消息队列解决方案">基于 Streams 的消息队列解决方案</a></li>
+        <li><a href="#小结">小结</a></li>
+        <li><a href="#精选留言">精选留言</a>
+          <ul>
+            <li><a href="#kaito">Kaito</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>
+<a href="../dir"  target="_blank" >极客时间 | 《Redis核心技术与实战》学习笔记目录</a></p>
+<p>
+<a href="https://time.geekbang.org/column/article/284291"  target="_blank"  rel="noopener">原文</a></p>
+<h2 id="消息队列的消息存取需求">消息队列的消息存取需求</h2>
+<ul>
+<li>消息保序</li>
+<li>重复消息处理</li>
+<li>消息可靠性保证</li>
+</ul>
+<h2 id="基于-list-的消息队列解决方案">基于 List 的消息队列解决方案</h2>
+<p>List 本身就是按<strong>先进先出</strong>的顺序对数据进行存取</p>
+<ul>
+<li>LPUSH 命令
+<ul>
+<li>把要发送的消息依次写入 List</li>
+</ul>
+</li>
+<li>RPOP 命令
+<ul>
+<li>从 List 的另一端按照消息的写入顺序，依次读取消息</li>
+</ul>
+</li>
+<li><strong>BRPOP 命令也称为阻塞式读取</strong>
+<ul>
+<li>客户端在没有读到队列数据时，自动阻塞，直到有新的数据写入队列，再开始读取新数据</li>
+</ul>
+</li>
+<li>BRPOPLPUSH 命令
+<ul>
+<li>保证消息可靠性</li>
+<li>让消费者程序从一个 List 中读取消息，同时，Redis 会把这个消息再插入到另一个 List（可以叫作备份 List）留存</li>
+<li>如果消费者程序读了消息但没能正常处理，等它重启后，就可以从备份 List 中重新读取消息并进行处理</li>
+</ul>
+</li>
+</ul>
+<h2 id="基于-streams-的消息队列解决方案">基于 Streams 的消息队列解决方案</h2>
+<blockquote>
+<p>Streams 是 Redis 5.0 <strong>专门针对消息队列</strong>场景设计的数据类型
+和 List 相比，Streams 同样能够满足消息队列的三大需求。而且，它还支持消费组形式的消息读取</p>
+</blockquote>
+<p>Streams 是 Redis 专门为消息队列设计的数据类型</p>
+<ul>
+<li>XADD：插入消息，保证有序，可以自动生成全局唯一 ID；</li>
+<li>XREAD：用于读取消息，可以按 ID 读取数据；</li>
+<li>XREADGROUP：按<strong>消费组</strong>形式读取消息；
+<ul>
+<li>消息队列中的消息一旦被消费组里的一个消费者读取了，就不能再被该消费组内的其他消费者读取了</li>
+<li>目的是让组内的多个消费者共同分担读取消息</li>
+</ul>
+</li>
+<li>XPENDING 和 XACK：
+<ul>
+<li>XPENDING 命令可以用来查询每个消费组内所有消费者已读取但尚未确认的消息</li>
+<li>XACK 命令用于向消息队列确认消息处理已完成</li>
+<li>为了保证消费者在发生故障或宕机再次重启后，仍然可以读取未处理完的消息，Streams 会自动使用内部队列（也称为 PENDING List）留存消费组里每个消费者读取的消息，直到消费者使用 <strong>XACK</strong> 命令通知 Streams“消息已经处理完成”。</li>
+<li>如果消费者没有成功处理消息，它就不会给 Streams 发送 XACK 命令，消息仍然会留存。此时，消费者可以在重启后，用 <strong>XPENDING</strong> 命令查看已读取、但尚未确认处理完成的消息。</li>
+</ul>
+</li>
+</ul>
+<h2 id="小结">小结</h2>
+<ul>
+<li>Streams 是 Redis 5.0 专门针对消息队列场景设计的数据类型，支持：有序、判重、可靠性。</li>
+<li>一个 Redis 能搞定的消息队列，还要什么其他消息队列？</li>
+<li>Redis 是一个非常轻量级的键值数据库，部署一个 Redis 实例就是启动一个进程，部署 Redis 集群，也就是部署多个 Redis 实例</li>
+<li>Kafka、RabbitMQ 部署时，涉及额外的组件，例如 Kafka 的运行就需要再部署 ZooKeeper</li>
+<li>相比 Redis 来说，Kafka 和 RabbitMQ 一般被认为是重量级的消息队列</li>
+</ul>
+<h2 id="精选留言">精选留言</h2>
+<h3 id="kaito">Kaito</h3>
+<p>如果一个生产者发送给消息队列的消息，需要被多个消费者进行读取和处理，你会使用Redis的什么数据类型来解决这个问题？</p>
+<p>这种情况下，只能使用Streams数据类型来解决。使用Streams数据类型，创建多个消费者组，就可以实现同时消费生产者的数据。每个消费者组内可以再挂多个消费者分担读取消息进行消费，消费完成后，各自向Redis发送XACK，标记自己的消费组已经消费到了哪个位置，而且消费组之间互不影响。</p>
+<p>另外，老师在介绍使用List用作队列时，为了保证消息可靠性，使用BRPOPLPUSH命令把消息取出的同时，还把消息插入到备份队列中，从而防止消费者故障导致消息丢失。</p>
+<p>这种情况下，还需要额外做一些工作，也就是维护这个备份队列：每次执行BRPOPLPUSH命令后，因为都会把消息插入一份到备份队列中，所以当消费者成功消费取出的消息后，最好把备份队列中的消息删除，防止备份队列存储过多无用的数据，导致内存浪费。</p>
+<p>这篇文章主要是讲消息队列的使用，借这个机会，也顺便总结一下使用消息队列时的注意点：</p>
+<p>在使用消息队列时，重点需要关注的是如何保证不丢消息？</p>
+<p>那么下面就来分析一下，哪些情况下，会丢消息，以及如何解决？</p>
+<h4 id="1生产者在发布消息时异常">1、生产者在发布消息时异常：</h4>
+<p>a) 网络故障或其他问题导致发布失败（直接返回错误，消息根本没发出去）
+b) 网络抖动导致发布超时（可能发送数据包成功，但读取响应结果超时了，不知道结果如何）</p>
+<p>情况a还好，消息根本没发出去，那么重新发一次就好了。但是情况b没办法知道到底有没有发布成功，所以也只能再发一次。所以这两种情况，生产者都需要重新发布消息，直到成功为止（一般设定一个最大重试次数，超过最大次数依旧失败的需要报警处理）。这就会导致消费者可能会收到重复消息的问题，所以消费者需要保证在收到重复消息时，依旧能保证业务的正确性（设计幂等逻辑），一般需要根据具体业务来做，例如使用消息的唯一ID，或者版本号配合业务逻辑来处理。</p>
+<h4 id="2消费者在处理消息时异常">2、消费者在处理消息时异常：</h4>
+<p>也就是消费者把消息拿出来了，但是还没处理完，消费者就挂了。这种情况，需要消费者恢复时，依旧能处理之前没有消费成功的消息。使用List当作队列时，也就是利用老师文章所讲的备份队列来保证，代价是增加了维护这个备份队列的成本。而Streams则是采用ack的方式，消费成功后告知中间件，这种方式处理起来更优雅，成熟的队列中间件例如RabbitMQ、Kafka都是采用这种方式来保证消费者不丢消息的。</p>
+<h4 id="3消息队列中间件丢失消息">3、消息队列中间件丢失消息</h4>
+<p>上面2个层面都比较好处理，只要客户端和服务端配合好，就能保证生产者和消费者都不丢消息。但是，如果消息队列中间件本身就不可靠，也有可能会丢失消息，毕竟生产者和消费这都依赖它，如果它不可靠，那么生产者和消费者无论怎么做，都无法保证数据不丢失。</p>
+<p>a) 在用Redis当作队列或存储数据时，是有可能丢失数据的：一个场景是，如果打开AOF并且是每秒写盘，因为这个写盘过程是异步的，Redis宕机时会丢失1秒的数据。而如果AOF改为同步写盘，那么写入性能会下降。另一个场景是，如果采用主从集群，如果写入量比较大，从库同步存在延迟，此时进行主从切换，也存在丢失数据的可能（从库还未同步完成主库发来的数据就被提成主库）。总的来说，<strong>Redis不保证严格的数据完整性和主从切换时的一致性</strong>。我们在使用Redis时需要注意。</p>
+<p>b) 而采用RabbitMQ和Kafka这些专业的队列中间件时，就没有这个问题了。这些组件一般是部署一个集群，生产者在发布消息时，队列中间件一般会采用写多个节点+预写磁盘的方式保证消息的完整性，即便其中一个节点挂了，也能保证集群的数据不丢失。当然，为了做到这些，方案肯定比Redis设计的要复杂（毕竟是专们针对队列场景设计的）。</p>
+<p>综上，Redis可以用作队列，而且性能很高，部署维护也很轻量，但缺点是无法严格保数据的完整性（个人认为这就是业界有争议要不要使用Redis当作队列的地方）。而使用专业的队列中间件，可以严格保证数据的完整性，但缺点是，部署维护成本高，用起来比较重。</p>
+<p>所以我们需要根据具体情况进行选择，如果对于丢数据不敏感的业务，例如发短信、发通知的场景，可以采用Redis作队列。如果是金融相关的业务场景，例如交易、支付这类，建议还是使用专业的队列中间件。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wyyl1</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-03-31
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/redis/">Redis</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/1/16/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">16 | 异步机制：如何避免单线程模型的阻塞？</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/3/1/">
+            <span class="next-text nav-default">Java 入门推荐书籍</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/wyyl1" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/349506199" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://wyyl1.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="hexo-link" href="https://beian.miit.gov.cn">浙ICP备16025224号-2</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>wyyl1</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+<script src="/js/baidu_tongji.js"></script>
+
+
+</body>
+</html>

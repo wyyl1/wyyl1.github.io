@@ -1,1 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>V2Ray on</title><link>https://wyyl1.github.io/tags/v2ray/</link><description>Recent content in V2Ray on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 14 Apr 2021 21:13:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/v2ray/index.xml" rel="self" type="application/rss+xml"/><item><title>V2Ray 入门</title><link>https://wyyl1.github.io/post/3/5/</link><pubDate>Wed, 14 Apr 2021 21:13:05 +0800</pubDate><guid>https://wyyl1.github.io/post/3/5/</guid><description>新 V2Ray 白话文指南 Ubuntu 配置文件目录 1 /usr/local/etc/v2ray/config.json systemctl enable v2ray; systemctl start v2ray MacOS 通过 Homebrew (opens new window)包管理器安装：brew install v2ray，随命令一起下载的 geosite.dat 和 geoip.dat 放置在 /usr/local/share/v2ray/ 目录</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>V2Ray on </title>
+    <link>https://wyyl1.github.io/tags/v2ray/</link>
+    <description>Recent content in V2Ray on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 14 Apr 2021 21:13:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/v2ray/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>V2Ray 入门</title>
+      <link>https://wyyl1.github.io/post/3/5/</link>
+      <pubDate>Wed, 14 Apr 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/3/5/</guid>
+      <description>新 V2Ray 白话文指南 Ubuntu 配置文件目录 1 /usr/local/etc/v2ray/config.json systemctl enable v2ray; systemctl start v2ray MacOS 通过 Homebrew (opens new window)包管理器安装：brew install v2ray，随命令一起下载的 geosite.dat 和 geoip.dat 放置在 /usr/local/share/v2ray/ 目录</description>
+    </item>
+    
+  </channel>
+</rss>

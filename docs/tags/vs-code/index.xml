@@ -1,1 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VS Code on</title><link>https://wyyl1.github.io/tags/vs-code/</link><description>Recent content in VS Code on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 19 Mar 2021 21:13:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/vs-code/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code 快捷键</title><link>https://wyyl1.github.io/post/6/1/</link><pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate><guid>https://wyyl1.github.io/post/6/1/</guid><description>快捷键 功能 补充说明 TAB / SHIFT + TAB 选中后整段左右移动 多行一起移动 Cmd + F2 全局替换文字 Option + Shift + ↓ / ↑ 复制当前行 Cmd + Shift + K 删除当前行 Option + ↑ 当前行向上移动</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VS Code on </title>
+    <link>https://wyyl1.github.io/tags/vs-code/</link>
+    <description>Recent content in VS Code on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Mar 2021 21:13:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/vs-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VS Code 快捷键</title>
+      <link>https://wyyl1.github.io/post/6/1/</link>
+      <pubDate>Fri, 19 Mar 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/6/1/</guid>
+      <description>快捷键 功能 补充说明 TAB / SHIFT + TAB 选中后整段左右移动 多行一起移动 Cmd + F2 全局替换文字 Option + Shift + ↓ / ↑ 复制当前行 Cmd + Shift + K 删除当前行 Option + ↑ 当前行向上移动</description>
+    </item>
+    
+  </channel>
+</rss>

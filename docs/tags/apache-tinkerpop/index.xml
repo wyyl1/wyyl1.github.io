@@ -1,1 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache TinkerPop on</title><link>https://wyyl1.github.io/tags/apache-tinkerpop/</link><description>Recent content in Apache TinkerPop on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 12 Apr 2021 09:53:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/apache-tinkerpop/index.xml" rel="self" type="application/rss+xml"/><item><title>The Gremlin Console</title><link>https://wyyl1.github.io/post/12/2/</link><pubDate>Mon, 12 Apr 2021 09:53:05 +0800</pubDate><guid>https://wyyl1.github.io/post/12/2/</guid><description>Gremlin 学习笔记目录 The Gremlin Console 官网文档 需要参考官网图数据关系示例图学习 找到 V(1) 不同类型的箭头指向的 V（顶点）- 只能找到部分顶点 1 2 3 4 g.V(1).outE(). group(). by(label). by(inV()) valueMap() 以 Map 格式</description></item><item><title>The Gremlin Recipes</title><link>https://wyyl1.github.io/post/12/1/</link><pubDate>Mon, 12 Apr 2021 09:53:05 +0800</pubDate><guid>https://wyyl1.github.io/post/12/1/</guid><description>Gremlin 学习笔记目录 The Gremlin Recipes 官网文档 Traversal Recipes 遍历 Between Vertices 顶点之间 g.V(1).bothE()：顶点的所有边 g.V(1).bothE().where(othe</description></item><item><title>Gremlin 入门</title><link>https://wyyl1.github.io/post/12/0/</link><pubDate>Sat, 10 Apr 2021 09:53:05 +0800</pubDate><guid>https://wyyl1.github.io/post/12/0/</guid><description>Gremlin 学习笔记目录 Apache TinkerPop Gremlin 以下代码来源 Getting Started 需要参考官网示例图学习 The First Five Minutes 遍历图的基础知识 g.V() 遍历图中所有顶点 g.V(1).outE(&amp;lsquo;knows&amp;rsquo;) 获取顶点“1”延伸出的所有带有标签“k</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache TinkerPop on </title>
+    <link>https://wyyl1.github.io/tags/apache-tinkerpop/</link>
+    <description>Recent content in Apache TinkerPop on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 12 Apr 2021 09:53:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/tags/apache-tinkerpop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Gremlin Console</title>
+      <link>https://wyyl1.github.io/post/12/2/</link>
+      <pubDate>Mon, 12 Apr 2021 09:53:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/12/2/</guid>
+      <description>Gremlin 学习笔记目录 The Gremlin Console 官网文档 需要参考官网图数据关系示例图学习 找到 V(1) 不同类型的箭头指向的 V（顶点）- 只能找到部分顶点 1 2 3 4 g.V(1).outE(). group(). by(label). by(inV()) valueMap() 以 Map 格式</description>
+    </item>
+    
+    <item>
+      <title>The Gremlin Recipes</title>
+      <link>https://wyyl1.github.io/post/12/1/</link>
+      <pubDate>Mon, 12 Apr 2021 09:53:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/12/1/</guid>
+      <description>Gremlin 学习笔记目录 The Gremlin Recipes 官网文档 Traversal Recipes 遍历 Between Vertices 顶点之间 g.V(1).bothE()：顶点的所有边 g.V(1).bothE().where(othe</description>
+    </item>
+    
+    <item>
+      <title>Gremlin 入门</title>
+      <link>https://wyyl1.github.io/post/12/0/</link>
+      <pubDate>Sat, 10 Apr 2021 09:53:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/12/0/</guid>
+      <description>Gremlin 学习笔记目录 Apache TinkerPop Gremlin 以下代码来源 Getting Started 需要参考官网示例图学习 The First Five Minutes 遍历图的基础知识 g.V() 遍历图中所有顶点 g.V(1).outE(&amp;lsquo;knows&amp;rsquo;) 获取顶点“1”延伸出的所有带有标签“k</description>
+    </item>
+    
+  </channel>
+</rss>

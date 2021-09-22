@@ -1,1 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>验证 on</title><link>https://wyyl1.github.io/categories/%E9%AA%8C%E8%AF%81/</link><description>Recent content in 验证 on</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 01 Sep 2021 21:13:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/%E9%AA%8C%E8%AF%81/index.xml" rel="self" type="application/rss+xml"/><item><title>Java 验证</title><link>https://wyyl1.github.io/post/3/7/</link><pubDate>Wed, 01 Sep 2021 21:13:05 +0800</pubDate><guid>https://wyyl1.github.io/post/3/7/</guid><description>Guava Preconditions Guava库：Preconditions实现优雅校验 Google Guava中Preconditions的用法，让前置条件判断变得更优雅 Spring 【Spri</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>验证 on </title>
+    <link>https://wyyl1.github.io/categories/%E9%AA%8C%E8%AF%81/</link>
+    <description>Recent content in 验证 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Sep 2021 21:13:05 +0800</lastBuildDate><atom:link href="https://wyyl1.github.io/categories/%E9%AA%8C%E8%AF%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java 验证</title>
+      <link>https://wyyl1.github.io/post/3/7/</link>
+      <pubDate>Wed, 01 Sep 2021 21:13:05 +0800</pubDate>
+      
+      <guid>https://wyyl1.github.io/post/3/7/</guid>
+      <description>Guava Preconditions Guava库：Preconditions实现优雅校验 Google Guava中Preconditions的用法，让前置条件判断变得更优雅 Spring 【Spri</description>
+    </item>
+    
+  </channel>
+</rss>
