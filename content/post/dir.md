@@ -13,6 +13,10 @@ categories: ["目录"]
 - [零碎笔记](/post/3/dir/)
   - [Java 入门推荐书籍](/post/3/1/)
 
+## Go
+
+- [Go 入门笔记-极客时间-Tony Bai · Go语言第一课](/post/16/dir/)
+
 ## 存储
 
 ### Redis
@@ -86,3 +90,4 @@ categories: ["目录"]
 | 13 | Docker|
 | 14 | Nginx|
 | 15 | Apache SkyWalking|
+| 16 | Go 入门笔记-极客时间-Tony Bai · Go语言第一课|
