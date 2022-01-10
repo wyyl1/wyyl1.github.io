@@ -16,6 +16,7 @@ categories: ["目录"]
 ## Go
 
 - [Go 入门笔记-极客时间-Tony Bai · Go语言第一课](/post/16/dir/)
+- [《Go 程序设计语言》学习笔记](/post/17/dir/)
 
 ## 存储
 
@@ -91,3 +92,5 @@ categories: ["目录"]
 | 14 | Nginx|
 | 15 | Apache SkyWalking|
 | 16 | Go 入门笔记-极客时间-Tony Bai · Go语言第一课|
+| 17 | 《Go 程序设计语言》学习笔记|
+| 18 | 如何写好代码|
