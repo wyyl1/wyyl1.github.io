@@ -19,3 +19,4 @@ categories: ["Java","零碎笔记","学习笔记"]
 - [V2Ray 入门](../5)
 - [实用技巧](../6)
 - [Java 验证](../7)
+- [IntelliJ Idea 快捷键 Mac版](../8)

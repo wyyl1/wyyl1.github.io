@@ -16,8 +16,9 @@ categories: ["目录"]
 
 - [《Java实战（第2版）》学习笔记](/post/0/dir/)
 - [《Java编程方法论:响应式Spring Reactor 3设计与实现》学习笔记](/post/2/dir/)
-- [零碎笔记](/post/3/dir/)
+- [零碎笔记 **点进去查看更多**](/post/3/dir/)
   - [Java 入门推荐书籍](/post/3/1/)
+  - [IntelliJ Idea 快捷键 Mac版](/post/3/8/)
 
 ## Go
 
