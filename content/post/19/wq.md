@@ -121,3 +121,9 @@ categories: ["学习笔记"]
 - 广度优先，先撑起来
 - 核心技能要深挖，TDD
 - 每天看书俩小时，TDD 8 小时
+
+更新了群里的学习笔记 截止时间 2022-04-12 https://wyyl1.com/post/19/wq/
+主要内容：
+小巨人项目打基础用的，入职第一年需要看完的书 https://www.wyyl1.com/post/19/xjr.png
+Intellij IDEA 的常用的快捷键视频 https://www.wyyl1.com/post/3/8/
+柯里化（英语：Currying）笔记 https://www.wyyl1.com/post/0/19/
