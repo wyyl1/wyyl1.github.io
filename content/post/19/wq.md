@@ -95,6 +95,8 @@ categories: ["学习笔记"]
 
 - 《Refactoring to Pattern》中文版《重构与模式》
 - 《How Google Tests Software》
+- 《xUnit Test Patterns : Refactoring Test Code》中文版《xUnit测试模式》
+- 《Unit Testing : Principles, Patterns and Practices》
 - [我收集的](../../3/1)
 
 ## 超级巨头曾经的结论
@@ -410,3 +412,40 @@ categories: ["学习笔记"]
   - 使用 Idea 快捷键进行重构（Extract 变量、方法参数、方法、类；inLine 方法；构造工厂方法；尽量使用接口等）
   - 通过**绞杀植物模式**替换旧的实现
     - 姚琪琳老师的 [遗留系统现代化实战 | 06 | 以增量演进为手段：为什么历时一年的改造到头来是一场空？](http://gk.link/a/11lAM)中有详细介绍
+
+## 2022-04-24 🚀 
+
+## 群友问：测试到底应该测试动态的过程还是静态的结果？
+
+### 问题举例
+
+- S(t) = S(t-1, delta)
+- 对于线性系统 可以改写 S(t) = S(t-1) + F(delta)
+
+### 答
+
+- 计算机里有个基本的等价关系
+- computation 等价于 data
+- 2 和 1 + 1是等价的。只不过一个是数据，一个是计算
+- 所以你说的，其实是一回事，两者其实并没有什么区别
+- **计算和数据等价有很多用处**
+  - 比如cache，也是一个意思
+  - 还有 lazy evaluation
+  - 包括stateless，event architecture，都是这个在更大范围的应用
+- S(t-1, delta) => S(t) 更一般的形式是 eval(ctx, statement) = value
+- 有个隐含上下文
+- 时序差，是ctx before 和 ctx after
+- S(t-1, ctx) => S(t, ctx’)
+- 时间也就变成状态改变，也就变成数据或者计算了
+- 这就是利用 lambda calc
+- 等价图灵机的基本思路
+- 把纸带建模成，状态/数据流
+- 时序操作就只和数据相关了
+- 所有测试都是对过程（计算）测试
+- 可以从data验证，也可以从computation验证
+- 就是状态验证和行为验证
+- 哪个好用用哪个（注：奥卡姆剃刀原理，如果你有两个或多个类似的解决方案，选择最简单的）
+
+## 无论是行为验证，还是状态验证，最后都只能验证状态
+
+- mock，spy，也是记录了发生了什么。判断是不是如期待一样
