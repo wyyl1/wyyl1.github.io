@@ -546,13 +546,16 @@ categories: ["学习笔记"]
 - 你封装了集合对象，那么排序就不是集合自己的逻辑
 
 
-## 2022-05-29
+## 2023-05-20 🚀 2022-05-29
+
+## Idea 简洁设置
 
 - https://www.jetbrains.com/lp/intellij-new-ui-preview/
 - JetBrains 表示，他们的目标是降低 IDE 的视觉复杂性，提供对基本功能的便捷访问，并根据需要逐步公开复杂的功能 —— 从而构建他们认为干净、现代和强大的外观。新 UI 是对现有 JetBrains IDE 产品线的重新设计，他们更改了主 IDE 窗口的外观和视觉，以及部分 UX 方面的变动，所有以代码为中心的功能和集成都像以前一样运行。新 UI 会确保与所有 IntelliJ 插件完全兼容
 - 双击 shift键 ，输入 registry ，将 ide.experimental 开头的都勾上就可以体验了
 - ide.experimental.* 全部打✓ 重启 IEDA
 
+## MyBatis 的优雅
 
 - 用mybatis，抽象地实现分库分表，还是很优雅的
 - 然后你会发现 其实你实现了一个jpa
