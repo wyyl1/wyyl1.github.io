@@ -20,6 +20,7 @@ categories: ["学习笔记"]
 - [08 09 10｜TDD中的测试](../06)
 - [12｜实战中的TDD：RESTful API的开发框架](../07) [课程原文链接](http://gk.link/a/11k0z)
 - [13 ｜DI Container（1）：如何实现基本的DI容器结构？](../08) [课程原文链接](http://gk.link/a/11kgj)
+- [我学习 TDD 的故事](../story) [课程原文链接](http://gk.link/a/11BHw)
 
 ## 扩展学习
 
