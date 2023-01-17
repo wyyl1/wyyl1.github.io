@@ -87,7 +87,7 @@ categories: ["目录"]
 | 0 | 《Java实战（第2版）》学习笔记 Modern Java In Action|
 | 1 | 极客时间 《Redis核心技术与实战》学习笔记|
 | 2 | 《Java编程方法论:响应式Spring Reactor 3设计与实现》学习笔记|
-| 3 | 零碎笔记|
+| 3 | [零碎笔记](/post/3/dir/)|
 | 4 | Git|
 | 5 | IntelliJ IDEA|
 | 6 | VS Code|
@@ -106,3 +106,4 @@ categories: ["目录"]
 | 19 | TDD|
 | 20 | 《程序员的底层思维》学习笔记|
 | 21 | 《代码精进之路 从码农到工匠》学习笔记|
+| 22 | [有趣的收集](/post/22/dir/)|
