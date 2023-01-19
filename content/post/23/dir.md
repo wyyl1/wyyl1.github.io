@@ -13,3 +13,4 @@ categories: ["学习笔记","目录"]
 ## 目录
 
 - [DDD 之 UML 入门 1](../01) [课程原文链接](http://gk.link/a/11UPs)
+- [DDD 之 UML 入门 2](../02) [课程原文链接](http://gk.link/a/11UTm)
