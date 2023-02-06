@@ -31,3 +31,7 @@ build/
 .vscode/
 
 www.wyyl1.com
+
+### drawio ###
+*.drawio.bkp
+*.drawio.dtmp
