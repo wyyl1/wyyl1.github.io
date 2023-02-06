@@ -10,7 +10,11 @@ categories: ["学习笔记","目录"]
 
 > [《极客时间|手把手教你落地 DDD》](http://gk.link/a/11UPq)学习笔记
 
-## 目录
+## UML 入门
 
 - [DDD 之 UML 入门 1](../01) [课程原文链接](http://gk.link/a/11UPs)
 - [DDD 之 UML 入门 2](../02) [课程原文链接](http://gk.link/a/11UTm)
+
+## 数据库设计
+
+- [DDD-数据库设计](../03) [课程原文链接](http://gk.link/a/11W17)
