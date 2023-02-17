@@ -35,3 +35,9 @@ www.wyyl1.com
 ### drawio ###
 *.drawio.bkp
 *.drawio.dtmp
+
+### hugo ###
+.hugo_build.lock
+
+### hugo themes ###
+hugo-clarity/
