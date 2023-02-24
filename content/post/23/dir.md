@@ -17,13 +17,15 @@ categories: ["学习笔记","目录"]
 
 ## 数据库设计
 
-- [DDD-数据库设计](../03)｜[原文：08｜数据库设计：怎样按领域模型设计数据库？](http://gk.link/a/11W17)
+- [DDD 数据库设计](../03)｜[原文：08｜数据库设计：怎样按领域模型设计数据库？](http://gk.link/a/11W17)
 
-## 架构
+## 架构实战
 
-- [DDD-分层架构](../04)｜[原文：09｜分层架构：怎样逃离“大泥球”？](http://gk.link/a/11WlS)
+- [DDD 分层架构](../04)｜[原文：09｜分层架构：怎样逃离“大泥球”？](http://gk.link/a/11WlS)
+- [DDD 代码一](../05)｜[原文：10｜代码实现（上）：要“贫血”还是要“充血”？](http://gk.link/a/11X6i)
 
-## 练习代码
+## 练习代码分支说明
 
 - [源码 Master 分支](https://github.com/wyyl1/geektime-ddd)
-- [DDD-分层架构｜ 原文：09｜分层架构：怎样逃离“大泥球”？](https://github.com/wyyl1/geektime-ddd/tree/1)
+- [branches 1](https://github.com/wyyl1/geektime-ddd/tree/1) 对应课程 [09｜分层架构：怎样逃离“大泥球”？](http://gk.link/a/11WlS)
+- [branches 2](https://github.com/wyyl1/geektime-ddd/tree/2) 对应课程 [10｜代码实现（上）：要“贫血”还是要“充血”？](http://gk.link/a/11X6i)
