@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-07-24T12:31:02.739Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.1 Chrome/112.0.5615.204 Electron/24.6.1 Safari/537.36" etag="vhKkaQ8Gpm3ElrybT3Tx" version="21.6.1" type="device" pages="10">
+<mxfile host="Electron" modified="2023-07-24T15:16:39.721Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.1 Chrome/112.0.5615.204 Electron/24.6.1 Safari/537.36" etag="xjyT9FI-lXfa-GRDLiSa" version="21.6.1" type="device" pages="11">
   <diagram name="分层架构-圈层结构" id="EKeebzzIygGIgbEC9B3Z">
     <mxGraphModel dx="2060" dy="1253" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
       <root>
@@ -438,6 +438,272 @@
             <mxPoint x="80" y="680" as="sourcePoint" />
             <mxPoint x="1280" y="680" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CNRrs4xDg_cDRb0szoo0" name="事件风暴全流程">
+    <mxGraphModel dx="2289" dy="1392" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-1" value="签订合同" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="240" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-2" value="合同已签订" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="240" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-8" value="" style="shape=mxgraph.signs.tech.computer;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="220" width="98" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-13" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="240" y="380" width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-5" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fad9d5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=bottom;" vertex="1" parent="7Oirmt9YOAZj8CJoYVpI-13">
+          <mxGeometry width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-12" value="销售&lt;br style=&quot;font-size: 15px;&quot;&gt;人员" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=15;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.user;" vertex="1" parent="7Oirmt9YOAZj8CJoYVpI-13">
+          <mxGeometry width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-18" value="客户" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#B9E0A5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="300" y="380" width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-20" value="添加客户" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="440" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-21" value="客户已添加" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="440" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-22" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="440" y="370" width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-23" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fad9d5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=bottom;" vertex="1" parent="7Oirmt9YOAZj8CJoYVpI-22">
+          <mxGeometry width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-24" value="客户&lt;br&gt;经理" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=15;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.user;" vertex="1" parent="7Oirmt9YOAZj8CJoYVpI-22">
+          <mxGeometry width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-26" value="为项目&lt;br&gt;分配员工" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="640" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-27" value="员工已分配" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="640" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-28" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="640" y="370" width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-29" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fad9d5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=bottom;" vertex="1" parent="7Oirmt9YOAZj8CJoYVpI-28">
+          <mxGeometry width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-30" value="项目&lt;br&gt;经理" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=15;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.user;" vertex="1" parent="7Oirmt9YOAZj8CJoYVpI-28">
+          <mxGeometry width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-31" value="项目" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#B9E0A5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="700" y="370" width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-32" value="员工" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#B9E0A5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="760" y="370" width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-33" value="更换&lt;br&gt;客户经理" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="940" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-34" value="客户经理&lt;br&gt;已更换" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="940" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-35" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="940" y="370" width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-36" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fad9d5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=bottom;" vertex="1" parent="7Oirmt9YOAZj8CJoYVpI-35">
+          <mxGeometry width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-37" value="客户&lt;br&gt;经理" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=15;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.user;" vertex="1" parent="7Oirmt9YOAZj8CJoYVpI-35">
+          <mxGeometry width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-38" value="目标&lt;br&gt;客户&lt;br&gt;经理" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#B9E0A5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="370" width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-39" value="客户" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#B9E0A5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="370" width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-40" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="880" y="370" width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-41" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fad9d5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=bottom;" vertex="1" parent="7Oirmt9YOAZj8CJoYVpI-40">
+          <mxGeometry width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-42" value="客户&lt;br&gt;经理&lt;br&gt;上级" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=15;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.user;" vertex="1" parent="7Oirmt9YOAZj8CJoYVpI-40">
+          <mxGeometry width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-43" value="添加客户" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-44" value="客户已添加" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-48" value="客户" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#B9E0A5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1040" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-50" value="签订合同" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-51" value="合同已签订" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-52" value="合同" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#B9E0A5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1040" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-54" value="合同已生效" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="610" y="1120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7Oirmt9YOAZj8CJoYVpI-55" value="合同已结束" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="740" y="1120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-1" value="使合同生效" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="610" y="1040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-2" value="结束合同" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="740" y="1040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-3" value="立项" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-4" value="已立项" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-5" value="项目" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#B9E0A5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1650" y="1040" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-7" value="项目已启动" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="1120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-8" value="员工已分配" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="1120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-9" value="启动项目" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="1040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-10" value="为项目&lt;br&gt;分配员工" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="1040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-11" value="项目已结束" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="1120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-12" value="员工已退出" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="1120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-13" value="结束项目" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="1040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-14" value="员工&lt;br&gt;退出项目" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="1040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-16" value="客户已添加" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="240" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-20" value="合同已签订" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="240" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-23" value="合同已生效" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="370" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-24" value="合同已结束" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="500" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-28" value="已立项" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="240" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-31" value="项目已启动" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="370" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-32" value="员工已分配" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="500" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-35" value="项目已结束" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="630" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-36" value="员工已退出" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="760" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-39" value="相关名词" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="920" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-40" value="相关名词" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="530" y="920" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-41" value="相关名词" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="790" y="920" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-45" value="添加客户" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-46" value="客户已添加" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-47" value="客户" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#B9E0A5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1320" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-48" value="客户" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fef2b1;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-49" value="签订合同" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-50" value="合同已签订" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-51" value="合同" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#B9E0A5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="870" y="1320" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-52" value="合同" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fef2b1;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="610" y="1390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-53" value="合同已生效" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="610" y="1460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-54" value="合同已结束" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="740" y="1460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-55" value="使合同生效" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="610" y="1320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-56" value="结束合同" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="740" y="1320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-57" value="立项" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-58" value="已立项" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-59" value="项目" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#B9E0A5;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1650" y="1320" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-60" value="项目" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#fef2b1;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="1390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-61" value="项目已启动" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="1460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-62" value="员工已分配" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="1460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-63" value="启动项目" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="1320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-64" value="为项目&lt;br&gt;分配员工" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="1320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-65" value="项目已结束" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="1460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-66" value="员工已退出" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#ffe6cc;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="1460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-67" value="结束项目" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="1320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OnWXmtkCI8cHl-k8x971-68" value="员工&lt;br&gt;退出项目" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#99CCFF;strokeColor=none;fillStyle=solid;fontStyle=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="1320" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
