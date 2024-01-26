@@ -1,0 +1,6 @@
+# Rename this file to languages.toml to enable multilingual support
+[zh-cn]
+languageName = "中文"
+languagedirection = "ltr"
+title = "万有引力一"
+weight = 1

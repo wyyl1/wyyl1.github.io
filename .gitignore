@@ -30,7 +30,9 @@ build/
 ### VS Code ###
 .vscode/
 
+### 临时目录 ###
 www.wyyl1.com
+temp-check
 
 ### drawio ###
 *.drawio.bkp
