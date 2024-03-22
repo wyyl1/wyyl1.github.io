@@ -7,9 +7,9 @@
 # 6. 删除临时目录
 # 7. 提交新代码到码云
 
-_WWW_WYYL1_DIR="/Users/aoe/github/wyyl1/wyyl1.github.io/www.wyyl1.com"
+_WWW_WYYL1_DIR="/Users/aoe/wyyl1/wyyl1.github.io/www.wyyl1.com"
 rm -rf $_WWW_WYYL1_DIR
-cd /Users/aoe/github/wyyl1/wyyl1.github.io/
+cd /Users/aoe/wyyl1/wyyl1.github.io/
 hugo --config config.toml,config-wyyl1.com.toml --minify
 
 _WYYL1_DIR="/Users/aoe/gitee/wyyl1"
