@@ -190,3 +190,5 @@ langchain 是什么意思？
 
 > 群友：老师，这些模板提示词都是怎么来的  
 8x：琢磨出来的
+
+> 编辑：[群聊精华做了个飞书文档](https://geek-agi.feishu.cn/docx/ExJ9dnR2yoOwRpxm2O4c7XLNnZg)
