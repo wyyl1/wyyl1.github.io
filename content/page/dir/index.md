@@ -122,3 +122,4 @@ menu:
 | 27 | [Head First C# 第四版学习笔记](/post/27/dir/)|
 | 28 | [徐昊 · AI 时代的软件工程学习笔记](/post/28/dir/)|
 | 29 | [Java 并发编程的艺术第2版学习笔记](/post/29/dir/)|
+| 29 | [Head First Android 开发第三版学习笔记](/post/30/dir/)|
