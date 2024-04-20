@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-07-25T01:19:40.493Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.1 Chrome/112.0.5615.204 Electron/24.6.1 Safari/537.36" etag="FDsoq1wYECwbmlQlsdo1" version="21.6.1" type="device" pages="11">
+<mxfile host="Electron" modified="2024-04-18T13:43:05.398Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.2.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="SDsOSSdSIY7cXPNtqKrr" version="24.2.5" type="device" pages="11">
   <diagram name="分层架构-圈层结构" id="EKeebzzIygGIgbEC9B3Z">
-    <mxGraphModel dx="2060" dy="1253" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1214" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -32,7 +32,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="hw40c4SO9KsdJAtegI_j" name="领域层示意图">
-    <mxGraphModel dx="2060" dy="1253" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1214" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -46,7 +46,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="qYQI3DITA4EfLxrpODds" name="领域+应用层示意图">
-    <mxGraphModel dx="2060" dy="1253" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1214" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -66,7 +66,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="W7CSGTySIcXoRU745aZh" name="Adapter">
-    <mxGraphModel dx="2060" dy="1253" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1214" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -89,7 +89,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Z5lcxb2asRxf1lz-uj6O" name="主动与被动适配器">
-    <mxGraphModel dx="2060" dy="1253" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1214" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -139,7 +139,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="-57M3p7xQT0P1kOzNn6M" name="common层">
-    <mxGraphModel dx="2060" dy="1253" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1214" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2920" pageHeight="2900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -192,23 +192,23 @@
     </mxGraphModel>
   </diagram>
   <diagram id="CXKH2JofkgDzUcvz6lFa" name="依赖倒转">
-    <mxGraphModel dx="2060" dy="1253" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1214" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="TkGmxwQryxDT7lOf805k-1" value="application.orgmng" style="shape=folder;fontStyle=1;tabWidth=220;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;" parent="1" vertex="1">
+        <mxCell id="TkGmxwQryxDT7lOf805k-1" value="application.orgmng" style="shape=folder;fontStyle=1;tabWidth=220;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;align=left;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="100" y="130" width="300" height="180" as="geometry" />
         </mxCell>
         <mxCell id="EDaD7iSytRbcuYHi5kS9-1" value="OrgService" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="TkGmxwQryxDT7lOf805k-1" vertex="1">
           <mxGeometry x="56.25" y="52.285714285714285" width="185.625" height="83.14285714285714" as="geometry" />
         </mxCell>
-        <mxCell id="EDaD7iSytRbcuYHi5kS9-11" value="adapter.driving.persistence.orgmng" style="shape=folder;fontStyle=1;tabWidth=220;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;" parent="1" vertex="1">
+        <mxCell id="EDaD7iSytRbcuYHi5kS9-11" value="adapter.driven.persistence.orgmng" style="shape=folder;fontStyle=1;tabWidth=220;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;align=left;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="100" y="590" width="300" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="EDaD7iSytRbcuYHi5kS9-12" value="OrgService" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="EDaD7iSytRbcuYHi5kS9-11" vertex="1">
+        <mxCell id="EDaD7iSytRbcuYHi5kS9-12" value="OrgRepositoryImpl" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="EDaD7iSytRbcuYHi5kS9-11" vertex="1">
           <mxGeometry x="57.24615384615385" y="59.99692307692308" width="185.625" height="83.14285714285714" as="geometry" />
         </mxCell>
-        <mxCell id="EDaD7iSytRbcuYHi5kS9-13" value="domain.orgmng" style="shape=folder;fontStyle=1;tabWidth=220;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;" parent="1" vertex="1">
+        <mxCell id="EDaD7iSytRbcuYHi5kS9-13" value="domain.orgmng" style="shape=folder;fontStyle=1;tabWidth=220;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;align=left;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="100" y="360" width="300" height="180" as="geometry" />
         </mxCell>
         <mxCell id="EDaD7iSytRbcuYHi5kS9-4" value="&lt;b&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;OrgRepository&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=59;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;container=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;fillColor=#fff2cc;strokeColor=#000000;" parent="EDaD7iSytRbcuYHi5kS9-13" vertex="1">
