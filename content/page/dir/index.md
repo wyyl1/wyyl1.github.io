@@ -42,6 +42,8 @@ menu:
 | 28 | [徐昊 · AI 时代的软件工程学习笔记](/post/28/dir/)|
 | 29 | [Java 并发编程的艺术第2版学习笔记](/post/29/dir/)|
 | 30 | [Head First Android 开发第三版学习笔记](/post/30/dir/)|
+| 31 | [AI 模板](/post/31/dir/)|
+| 32 | [ELK/Elastic Stack](/post/32/dir/)|
 
 ## 如何写出好代码
 
